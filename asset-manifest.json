@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CryptoCasino/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/CryptoCasino/static/js/main.ea2a23fa.chunk.js",
-    "main.js.map": "/CryptoCasino/static/js/main.ea2a23fa.chunk.js.map",
+    "main.js": "/CryptoCasino/static/js/main.d25b1f30.chunk.js",
+    "main.js.map": "/CryptoCasino/static/js/main.d25b1f30.chunk.js.map",
     "runtime~main.js": "/CryptoCasino/static/js/runtime~main.28b99882.js",
     "runtime~main.js.map": "/CryptoCasino/static/js/runtime~main.28b99882.js.map",
     "static/js/2.8696a317.chunk.js": "/CryptoCasino/static/js/2.8696a317.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.1b3c587a.chunk.js": "/CryptoCasino/static/js/3.1b3c587a.chunk.js",
     "static/js/3.1b3c587a.chunk.js.map": "/CryptoCasino/static/js/3.1b3c587a.chunk.js.map",
     "index.html": "/CryptoCasino/index.html",
-    "precache-manifest.75962dfe58c5d2b5221f8ef88f2f9041.js": "/CryptoCasino/precache-manifest.75962dfe58c5d2b5221f8ef88f2f9041.js",
+    "precache-manifest.6928d2fb5c97ae9c540bd28eef21c85a.js": "/CryptoCasino/precache-manifest.6928d2fb5c97ae9c540bd28eef21c85a.js",
     "service-worker.js": "/CryptoCasino/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/CryptoCasino/static/css/main.5ecd60fb.chunk.css.map"
   }
