@@ -11,7 +11,7 @@ function CasinoHomePage() {
             <li><a href="#">Inicio de culo</a></li>
             <li><a href="#">Juegos de pena</a></li>
             <li><a href="#">Promociones de pena</a></li>
-            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Soporte de putas</a></li>
           </ul>
         </nav>
       </header>
