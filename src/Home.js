@@ -8,7 +8,7 @@ function CasinoHomePage() {
         <h1>Bienvenido al Casino</h1>
         <nav>
           <ul>
-            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Inicio de culo</a></li>
             <li><a href="#">Juegos</a></li>
             <li><a href="#">Promociones</a></li>
             <li><a href="#">Soporte</a></li>
