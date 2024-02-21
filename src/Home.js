@@ -9,7 +9,7 @@ function CasinoHomePage() {
         <nav>
           <ul>
             <li><a href="#">Inicio de culo</a></li>
-            <li><a href="#">Juegos</a></li>
+            <li><a href="#">Juegos de pena</a></li>
             <li><a href="#">Promociones</a></li>
             <li><a href="#">Soporte</a></li>
           </ul>
