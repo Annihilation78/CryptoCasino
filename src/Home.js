@@ -22,7 +22,7 @@ function CasinoHomePage() {
             <div className="game-item">
               <img src="imagen_juego_1.jpg" alt="Juego 1" />
               <h3>Juego 1</h3>
-              <p>Descripción del Juego 1</p>
+              <p>Descripción del Juego asssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
               <button>¡Jugar Ahora!</button>
             </div>
             <div className="game-item">
