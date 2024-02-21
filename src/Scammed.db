@@ -1,0 +1,11 @@
+CREATE TABLE usuarios (
+    id INTEGER PRIMARY KEY,
+    usuario TEXT NOT NULL UNIQUE,
+    contrasena TEXT NOT NULL,
+    email TEXT NOT NULL,
+    wallet REAL DEFAULT 0
+);
+
+INSERT INTO usuarios (usuario, contrasena, email, wallet) VALUES
+    ('usuario1', 'contrasena1', 'usuario1@example.com', 100),
+    ('usuario2', 'contrasena2', 'usuario2@example.com', 50);
