@@ -8,7 +8,7 @@ function CasinoHomePage() {
         <h1>Bienvenido al Casino</h1>
         <nav>
           <ul>
-            <li><a href="#">Inicio de culosssssssssssswwwwwwwwwwwwwasdasdasda er wad asasdas sa fsae gs gdg dgse df fsd fswwwwwwwwwssssssssssssssssss</a></li>
+            <li><a href="#">Inicio</a></li>
             <li><a href="#">Juegos de pena</a></li>
             <li><a href="#">Promociones de pena</a></li>
             <li><a href="#">Soporte de putas</a></li>
