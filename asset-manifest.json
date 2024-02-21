@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/CryptoCasino/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/CryptoCasino/static/js/main.3040cf00.chunk.js",
-    "main.js.map": "/CryptoCasino/static/js/main.3040cf00.chunk.js.map",
-    "runtime~main.js": "/CryptoCasino/static/js/runtime~main.28b99882.js",
-    "runtime~main.js.map": "/CryptoCasino/static/js/runtime~main.28b99882.js.map",
-    "static/js/2.8696a317.chunk.js": "/CryptoCasino/static/js/2.8696a317.chunk.js",
-    "static/js/2.8696a317.chunk.js.map": "/CryptoCasino/static/js/2.8696a317.chunk.js.map",
-    "static/js/3.1b3c587a.chunk.js": "/CryptoCasino/static/js/3.1b3c587a.chunk.js",
-    "static/js/3.1b3c587a.chunk.js.map": "/CryptoCasino/static/js/3.1b3c587a.chunk.js.map",
+    "main.css": "/CryptoCasino/static/css/main.69eda509.chunk.css",
+    "main.js": "/CryptoCasino/static/js/main.89a9555d.chunk.js",
+    "main.js.map": "/CryptoCasino/static/js/main.89a9555d.chunk.js.map",
+    "runtime-main.js": "/CryptoCasino/static/js/runtime-main.7417a970.js",
+    "runtime-main.js.map": "/CryptoCasino/static/js/runtime-main.7417a970.js.map",
+    "static/js/2.590bc107.chunk.js": "/CryptoCasino/static/js/2.590bc107.chunk.js",
+    "static/js/2.590bc107.chunk.js.map": "/CryptoCasino/static/js/2.590bc107.chunk.js.map",
+    "static/js/3.80ef9c0c.chunk.js": "/CryptoCasino/static/js/3.80ef9c0c.chunk.js",
+    "static/js/3.80ef9c0c.chunk.js.map": "/CryptoCasino/static/js/3.80ef9c0c.chunk.js.map",
     "index.html": "/CryptoCasino/index.html",
-    "precache-manifest.ddd566befb7a660057aebb8380615e29.js": "/CryptoCasino/precache-manifest.ddd566befb7a660057aebb8380615e29.js",
+    "precache-manifest.5c01a207b3615b7c550fb5b1e55cb081.js": "/CryptoCasino/precache-manifest.5c01a207b3615b7c550fb5b1e55cb081.js",
     "service-worker.js": "/CryptoCasino/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/CryptoCasino/static/css/main.5ecd60fb.chunk.css.map"
-  }
+    "static/css/main.69eda509.chunk.css.map": "/CryptoCasino/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.590bc107.chunk.js.LICENSE.txt": "/CryptoCasino/static/js/2.590bc107.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7417a970.js",
+    "static/js/2.590bc107.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.89a9555d.chunk.js"
+  ]
 }
