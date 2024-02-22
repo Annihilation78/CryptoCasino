@@ -5,6 +5,7 @@ import * as qna from '@tensorflow-models/qna';
 export default function ChatBot() {
   const [messages, setMessages] = useState([]);
   const [model, setModel] = useState(null);
+  const [input, setInput] = useState('');
 
   // Carga el modelo cuando se carga el componente
   useEffect(() => {
@@ -23,4 +24,22 @@ export default function ChatBot() {
       setMessages([...messages, { sender: 'user', text: message }, { sender: 'bot', text: botResponse }]);
     }
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendMessage(input);
+    setInput('');
+  };
+
+  return (
+    <div>
+      {messages.map((message, index) => (
+        <p key={index}><strong>{message.sender}:</strong> {message.text}</p>
+      ))}
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={input} onChange={e => setInput(e.target.value)} />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  );
 }
