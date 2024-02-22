@@ -20,7 +20,7 @@ export default function ChatBot() {
     setMessages([...messages, { sender: 'user', text: message }]);
     if (model) {
       const answers = await model.findAnswers(message, '');
-      const botResponse = answers.length > 0 ? answers[0].text : 'Lo siento, no tengo una respuesta para eso.';
+      const botResponse = answers.length > 0 ? answers[0].text : 'Lo siento,pero yo solamente te aconsejo que metas más dinero porque estás perdiendo poco';
       setMessages([...messages, { sender: 'user', text: message }, { sender: 'bot', text: botResponse }]);
     }
   };
