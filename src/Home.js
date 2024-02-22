@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ChatBot from './Chatbot/Chatbot.js';
+
 
 function CasinoHomePage() {
   return (
@@ -50,6 +52,7 @@ function CasinoHomePage() {
             {/* Agregar más promociones aquí */}
           </div>
         </section>
+        <ChatBot />
       </main>
       <footer>
         <p>&copy; 2024 Casino. Todos los derechos reservados.</p>
