@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ChatBot from './Chatbot/Chatbot.js';
 import './index.css';
 
 function CasinoHomePage() {
@@ -52,7 +50,6 @@ function CasinoHomePage() {
             {/* Agregar más promociones aquí */}
           </div>
         </section>
-        <ChatBot />
       </main>
       <footer>
         <p>© 2024 Casino. Todos los derechos reservados.</p>
