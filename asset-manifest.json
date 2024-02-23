@@ -1,24 +1,22 @@
 {
   "files": {
     "main.css": "/CryptoCasino/static/css/main.53fefb6a.chunk.css",
-    "main.js": "/CryptoCasino/static/js/main.e6280534.chunk.js",
-    "main.js.map": "/CryptoCasino/static/js/main.e6280534.chunk.js.map",
-    "runtime-main.js": "/CryptoCasino/static/js/runtime-main.8a58bff6.js",
-    "runtime-main.js.map": "/CryptoCasino/static/js/runtime-main.8a58bff6.js.map",
+    "main.js": "/CryptoCasino/static/js/main.9de1b7eb.chunk.js",
+    "main.js.map": "/CryptoCasino/static/js/main.9de1b7eb.chunk.js.map",
+    "runtime-main.js": "/CryptoCasino/static/js/runtime-main.426027a5.js",
+    "runtime-main.js.map": "/CryptoCasino/static/js/runtime-main.426027a5.js.map",
     "static/js/2.598f5b3e.chunk.js": "/CryptoCasino/static/js/2.598f5b3e.chunk.js",
     "static/js/2.598f5b3e.chunk.js.map": "/CryptoCasino/static/js/2.598f5b3e.chunk.js.map",
-    "static/js/3.801c6581.chunk.js": "/CryptoCasino/static/js/3.801c6581.chunk.js",
-    "static/js/3.801c6581.chunk.js.map": "/CryptoCasino/static/js/3.801c6581.chunk.js.map",
     "index.html": "/CryptoCasino/index.html",
-    "precache-manifest.8d2e7b8c4fcbbf1ecb840972bf2a7137.js": "/CryptoCasino/precache-manifest.8d2e7b8c4fcbbf1ecb840972bf2a7137.js",
+    "precache-manifest.f27274dfe968e86db1d93fa4472ed250.js": "/CryptoCasino/precache-manifest.f27274dfe968e86db1d93fa4472ed250.js",
     "service-worker.js": "/CryptoCasino/service-worker.js",
     "static/css/main.53fefb6a.chunk.css.map": "/CryptoCasino/static/css/main.53fefb6a.chunk.css.map",
     "static/js/2.598f5b3e.chunk.js.LICENSE.txt": "/CryptoCasino/static/js/2.598f5b3e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8a58bff6.js",
+    "static/js/runtime-main.426027a5.js",
     "static/js/2.598f5b3e.chunk.js",
     "static/css/main.53fefb6a.chunk.css",
-    "static/js/main.e6280534.chunk.js"
+    "static/js/main.9de1b7eb.chunk.js"
   ]
 }

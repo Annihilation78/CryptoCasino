@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39e2f22c753f2896b888feec97a81792",
+    "revision": "cc190eeace958bb01fc5c8d0796b8a8b",
     "url": "/CryptoCasino/index.html"
   },
   {
-    "revision": "30cbdd3ae4a0bde3c531",
+    "revision": "3dec870e4696be819329",
     "url": "/CryptoCasino/static/css/main.53fefb6a.chunk.css"
   },
   {
@@ -16,15 +16,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CryptoCasino/static/js/2.598f5b3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7b05b126117bbb1c893d",
-    "url": "/CryptoCasino/static/js/3.801c6581.chunk.js"
+    "revision": "3dec870e4696be819329",
+    "url": "/CryptoCasino/static/js/main.9de1b7eb.chunk.js"
   },
   {
-    "revision": "30cbdd3ae4a0bde3c531",
-    "url": "/CryptoCasino/static/js/main.e6280534.chunk.js"
-  },
-  {
-    "revision": "72485ba3995c3ed2323e",
-    "url": "/CryptoCasino/static/js/runtime-main.8a58bff6.js"
+    "revision": "f0668674b4e6d9cbb96b",
+    "url": "/CryptoCasino/static/js/runtime-main.426027a5.js"
   }
 ]);
