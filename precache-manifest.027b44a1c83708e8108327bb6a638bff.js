@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cc190eeace958bb01fc5c8d0796b8a8b",
+    "revision": "85e3baf2e02ec20581f38b7fd437a651",
     "url": "/CryptoCasino/index.html"
   },
   {
