@@ -23,7 +23,7 @@ function CasinoHomePage() {
               <img src="imagen_juego_1.jpg" alt="Juego 1" className="w-full h-64 object-cover mb-4 rounded" />
               <h3 className="text-xl font-bold">Juego 1</h3>
               <p className="text-gray-700 mb-4">Descripción del Juego</p>
-              <button className="bg-blue-600 text-white rounded-full px-4 py-2">¡Jugar Ahora!</button>
+              <button className="btn">¡Jugar Ahora!</button>
             </div>
             <div className="game-item">
               <img src="imagen_juego_2.jpg" alt="Juego 2" />
