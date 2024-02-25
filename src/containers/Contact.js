@@ -4,6 +4,7 @@ import Home from '../Home.js'
 
 function Contact() {
   return (
+    <Router>
     <div>
       <header className="header">
         <h1>Contacto</h1>
@@ -34,6 +35,7 @@ function Contact() {
         <p>© 2024 Casino. Todos los derechos reservados.</p>
       </footer>
     </div>
+    </Router>
   );
 }
 

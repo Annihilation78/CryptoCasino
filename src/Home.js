@@ -5,6 +5,7 @@ import Contact from './containers/Contact';
 
 function CasinoHomePage() {
   return (
+    <Router>
     <div className="app">
       <header className="header">
         <h1>Bienvenido al Casino</h1>
@@ -59,6 +60,7 @@ function CasinoHomePage() {
         <p>© 2024 Casino. Todos los derechos reservados.</p>
       </footer>
     </div>
+    </Router>
   );
 }
 
