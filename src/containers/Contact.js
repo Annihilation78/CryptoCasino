@@ -16,7 +16,7 @@ function Contact() {
             <li><a href="#" className="text-white">Soporte</a></li>
           </ul>
         </nav>
-        <Route path="/" exact component={Home} />
+        <Routes><Route path="/" exact component={Home} /></Routes>
       </header>
       <section className="container mx-auto">
           <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
