@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/index.css';
+import Contact from './containers/Contact';
 
 function CasinoHomePage() {
   return (
@@ -12,6 +13,7 @@ function CasinoHomePage() {
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
+            <li><a href="/containers/Contact" className="text-white">Contacto</a></li>
           </ul>
         </nav>
       </header>
