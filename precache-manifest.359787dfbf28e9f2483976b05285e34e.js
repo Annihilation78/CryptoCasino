@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5f9da02c0d7dc89784fc26897d66408a",
+    "revision": "c3c9f3a1ee2e7c1ee85a9592fcda5cde",
     "url": "/CryptoCasino/index.html"
   },
   {
-    "revision": "b4c50c69c195ae6430d5",
+    "revision": "4c6beaca7328379d510c",
     "url": "/CryptoCasino/static/css/main.53fefb6a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CryptoCasino/static/js/2.b22dbe64.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b4c50c69c195ae6430d5",
-    "url": "/CryptoCasino/static/js/main.81eb92b6.chunk.js"
+    "revision": "4c6beaca7328379d510c",
+    "url": "/CryptoCasino/static/js/main.96871ca9.chunk.js"
   },
   {
     "revision": "f0668674b4e6d9cbb96b",
