@@ -17,7 +17,6 @@ function CasinoHomePage() {
             <li><Link to="/containers/Contact.js">Contacto</Link></li>
           </ul>
         </nav>
-        <Route path="/" exact component={Home} />
         <Route path="/containers/Contact.js" component={Contact} />
       </header>
       <main className="py-6">
