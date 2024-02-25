@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/index.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Contact from './containers/Contact';
 
 function CasinoHomePage() {
@@ -9,13 +10,15 @@ function CasinoHomePage() {
         <h1>Bienvenido al Casino</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#" className="text-white">Inicio</a></li>
+            <li><Link to="/">Inicio</Link></li>
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
-            <li><a href="/containers/Contact.js" className="text-white">Contacto</a></li>
+            <li><Link to="/containers/Contact.js">Contacto</Link></li>
           </ul>
         </nav>
+        <Route path="/" exact component={Home} />
+        <Route path="/containers/Contact.js" component={Contact} />
       </header>
       <main className="py-6">
         <section className="container mx-auto">

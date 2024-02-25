@@ -7,12 +7,13 @@ function Contact() {
         <h1>Contacto</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#" className="text-white">Inicio</a></li>
+            <li><Link to="../Home.js" className="text-white">Inicio</Link></li>
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
           </ul>
         </nav>
+        <Route path="../Home.js" exact component={Home} />
       </header>
       <section className="container mx-auto">
           <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
