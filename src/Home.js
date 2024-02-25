@@ -15,10 +15,10 @@ function CasinoHomePage() {
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
-            <li><Link to="/containers/Contact.js">Contacto</Link></li>
+            <li><Link to="/contact">Contacto</Link></li>
           </ul>
         </nav>
-        <Route path="/containers/Contact.js" component={Contact} />
+        <Route path="/contact" component={Contact} />
       </header>
       <main className="py-6">
         <section className="container mx-auto">
