@@ -13,7 +13,7 @@ function CasinoHomePage() {
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
-            <li><a href="/containers/Contact" className="text-white">Contacto</a></li>
+            <li><a href="/containers/Contact.js" className="text-white">Contacto</a></li>
           </ul>
         </nav>
       </header>
