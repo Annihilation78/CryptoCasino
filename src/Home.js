@@ -18,7 +18,9 @@ function CasinoHomePage() {
             <li><Link to="/contact">Contacto</Link></li>
           </ul>
         </nav>
-        <Routes><Route path="/contact" component={Contact} /></Routes>
+        <Routes>
+          <Route path="/contact" component={<Contact />} />
+        </Routes>
       </header>
       <main className="py-6">
         <section className="container mx-auto">
