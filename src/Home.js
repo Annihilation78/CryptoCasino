@@ -5,12 +5,6 @@ import Contact from './containers/Contact';
 
 function CasinoHomePage() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
     <Router>
     <div className="app">
       <header className="header">
@@ -69,7 +63,6 @@ function CasinoHomePage() {
       </footer>
     </div>
     </Router>
-    </BrowserRouter>
   );
 }
 

@@ -11,14 +11,14 @@ function Contact() {
         <h1>Contacto</h1>
         <nav>
           <ul className="flex space-x-4">
-          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/home">Inicio</Link></li>
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
             <li><Link to="/">Contacto</Link></li>
           </ul>
         </nav>
-        <Routes><Route path="/" exact component={Home} /></Routes>
+        <Routes><Route path="/home" exact component={Home} /></Routes>
       </header>
       <section className="container mx-auto">
           <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
