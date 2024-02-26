@@ -9,10 +9,6 @@ import "./css/index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>
-  },
-  {
-    path: "home",
     element: <Home/>
   },
   {
