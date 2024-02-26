@@ -8,7 +8,6 @@ export default function App() {
     <div>
      <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
