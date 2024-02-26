@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/index.css';
-import { BrowserRouter, Router, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Router, Route, Routes, Link } from 'react-router-dom';
 import Contact from './containers/Contact';
 
 function CasinoHomePage() {
