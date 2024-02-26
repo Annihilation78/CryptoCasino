@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Router, Route, Routes, Link} from 'react-router-dom';
 import Home from './Home';
-import Contact from './Contact';
+import Contact from './containers/Contact';
 
 export default function App() {
   return (
