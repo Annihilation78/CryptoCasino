@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/index.css';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import BrowserRouter from 'react-router-dom';
 import Home from '../Home.js'
 
 function Contact() {
