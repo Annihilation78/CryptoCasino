@@ -11,10 +11,11 @@ function Contact() {
         <h1>Contacto</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link to="../Home.js" className="text-white">Inicio</Link></li>
+          <li><Link to="/">Inicio</Link></li>
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
+            <li><Link to="/">Contacto</Link></li>
           </ul>
         </nav>
         <Routes><Route path="/" exact component={Home} /></Routes>
