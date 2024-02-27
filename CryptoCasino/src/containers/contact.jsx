@@ -8,7 +8,7 @@ function Contact() {
         <h1>Contacto</h1>
         <nav>
           <ul className="flex space-x-4">
-          <li><Link to="/home">Inicio</Link></li>
+          <li><Link to="/">Inicio</Link></li>
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
