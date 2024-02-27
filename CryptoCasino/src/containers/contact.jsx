@@ -12,7 +12,7 @@ function Contact() {
             <li><a href="#" className="text-white">Juegos</a></li>
             <li><a href="#" className="text-white">Promociones</a></li>
             <li><a href="#" className="text-white">Soporte</a></li>
-            <li><Link to="/">Contacto</Link></li>
+            <li><Link to="/Contact">Contacto</Link></li>
           </ul>
         </nav>
       </header>
