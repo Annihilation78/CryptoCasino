@@ -33,7 +33,7 @@ function Home() {
               <p>Descripción del Juego 2</p>
               <button className="btn">¡Jugar Ahora!</button>
             </div>
-            {/* Agregar más juegos aquí */}
+            {/* Agregar más juegos aqui */}
           </div>
         </section>
         <section className="section">
