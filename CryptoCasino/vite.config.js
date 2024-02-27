@@ -6,7 +6,7 @@ import envCompatible from 'vite-plugin-env-compatible'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), eslintPlugin(), envCompatible()],
-  base: "annihilation78.github.io/CryptoCasino/",
+  base: "/CryptoCasino",
   css: {
     // Example if you want to use preprocessors:
     preprocessorOptions: {
