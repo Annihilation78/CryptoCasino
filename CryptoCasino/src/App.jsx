@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './containers/home.jsx';
-import Contact from './containers/contact.jsx';
+import Home from './containers/Home.jsx';
+import Contact from './containers/Contact.jsx';
 
 function App() {
   return (
