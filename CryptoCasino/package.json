@@ -13,7 +13,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "@supabase/supabase-js": "^2.39.7",
+=======
     "i": "^0.3.7",
+>>>>>>> 990c5c9ecc305449343448f6b7997e82cd514dfd
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
