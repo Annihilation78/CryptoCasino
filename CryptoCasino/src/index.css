@@ -1,60 +1,206 @@
-.app {
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-.header {
-  background-color: #007BFF;
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.nav-list {
-  list-style-type: none;
+/* RESETEO BÁSICO  */
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-list li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-}
-
-.section {
-  margin-top: 20px;
-}
-
-.game-list, .promotion-list {
+.app{
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-wrap: wrap;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-image: url('C:\Users\yunqi\Desktop\CryptoCasino-1\CryptoCasino\src\assets\casino.png');
+  color: #333;
   display: flex;
+  flex-direction: column;
+}
+
+.content-container h2{
+  color: white;
+}
+
+
+.container {
+  max-width: 1100px; /* Ajusta este ancho si lo deseas */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Mantén el header por delante del contenido */
+  background-color: #222;
+  color: #fff;
+  padding: 15px;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-x-4 {
+  justify-content: space-between;
+}  
+
+/* NAVEGACION */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MAIN */
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-.game-item, .promotion-item {
-  background-color: white;
+.game-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.game-item img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px 8px 0 0;
 }
 
 .btn {
-  background-color: #007BFF;
-  color: white;
+  display: block;
+  background-color: #007bff; /* Color azul para el boton */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* SECCIONES */
+.section {
+    padding: 10px;
+}
+
+/* PROMOCIONES */
+.promotion-list {
+    /* Podrías usar grid o flexbox, aqui un ejemplo con flex: */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.promotion-item {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 30%; /* Ocupa aproximadamente el 30% de cada fila */
+    text-align: center;
+}
+
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container {
+  background-color: lightyellow;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-footer {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 14px;
+.login-btn:hover {
+  opacity: 0.8;
 }
 
+.py-6 {
+  display: grid;
+  grid-template-columns: 30% 70%; /* Ajusta la distribución de columnas  */
+  gap: 20px;
+  justify-content: center;
+  padding: 10% 4%;
+}
+
+.content-container{
+  padding: 0% 15%;
+}
+
+.chatbot-container {
+  z-index: 1000;
+  position: fixed; /* Lo fijamos en la ventana */
+  bottom: 40px; /* Distancia del borde inferior */
+  right: 40px;  /* Distancia del borde derecho */
+  height: 500px;
+  width: 300px;
+  background-color: lightgrey;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  text-align: center;
+  
+  /* Agrega otros estilos necesarios para tu chatbot */
+}
