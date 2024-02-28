@@ -65,7 +65,7 @@ function Home() {
                 <p>Descripción de la Promoción 2</p>
                 <button className="btn">¡Ver Más!</button>
               </div>
-              {/* Agregar más promociones aquí */}
+              {/* Agregar más promociones aqu */}
             </div>
           </section>
         </div>

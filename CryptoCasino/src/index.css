@@ -193,7 +193,7 @@ footer {
   z-index: 1000;
   position: fixed; /* Lo fijamos en la ventana */
   bottom: 40px; /* Distancia del borde inferior */
-  right: 40px;  /* Distancia del borde derecho */
+  right: 40px;  
   height: 500px;
   width: 300px;
   background-color: lightgrey;
