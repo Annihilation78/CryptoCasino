@@ -7,15 +7,16 @@ function Home() {
     <div className="app">
       <header className="header">
         <h1>Bienvenido al Casino</h1>
-        <nav>
-          <ul className="flex space-x-4">
+        <nav className="main-nav">
+          <ul className="menu">
             <li><Link to="/">Inicio</Link></li>
-            <li><a href="#" className="text-white">Juegos</a></li>
-            <li><a href="#" className="text-white">Promociones</a></li>
-            <li><a href="#" className="text-white">Soporte</a></li>
+            <li><Link to="/juegos">Juegos</Link></li>
+            <li><Link to="/promociones">Promociones</Link></li>
+            <li><Link to="/soporte">Soporte</Link></li>
             <li><Link to="/contact">Contacto</Link></li>
           </ul>
         </nav>
+
       </header>
       <main className="py-6">
         <div class="login-container">

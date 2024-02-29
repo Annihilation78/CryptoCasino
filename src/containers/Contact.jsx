@@ -1,34 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import '../css/contacto.css';
+
+
 function Contact() {
   return (
-    <div>
+    <div className="app">
       <header className="header">
         <h1>Contacto</h1>
-        <nav>
-          <ul className="flex space-x-4">
-          <li><Link to="/">Inicio</Link></li>
-            <li><a href="#" className="text-white">Juegos</a></li>
-            <li><a href="#" className="text-white">Promociones</a></li>
-            <li><a href="#" className="text-white">Soporte</a></li>
-            <li><Link to="/Contact">Contacto</Link></li>
+        <nav className="main-nav">
+          <ul className="menu">
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/juegos">Juegos</Link></li>
+            <li><Link to="/promociones">Promociones</Link></li>
+            <li><Link to="/soporte">Soporte</Link></li>
+            <li><Link to="/contact">Contacto</Link></li>
           </ul>
         </nav>
+
       </header>
-      <section className="container mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
-          <div className="game-list grid grid-cols-2 gap-4">
-            <div className="game-item bg-white rounded-lg shadow-md p-4">
-              <p className="text-gray-700 mb-4">Puedes ponerte en contacto con nosotros a través de:</p>
-              <ul>
-                <li>Email: info@quantumbetbot.com</li>    
-                <li>Teléfono: +34 629812353</li>
-              </ul>
-              <button className="btn">Enviar correo</button>
-            </div>
+      <section class="contact-section">
+        <div class="container mx-auto">
+          <h2>Contacta con nosotros</h2>
+          <p>¿Tienes preguntas, sugerencias o quieres trabajar con nosotros? ¡No dudes en contactarnos!</p>
+
+          <div class="contact-info">
+            <ul>
+              <li><i class="fas fa-phone"></i> +34 629812353</li>
+              <li><i class="fas fa-envelope"></i> info@quantumbetbot.com</li>
+            </ul>
           </div>
-        </section>
+
+          <div class="contact-form">
+            <form action="your-email-handler.php" method="post">
+              <input type="text" name="nombre" placeholder="Tu nombre" required />
+              <input type="email" name="email" placeholder="Tu email" required />
+              <textarea name="mensaje" placeholder="Tu mensaje"></textarea>
+              <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <footer>
         <p>© 2024 Casino. Todos los derechos reservados.</p>
       </footer>

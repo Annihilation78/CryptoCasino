@@ -1,0 +1,86 @@
+.contact-section {
+    background-color: #fff;
+    padding: 60px;
+    margin: 50px 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* Añade sombra sutil /
+}
+
+.contact-section h2 {
+    color: #303F9F;
+    / Azul oscuro para el título /
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+    / Gris más oscuro para la descripción /
+}
+
+/ Información de contacto /
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    / Centra el ícono y texto /
+}
+
+.contact-info i {
+    color: #008cba;
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+/ Formulario de contacto /
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form .btn {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    / Transición para el hover /
+}
+
+.contact-form .btn:hover {
+    background-color: #006BA1;
+    / Azul más oscuro en hover */
+}

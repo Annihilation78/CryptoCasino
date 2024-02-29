@@ -1,4 +1,5 @@
 /* RESETEO BÁSICO  */
+/* RESETEO BÁSICO  */
 * {
   margin: 0;
   padding: 0;
@@ -42,28 +43,34 @@
   text-align: center;
 }
 
-.flex {
-  display: flex;
+/* nav*/
+.main-nav { 
+  color: #fff;
+  padding: 15px 0; 
+  text-align: right; /* Opcional: Centra la navegación */
 }
 
-.space-x-4 {
-  justify-content: space-between;
-}  
-
-/* NAVEGACION */
-nav ul {
-    list-style: none;
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; 
 }
 
-nav li {
-    display: inline;
-    margin-right: 20px;
+.main-nav ul li {
+  display: inline-block; /* Muestra los elementos en línea */
+  margin-right: 25px; 
 }
 
-nav li a {
-    color: #fff;
-    text-decoration: none;
+.main-nav a { 
+   color: #fff; 
+   text-decoration: none;  /* Quita el subrayado */
+   transition: color 0.3s ease; /* Transición para el hover */
 }
+
+.main-nav a:hover {
+   color: #008cba; /* Color al hacer hover */
+}
+
 
 /* MAIN */
 .game-list {
