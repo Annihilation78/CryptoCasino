@@ -1,6 +1,7 @@
 {
   "name": "cryptocasino",
-  "private": true,
+  "private": false,
+  "homepage": "https://Annihilation78.github.io/CryptoCasino",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
