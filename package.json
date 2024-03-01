@@ -1,13 +1,13 @@
 {
-  "name": "cryptocasino",
-  "private": false,
   "homepage": "https://Annihilation78.github.io/CryptoCasino",
+  "name": "cryptocasino",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
