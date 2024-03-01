@@ -47,7 +47,7 @@
 .main-nav { 
   color: #fff;
   padding: 15px 0; 
-  text-align: right; /* Opcional: Centra la navegación */
+  text-align: left; /* Opcional: Centra la navegación */
 }
 
 .main-nav ul {
