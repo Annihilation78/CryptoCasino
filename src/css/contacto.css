@@ -18,7 +18,7 @@
     color: #555;
 }
 
-/* Información de contacto */
+
 .contact-info {
     max-width: 600px;
     margin: 0 auto;
@@ -35,7 +35,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Centra el ícono y texto */
 }
 
 .contact-info i {
@@ -44,7 +43,7 @@
     margin-right: 15px;
 }
 
-/* Formulario de contacto */
+
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
@@ -74,10 +73,8 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* Transición para el hover */
 }
 
 .contact-form .btn:hover {
     background-color: #006BA1;
-    /* Azul más oscuro en hover */
 }
