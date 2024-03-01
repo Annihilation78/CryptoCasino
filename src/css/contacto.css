@@ -3,7 +3,6 @@
     padding: 60px;
     margin: 50px 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
     
 }
 
@@ -36,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    / Centra el ícono y texto /
+    /* Centra el ícono y texto */
 }
 
 .contact-info i {
