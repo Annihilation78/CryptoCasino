@@ -16,13 +16,30 @@ function Contact() {
   return (
     <div className="app">
       <header className="header">
-        {/* ... (resto de tu código) */}
+      <h1>Contacto</h1>
+        <nav className="main-nav">
+          <ul className="menu">
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/juegos">Juegos</Link></li>
+            <li><Link to="/promociones">Promociones</Link></li>
+            <li><Link to="/soporte">Soporte</Link></li>
+            <li><Link to="/contact">Contacto</Link></li>
+          </ul>
+        </nav>
       </header>
-      <section class="contact-section">
-        <div class="container mx-auto">
-          {/* ... (resto de tu código) */}
+      <section className="contact-section">
+        <div className="container mx-auto">
+          <h2>Contacta con nosotros</h2>
+          <p>¿Tienes preguntas, sugerencias o quieres trabajar con nosotros? ¡No dudes en contactarnos!</p>
 
-          <div class="contact-form">
+          <div className="contact-info">
+            <ul>
+              <li><i className="fas fa-phone"></i> +34 629812353</li>
+              <li><i className="fas fa-envelope"></i> info@quantumbetbot.com</li>
+            </ul>
+          </div>
+
+          <div className="contact-form">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="text"
@@ -53,7 +70,7 @@ function Contact() {
               />
               {errors.mensaje && <p>{errors.mensaje.message}</p>}
 
-              <button type="submit" class="btn">Enviar mensaje</button>
+              <button type="submit" className="btn">Enviar mensaje</button>
             </form>
           </div>
         </div>
@@ -67,3 +84,4 @@ function Contact() {
 }
 
 export default Contact;
+
