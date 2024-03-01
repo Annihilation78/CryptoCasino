@@ -10,6 +10,6 @@ export default defineConfig(({ command, mode }) => {
       viteCompression()
     ],
     assetsInclude: ['**/*.jpg', '**/*.png', '**/*.svg', '**/*.gif'],
-    base: './'
+    base: '/'
   }
 });
