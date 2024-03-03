@@ -39,13 +39,13 @@ function Home() {
             <h2 className="text-2xl">Juegos Destacados</h2>
             <div className="game-list">
               <div className="game-item">
-                <img src="imagen_juego_1.jpg" alt="Juego 1" className="w-full" />
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="Juego 1" className="w-full" />
                 <h3 className="text-xl">Juego 1</h3>
                 <p className="text-gray-700">Descripción del Juego</p>
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
               <div className="game-item">
-                <img src="imagen_juego_2.jpg" alt="Juego 2" />
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/ruleta.jpg" alt="Juego 2" />
                 <h3>Juego 2</h3>
                 <p>Descripción del Juego 2</p>
                 <button className="btn">¡Jugar Ahora!</button>
