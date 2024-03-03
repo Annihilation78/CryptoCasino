@@ -50,7 +50,6 @@ function Home() {
                 <p>Descripción del Juego 2</p>
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
-              {/* Agregar más juegos aqui */}
             </div>
           </section>
           <section className="section">
@@ -66,7 +65,6 @@ function Home() {
                 <p>Descripción de la Promoción 2</p>
                 <button className="btn">¡Ver Más!</button>
               </div>
-              {/* Agregar más promociones aqu */}
             </div>
           </section>
         </div>
