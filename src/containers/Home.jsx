@@ -35,13 +35,13 @@ function Home() {
           <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
         </div>
         <div class="content-container">
-          <section className="container mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Juegos Destacados</h2>
-            <div className="game-list grid grid-cols-2 gap-4">
-              <div className="game-item bg-white rounded-lg shadow-md p-4">
-                <img src="imagen_juego_1.jpg" alt="Juego 1" className="w-full h-64 object-cover mb-4 rounded" />
-                <h3 className="text-xl font-bold">Juego 1</h3>
-                <p className="text-gray-700 mb-4">Descripción del Juego</p>
+          <section className="container">
+            <h2 className="text-2xl">Juegos Destacados</h2>
+            <div className="game-list">
+              <div className="game-item">
+                <img src="imagen_juego_1.jpg" alt="Juego 1" className="w-full" />
+                <h3 className="text-xl">Juego 1</h3>
+                <p className="text-gray-700">Descripción del Juego</p>
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
               <div className="game-item">
@@ -50,7 +50,6 @@ function Home() {
                 <p>Descripción del Juego 2</p>
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
-              {/* Agregar más juegos aqui */}
             </div>
           </section>
           <section className="section">
@@ -66,7 +65,6 @@ function Home() {
                 <p>Descripción de la Promoción 2</p>
                 <button className="btn">¡Ver Más!</button>
               </div>
-              {/* Agregar más promociones aqu */}
             </div>
           </section>
         </div>
@@ -76,6 +74,13 @@ function Home() {
       </div>
       <footer>
         <p>© 2024 Casino. Todos los derechos reservados.</p>
+        <p>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img style={{ border: '0', width: '88px', height: '31px' }}
+              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="¡CSS Válido!" />
+          </a>
+        </p>
       </footer>
     </div>
   );
