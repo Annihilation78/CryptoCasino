@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useSound from 'use-sound';
-import boopSfx from './urss.mp3'; 
-import beepSfx from './fri.mp3'; 
+import boopSfx from '../assets/urss.mp3'; 
+import beepSfx from '../assets/fri.mp3'; 
 
 
 function Home() {
