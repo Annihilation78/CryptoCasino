@@ -1,8 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useSound from 'use-sound';
+import boopSfx from './urss.mp3'; 
+import beepSfx from './fri.mp3'; 
 
 
 function Home() {
+  const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
+  const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
+  const urlDelGif = "https://media.tenor.com/9eXlgcljmCAAAAAM/cat-money.gif";
+
+  const handleBoopClick = () => {
+    if (isBoopPlaying) {
+      stopBoop();
+    } else {
+      stopBoop();
+      playBoop();
+    }
+  };
+  
+  const handleBeepClick = () => {
+    if (isBeepPlaying) {
+      stopBeep();
+    } else {
+      stopBeep();
+      playBeep();
+    }
+  };
+  
+  
+
+
   return (
     <div className="app">
       <header className="header">
@@ -19,6 +47,8 @@ function Home() {
 
       </header>
       <main className="py-6">
+      
+        
         <div class="login-container">
           <h2>Ingresa a tu cuenta</h2>
           <form>
@@ -73,6 +103,13 @@ function Home() {
         <p>chatbot</p>
       </div>
       <footer>
+      <img src={urlDelGif} alt="Mi Gif" style={{ display: 'block', marginLeft: '0', width: '200px', height: '200px' }} />
+      <button onClick={handleBoopClick}>
+          {isBoopPlaying ? 'Detener sonido Boop' : 'Reproducir sonido Boop'}
+        </button>
+        <button onClick={handleBeepClick}>
+          {isBeepPlaying ? 'Detener sonido Beep' : 'Reproducir sonido Beep'}
+        </button>
         <p>© 2024 Casino. Todos los derechos reservados.</p>
         <p>
           <a href="https://jigsaw.w3.org/css-validator/check/referer">
