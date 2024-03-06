@@ -29,6 +29,7 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@types/react": "^18.2.56",
