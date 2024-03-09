@@ -146,8 +146,8 @@ footer {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 400px;
-  height: 700px;
+  width: 400px;  /* reducido de 400px a 300px */
+  height: 350px; /* reducido de 700px a 500px */
 }
 
 .login-container h2 {
@@ -200,16 +200,15 @@ footer {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  height: 500px;
-  width: 300px;
+  height: 300px; /* reducido de 500px a 400px */
+  width: 250px;  /* reducido de 300px a 250px */
   background-color: lightgrey;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
-
-
 }
+
 
 .sound-button {
   background-color: #4CAF50; /* Color de fondo */
