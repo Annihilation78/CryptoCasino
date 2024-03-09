@@ -4,7 +4,7 @@ import Home from './Home';
 
 describe('Home', () => {
   it('renders headline', () => {
-    render(<Home title="Bienvenido al Casino" />);
+    render(<Home header="Bienvenido al Casino" />);
 
     screen.debug();
 
