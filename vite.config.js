@@ -7,7 +7,7 @@ export default defineConfig({
       // <--- Add this object
       globals: true,
       environment: "jsdom",
-      setupFiles: './containers/setup.js',
+      setupFiles: './src/containers/setup.js',
     },
   base: process.env.NODE_ENV === 'production' ? '/CryptoCasino/' : '/',
 })
