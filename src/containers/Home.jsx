@@ -6,6 +6,7 @@ import beepSfx from '../assets/fri.mp3';
 
 
 function Home() {
+
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
   const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
   const urlDelGif = "https://media.tenor.com/9eXlgcljmCAAAAAM/cat-money.gif";
@@ -46,9 +47,7 @@ function Home() {
         </nav>
 
       </header>
-      <main className="py-6">
-      
-        
+      <main className="py-6">  
         <div class="login-container">
           <h2>Ingresa a tu cuenta</h2>
           <form>
