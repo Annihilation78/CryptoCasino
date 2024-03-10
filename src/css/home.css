@@ -32,7 +32,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: #222;
+  background-color: #1a2229;
   color: #fff;
   padding: 15px;
   max-height: 150px;
@@ -44,7 +44,6 @@
 
 .logo {
   position: absolute;
-  left: 0;
   max-width: 100px;
 }
 .main-nav {

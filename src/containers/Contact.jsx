@@ -19,7 +19,10 @@ function Contact() {
   return (
     <div className="app">
       <header className="header">
-        <h1>Contacto</h1>
+        <h1>
+          <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" class="logo"/>
+          Contacto
+          </h1>
         <Navigation />
       </header>
       <section className="contact-section">
