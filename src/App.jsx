@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
+          <Navigation />
         </Routes>
       </Router>
       
