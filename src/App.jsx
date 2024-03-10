@@ -9,7 +9,6 @@ function App() {
   return (
       <Router>
         <Routes>
-          <Navigation />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
         </Routes>
