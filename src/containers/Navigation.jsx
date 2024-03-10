@@ -6,7 +6,7 @@ function Navigation(){
         <div className="app">
           <header className="header">
             <nav className="main-nav">
-            <ul className="menu">
+              <ul className="menu">
                 <li>
                     <Link to="/">Inicio</Link>
                 </li>
@@ -22,7 +22,7 @@ function Navigation(){
                 <li>
                     <Link to="/contact">Contacto</Link>
                 </li>
-            </ul>
+              </ul>
             </nav>
           </header>
           <footer className="footer">
