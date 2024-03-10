@@ -35,7 +35,6 @@
   background-color: #1a2229;
   color: #fff;
   padding: 15px;
-  max-height: 150px;
 }
 
 .header h1 {
@@ -44,7 +43,6 @@
 
 .logo {
   max-width: 100px;
-  left: 5px;
 }
 .main-nav {
   color: #fff;
