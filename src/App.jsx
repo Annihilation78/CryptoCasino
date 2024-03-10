@@ -8,7 +8,10 @@ import Navigation from './containers/Navigation.jsx';
 function App() {
   return (
       <Router>
-        <Navigation />
+        <Routes>
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Router>
       
   );

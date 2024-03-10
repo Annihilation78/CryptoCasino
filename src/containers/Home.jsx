@@ -33,6 +33,7 @@ function Home() {
 
   return (
     <div className="app">
+      <Navigator />
         <h1>Bienvenido al Casino</h1>
       <main className="py-6">  
         <div class="login-container">
