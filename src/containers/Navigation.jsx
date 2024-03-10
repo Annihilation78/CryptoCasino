@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 function Navigation(){
     return (
+        <div className="app">
         <header className="header">
             <nav className="main-nav">
             <ul className="menu">
@@ -24,7 +25,8 @@ function Navigation(){
             </ul>
             </nav>
         </header>
+        </div>
     );
 }
 
-export default NavBar;
+export default Navigation;
