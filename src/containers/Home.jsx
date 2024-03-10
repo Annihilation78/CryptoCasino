@@ -34,8 +34,10 @@ function Home() {
 
   return (
     <div className="app">
+      <header className="header">
             <Navigation />
         <h1>Bienvenido al Casino</h1>
+      </header>
       <main className="py-6">  
         <div class="login-container">
           <h2>Ingresa a tu cuenta</h2>
