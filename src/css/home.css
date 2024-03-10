@@ -43,7 +43,9 @@
 
 .header h1 img {
   max-width: 100px;
-  object-position: left center;
+  position: absolute;
+    left: 5px;
+    top: 5px;
 }
 .main-nav {
   color: #fff;
