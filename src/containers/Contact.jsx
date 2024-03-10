@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Navigation from './containers/Navigation.jsx';
+import Navigation from './Navigation.jsx';
 
 import "../css/contacto.css";
 

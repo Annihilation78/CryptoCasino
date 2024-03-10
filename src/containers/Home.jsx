@@ -2,7 +2,7 @@ import React from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
-import Navigation from './containers/Navigation.jsx'; 
+import Navigation from './Navigation.jsx'; 
 
 
 function Home() {
