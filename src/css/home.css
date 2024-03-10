@@ -34,7 +34,7 @@
   z-index: 10;
   background-color: #1a2229;
   color: #fff;
-  padding: 15px;
+  padding: 5px;
 }
 
 .header h1 {
@@ -44,12 +44,11 @@
 .header h1 img {
   max-width: 100px;
   position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 15px;
 }
 .main-nav {
   color: #fff;
-  padding: 15px 0;
+  padding: 5px 0;
   text-align: right;
 }
 
