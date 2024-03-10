@@ -19,8 +19,8 @@ function Contact() {
   return (
     <div className="app">
       <header className="header">
+      <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" class="logo"/>
         <h1>
-          <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" class="logo"/>
           Contacto
           </h1>
         <Navigation />
