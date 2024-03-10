@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 function Navigation(){
     return (
-        <nav className="main-nav">
+        <nav>
           <ul className="menu">
             <li>
                 <Link to="/">Inicio</Link>
