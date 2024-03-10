@@ -39,12 +39,11 @@
 
 .header h1 {
   text-align: center;
-  object-position: left center;
 }
 
 .logo {
   max-width: 100px;
-  position: absolute;
+  object-position: left center;
 }
 .main-nav {
   color: #fff;
