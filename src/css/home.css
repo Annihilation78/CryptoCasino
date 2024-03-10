@@ -43,7 +43,7 @@
 
 .logo {
   max-width: 100px;
-  object-position: left center;
+  position: left center;
 }
 .main-nav {
   color: #fff;
