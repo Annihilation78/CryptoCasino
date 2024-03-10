@@ -19,8 +19,8 @@ function Contact() {
   return (
     <div className="app">
       <header className="header">
-            <Navigation />
         <h1>Contacto</h1>
+        <Navigation />
       </header>
       <section className="contact-section">
         <div className="container mx-auto">
