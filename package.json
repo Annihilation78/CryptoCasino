@@ -15,9 +15,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^2.0.3",
     "@supabase/supabase-js": "^2.39.7",
     "@tensorflow-models/qna": "^1.0.2",
     "@tensorflow/tfjs": "^4.17.0",
+    "axios": "^1.6.7",
     "firebase": "^10.8.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
