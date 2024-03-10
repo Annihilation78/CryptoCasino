@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import "../css/contacto.css";
@@ -18,28 +17,7 @@ function Contact() {
 
   return (
     <div className="app">
-      <header className="header">
         <h1>Contacto</h1>
-        <nav className="main-nav">
-          <ul className="menu">
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
-            <li>
-              <Link to="/juegos">Juegos</Link>
-            </li>
-            <li>
-              <Link to="/promociones">Promociones</Link>
-            </li>
-            <li>
-              <Link to="/soporte">Soporte</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contacto</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>

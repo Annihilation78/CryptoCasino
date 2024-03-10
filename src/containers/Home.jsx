@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3'; 
@@ -34,19 +33,7 @@ function Home() {
 
   return (
     <div className="app">
-      <header className="header">
         <h1>Bienvenido al Casino</h1>
-        <nav className="main-nav">
-          <ul className="menu">
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/juegos">Juegos</Link></li>
-            <li><Link to="/promociones">Promociones</Link></li>
-            <li><Link to="/soporte">Soporte</Link></li>
-            <li><Link to="/contact">Contacto</Link></li>
-          </ul>
-        </nav>
-
-      </header>
       <main className="py-6">  
         <div class="login-container">
           <h2>Ingresa a tu cuenta</h2>
@@ -123,5 +110,3 @@ function Home() {
 }
 
 export default Home;
-
-//puta
