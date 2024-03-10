@@ -1,7 +1,8 @@
 import React from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
-import beepSfx from '../assets/fri.mp3'; 
+import beepSfx from '../assets/fri.mp3';
+import Navigation from './containers/Navigation.jsx'; 
 
 
 function Home() {
@@ -33,6 +34,7 @@ function Home() {
 
   return (
     <div className="app">
+            <Navigation />
         <h1>Bienvenido al Casino</h1>
       <main className="py-6">  
         <div class="login-container">

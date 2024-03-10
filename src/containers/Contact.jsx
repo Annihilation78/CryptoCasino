@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Navigation from './containers/Navigation.jsx';
 
 import "../css/contacto.css";
 
@@ -17,6 +18,7 @@ function Contact() {
 
   return (
     <div className="app">
+      <Navigation />
         <h1>Contacto</h1>
       <section className="contact-section">
         <div className="container mx-auto">
