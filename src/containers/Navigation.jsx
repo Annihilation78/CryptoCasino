@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 function Navigation(){
     return (
-        <nav>
-          <ul className="menu">
+        <nav className="main-nav">
+          <ul>
             <li>
                 <Link to="/">Inicio</Link>
             </li>
