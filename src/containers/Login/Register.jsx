@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Register = () => {
+function Register () {
 
   return (
         <div class="login-container">
