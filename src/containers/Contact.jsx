@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
 
+
 import "../css/contacto.css";
 
 function Contact() {
@@ -18,13 +19,16 @@ function Contact() {
 
   return (
     <div className="app">
+      
       <header className="header">
+      
         <h1>
         <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
           Contacto
           </h1>
         <Navigation />
       </header>
+      
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>
@@ -43,7 +47,7 @@ function Contact() {
               </li>
             </ul>
           </div>
-
+          
           <div className="contact-form">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -85,8 +89,8 @@ function Contact() {
           </div>
         </div>
       </section>
-
-      <footer>
+      
+      <footer> 
         <p>© 2024 Casino. Todos los derechos reservados.</p>
         <p>
           <a href="https://jigsaw.w3.org/css-validator/check/referer">
@@ -96,6 +100,7 @@ function Contact() {
           </a>
         </p>
       </footer>
+      
     </div>
   );
 }

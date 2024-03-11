@@ -3,6 +3,10 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
+import Chat from './Chatbot';
+import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
+
+
 
 
 function Home() {
@@ -41,6 +45,7 @@ function Home() {
         </h1>
         <Navigation />
       </header>
+      <Chat />
       <main className="py-6">  
         <div class="login-container">
           <h2>Ingresa a tu cuenta</h2>
@@ -92,10 +97,13 @@ function Home() {
           </section>
         </div>
       </main>
+      
       <div class="chatbot-container">
+      
         <p>chatbot</p>
       </div>
       <footer>
+      
       <img src={urlDelGif} alt="Mi Gif" style={{ display: 'block', marginLeft: '0', width: '200px', height: '200px' }} />
       <button onClick={handleBoopClick}>
           {isBoopPlaying ? 'Detener sonido Boop' : 'Reproducir sonido Boop'}
