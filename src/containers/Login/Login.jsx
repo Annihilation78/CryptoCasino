@@ -16,13 +16,13 @@ const Login = () => {
             <input type="password" id="password" name="password" required />
           </div>
           <div>
-            <label htmlFor="Recuérdame"></label>
+            <label htmlFor="Recuérdame">Recuérdame</label>
             <input type="checkbox" name="" id="" />
           </div>
-          <span>¿Has olvidado tu contraseña?</span>
+          <Link to="">¿Has olvidado tu contraseña?</Link>
           <button type="submit" class="login-btn">Iniciar sesión</button>
           <div>
-            <ul><li><Link to="/register">¿No tienes cuenta?</Link></li></ul>
+            <li><Link to="/register">¿No tienes cuenta?</Link></li>
           </div>
         </form>
         </div>
