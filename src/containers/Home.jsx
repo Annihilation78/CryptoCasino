@@ -2,17 +2,14 @@ import React from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
-<<<<<<< HEAD
 import Navigation from './Navigation.jsx'; 
 import Chat from './Chatbot';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
 
-=======
 import Navigation from './Navigation.jsx';
 import Login from './Login/Login.jsx';
 import Register from './Login/Register.jsx'; 
->>>>>>> 1ddd4cec932a426b0ba57d9781eef76874a12927
 
 
 function Home() {
