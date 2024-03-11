@@ -2,7 +2,9 @@ import React from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
-import Navigation from './Navigation.jsx'; 
+import Navigation from './Navigation.jsx';
+import Login from './Login/Login.jsx';
+import Register from './Login/Register.jsx'; 
 
 
 function Home() {
@@ -42,21 +44,7 @@ function Home() {
         <Navigation />
       </header>
       <main className="py-6">  
-        <div class="login-container">
-          <h2>Ingresa a tu cuenta</h2>
-          <form>
-            <div class="input-group">
-              <label for="username">Usuario:</label>
-              <input type="text" id="username" name="username" required />
-            </div>
-            <div class="input-group">
-              <label for="password">Contraseña:</label>
-              <input type="password" id="password" name="password" required />
-            </div>
-            <button type="submit" class="login-btn">Iniciar sesión</button>
-          </form>
-          <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
-        </div>
+        <Login />
         <div class="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
