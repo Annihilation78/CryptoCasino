@@ -3,7 +3,10 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
-import Chat from './Chatbot';
+import Chat from './Chatbot.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
+
+// Resto del código de home.jsx
+
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import Login from './login/Login.jsx';
 import Register from './login/Register.jsx'; 
@@ -88,6 +91,7 @@ function Home() {
       
         <p>chatbot</p>
       </div>
+      
       <footer>
       
       <img src={urlDelGif} alt="Mi Gif" style={{ display: 'block', marginLeft: '0', width: '200px', height: '200px' }} />
