@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
 
   return (
         <div class="login-container">
-        <h2>Ingresa a tu cuenta</h2>
+        <h2>Crea tu cuenta</h2>
         <form action="">
           <div class="input-group">
             <label for="username">Usuario:</label>
@@ -15,18 +15,17 @@ const Login = () => {
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required />
           </div>
-          <div>
-            <label htmlFor="Recuérdame">Recuérdame</label>
-            <input type="checkbox" name="" id="" />
+          <div class="input-group">
+            <label for="password">Confirma la contraseña:</label>
+            <input type="password" id="password" name="password" required />
           </div>
-          <Link to="">¿Has olvidado tu contraseña?</Link>
-          <button type="submit" class="login-btn">Iniciar sesión</button>
+          <button type="submit" class="login-btn">Crear cuenta</button>
           <div>
-            <li><Link to="/register">¿No tienes cuenta?</Link></li>
+            <li><Link to="/login">¿Ya tienes cuenta?</Link></li>
           </div>
         </form>
         </div>
   );
 }
 
-export default Login;
+export default Register;
