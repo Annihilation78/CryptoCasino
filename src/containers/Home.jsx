@@ -5,11 +5,8 @@ import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
 import Chat from './Chatbot';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-
-
-import Navigation from './Navigation.jsx';
-import Login from './Login/Login.jsx';
-import Register from './Login/Register.jsx'; 
+import Login from './login/Login.jsx';
+import Register from './login/Register.jsx'; 
 
 
 function Home() {
