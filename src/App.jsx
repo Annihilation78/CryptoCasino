@@ -3,8 +3,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './containers/Home.jsx';
 import Contact from './containers/Contact.jsx';
 import Navigation from './containers/Navigation.jsx';
-import Login from './containers/login/Login.jsx';
-import Register from './containers/login/Register.jsx';
+import Login from './containers/Login/Login.jsx';
+import Register from './containers/Login/Register.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 

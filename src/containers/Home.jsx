@@ -87,8 +87,8 @@ function Home() {
       </main>
       
       <div class="chatbot-container">
-      
-        <p>chatbot</p>
+      <Chat />
+        <p>Chatbot</p>
       </div>
       
       <footer>
