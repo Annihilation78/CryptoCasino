@@ -93,11 +93,26 @@ const Chat = () => {
 
   return (
     <div className="Chat">
-      <button style={{ position: 'fixed', bottom: '10px', right: '10px' }} onClick={() => setShowChat(!showChat)}>
-        {showChat ? 'Ocultar chat' : 'Mostrar chat'}
-      </button>
-      {showChat && (
-        <div style={{ position:"fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 1000 }}>
+      {showChat ? (
+        <div style={{ position:"fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 2000 }}>
+          <button style={{
+            position: 'absolute', 
+            bottom: '100%', 
+            right: '0',
+            backgroundColor: '#008CBA', /* Blue */
+            border: 'none',
+            color: 'white',
+            padding: '15px 32px',
+            textAlign: 'center',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontSize: '16px',
+            borderRadius: '12px',
+            boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+            zIndex: 2000  // Increased z-index
+          }} onClick={() => setShowChat(!showChat)}>
+            Ocultar chat
+          </button>
           <MainContainer>
             <ChatContainer>       
               <MessageList 
@@ -112,10 +127,30 @@ const Chat = () => {
             </ChatContainer>
           </MainContainer>
         </div>
+      ) : (
+        <button style={{
+          position: 'fixed', 
+          bottom: '10px', 
+          right: '20px',
+          backgroundColor: '#008CBA', /* Blue */
+          border: 'none',
+          color: 'white',
+          padding: '15px 32px',
+          textAlign: 'center',
+          textDecoration: 'none',
+          display: 'inline-block',
+          fontSize: '16px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+          zIndex: 2000  // Increased z-index
+        }} onClick={() => setShowChat(!showChat)}>
+          Mostrar chat
+        </button>
       )}
     </div>
   );
   
+   
   
 };
 
