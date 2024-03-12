@@ -48,7 +48,6 @@ function Home() {
         </h1>
         <Navigation />
       </header>
-      <Chat />
       <main className="py-6">  
         <Login />
         <div class="content-container">
