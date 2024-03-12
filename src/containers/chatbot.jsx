@@ -12,6 +12,7 @@ import {
 const API_KEY = "";
 
 const Chat = () => {
+  const [showChat, setShowChat] = useState(true);
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -92,24 +93,28 @@ const Chat = () => {
 
   return (
     <div className="Chat">
-      <div style={{ position:"relative", height: "800px", width: "700px"  }}>
-        <MainContainer>
-          <ChatContainer>       
-            <MessageList 
-              scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
-            >
-              {messages.map((message, i) => (
-                <Message key={i} model={message} />
-              ))}
-            </MessageList>
-            <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
-          </ChatContainer>
-        </MainContainer>
-      </div>
+      <button style={{ position: 'fixed', bottom: '10px', right: '10px' }} onClick={() => setShowChat(!showChat)}>
+        {showChat ? 'Ocultar chat' : 'Mostrar chat'}
+      </button>
+      {showChat && (
+        <div style={{ position:"relative", height: "400px", width: "300px"  }}>
+          <MainContainer>
+            <ChatContainer>       
+              <MessageList 
+                scrollBehavior="smooth" 
+                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+              >
+                {messages.map((message, i) => (
+                  <Message key={i} model={message} />
+                ))}
+              </MessageList>
+              <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
+            </ChatContainer>
+          </MainContainer>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Chat;
-
