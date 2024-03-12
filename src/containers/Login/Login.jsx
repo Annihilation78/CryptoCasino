@@ -19,8 +19,10 @@ const Login = () => {
             <label htmlFor="Recuérdame">Recuérdame</label>
             <input type="checkbox" name="" id="" />
           </div>
-          <Link to="">¿Has olvidado tu contraseña?</Link>
-          <button type="submit" class="login-btn">Iniciar sesión</button>
+          <div>
+            <li><Link to="">¿Has olvidado tu contraseña?</Link></li>
+          </div>
+          <div><button type="submit" class="login-btn">Iniciar sesión</button></div>
           <div>
             <li><Link to="/register">¿No tienes cuenta?</Link></li>
           </div>
