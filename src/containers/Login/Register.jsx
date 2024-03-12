@@ -13,27 +13,29 @@ const Register = () => {
           </h1>
           <Navigation />
         </header>
-        <div class="login-container">
-        <h2>Crea tu cuenta</h2>
-        <form action="">
-          <div class="input-group">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required />
+        <main className="py-6">
+          <div class="login-container">
+            <h2>Crea tu cuenta</h2>
+            <form action="">
+              <div class="input-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required />
+              </div>
+              <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required />
+              </div>
+              <div class="input-group">
+                <label for="password">Confirma la contraseña:</label>
+                <input type="password" id="password" name="password" required />
+              </div>
+              <button type="submit" class="login-btn">Crear cuenta</button>
+              <div>
+                <li><Link to="/">¿Ya tienes cuenta?</Link></li>
+              </div>
+            </form>
           </div>
-          <div class="input-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <div class="input-group">
-            <label for="password">Confirma la contraseña:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <button type="submit" class="login-btn">Crear cuenta</button>
-          <div>
-            <li><Link to="/">¿Ya tienes cuenta?</Link></li>
-          </div>
-        </form>
-        </div>
+        </main>
         <footer> 
           <p>© 2024 Casino. Todos los derechos reservados.</p>
           <p>
