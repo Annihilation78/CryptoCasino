@@ -97,7 +97,7 @@ const Chat = () => {
         {showChat ? 'Ocultar chat' : 'Mostrar chat'}
       </button>
       {showChat && (
-        <div style={{ position:"relative", height: "400px", width: "300px"  }}>
+        <div style={{ position:"fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 1000 }}>
           <MainContainer>
             <ChatContainer>       
               <MessageList 
@@ -115,6 +115,8 @@ const Chat = () => {
       )}
     </div>
   );
+  
+  
 };
 
 export default Chat;

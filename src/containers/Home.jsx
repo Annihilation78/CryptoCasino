@@ -86,11 +86,6 @@ function Home() {
         </div>
       </main>
       <Chat />
-      <div class="chatbot-container">
-      
-        <p>Chatbot</p>
-      </div>
-      
       <footer>
       
       <img src={urlDelGif} alt="Mi Gif" style={{ display: 'block', marginLeft: '0', width: '200px', height: '200px' }} />

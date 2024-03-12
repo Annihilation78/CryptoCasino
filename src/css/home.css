@@ -206,19 +206,7 @@ footer {
   padding: 0% 15%;
 }
 
-.chatbot-container {
-  z-index: 1000;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  height: 300px; /* reducido de 500px a 400px */
-  width: 250px;  /* reducido de 300px a 250px */
-  background-color: lightgrey;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  text-align: center;
-}
+
 
 
 .sound-button {
