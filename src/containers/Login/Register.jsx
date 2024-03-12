@@ -13,8 +13,8 @@ const Register = () => {
           </h1>
           <Navigation />
         </header>
-        <main className="py-6">
-          <div class="login-container">
+        <main className="py-6" style={{position:"absolute", top:"10%", left="36%"}}>
+          <div class="login-container" style={{height:"400px"}}>
             <h2>Crea tu cuenta</h2>
             <form action="">
               <div class="input-group">
