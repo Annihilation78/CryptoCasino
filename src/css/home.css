@@ -161,6 +161,10 @@ footer {
   margin-bottom: 20px;
 }
 
+.login-container li {
+  list-style: none;
+}
+
 .input-group {
   margin-bottom: 15px;
 }

@@ -17,7 +17,7 @@ const Login = () => {
           </div>
           <div>
             <label htmlFor="Recuérdame">Recuérdame</label>
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="" id="" style={{position: "relative", right: "-5px"}}/>
           </div>
           <div>
             <li><Link to="">¿Has olvidado tu contraseña?</Link></li>
