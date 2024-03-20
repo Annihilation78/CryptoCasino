@@ -4,7 +4,7 @@ labels: ["Bug"]
 body:
   - type: checkboxes
     attributes:
-      labek: Existe un reporte del mismo bug?
+      label: Existe un reporte del mismo bug?
       description: Por favor busca si existe un reporte del mismo bug que vas a reportar.
       options:
       - label: He buscado los reportes existentes
