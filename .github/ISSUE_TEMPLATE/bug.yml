@@ -1,0 +1,27 @@
+name: Reporte de bug
+description: Reporta un bug desconocido para que se pueda asignar a un desarrollador y que se solucione.
+labels: ["Bug"]
+body:
+  - type: checkboxes
+    attributes:
+      labek: Existe un reporte del mismo bug?
+      description: Por favor busca si existe un reporte del mismo bug que vas a reportar.
+      options:
+      - label: He buscado los reportes existentes
+        required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Describe el bug
+    validations:
+      required: true
+  - type: textarea
+    id: replica
+    attributes:
+      label: Como replicar el bug
+    validations:
+      required: true
+  - type: textarea
+    id: otros
+    attributes:
+      label: Otra informacion relevante
