@@ -40,7 +40,7 @@ function Contact() {
           <div className="contact-info">
             <ul>
               <li>
-                <i className="fas fa-phone"></i> +34 629812353
+                <i className="fas fa-phone"></i> +34 911 21 00 90
               </li>
               <li>
                 <i className="fas fa-envelope"></i> info@quantumbetbot.com
