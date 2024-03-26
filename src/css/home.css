@@ -154,7 +154,7 @@ footer {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 400px;
-  height: 450px;
+  height: 380px;
 }
 
 .login-container h2 {
@@ -227,5 +227,3 @@ footer {
   background-color: white; /* Color de fondo al pasar el ratón */
   color: black; /* Color del texto al pasar el ratón */
 }
-
-html body div.login-container {height: 400 !important;}

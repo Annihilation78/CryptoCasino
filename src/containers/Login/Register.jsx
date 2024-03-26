@@ -25,7 +25,7 @@ function Register() {
           <Navigation />
         </header>
         <main className="py-6" style={{position:"absolute", top:"10%", left:"36%"}}>
-          <div class="login-container" style={{height:"400px"}}>
+          <div class="login-container" style={{height:"450px"}}>
             <h2>Crea tu cuenta</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div class="input-group">
