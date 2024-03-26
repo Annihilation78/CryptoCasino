@@ -16,18 +16,37 @@ const Register = () => {
         <main className="py-6" style={{position:"absolute", top:"10%", left:"36%"}}>
           <div class="login-container" style={{height:"400px"}}>
             <h2>Crea tu cuenta</h2>
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div class="input-group">
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required />
+                <label for="usuario">Usuario:</label>
+                <input
+                  type="text"
+                  name="usuario"
+                  {...register("usuario", { required: "Este campo es requerido" })}/>
+                  {errors.nombre && <p>{errors.nombre.message}</p>}
+              </div>
+              <div class="input-group">
+                <label for="email">Correo:</label>
+                <input
+                  type="email"
+                  name="email"
+                  {...register("email", {
+                    required: "Este campo es requerido",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message:
+                        "Por favor, ingresa una dirección de correo válida",
+                    },
+                  })}/>
+                {errors.email && <p>{errors.email.message}</p>}
               </div>
               <div class="input-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required />
               </div>
-              <div class="input-group">
-                <label for="password">Confirma la contraseña:</label>
-                <input type="password" id="password" name="password" required />
+              <div>
+                <label htmlFor="Recuérdame">Recuérdame</label>
+                <input type="checkbox" name="" id="" style={{position: "relative", right: "-5px"}}/>
               </div>
               <button type="submit" class="login-btn">Crear cuenta</button>
               <div>
