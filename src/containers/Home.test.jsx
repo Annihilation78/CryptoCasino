@@ -44,6 +44,13 @@ describe('Home', () => {
     expect(gameSection).toBeInTheDocument();
     expect(promotionSections.length).toBeGreaterThanOrEqual(1);
   });
+  it('renders sound buttons', () => {
+    const boopButton = screen.getByRole('button', { name: /Reproducir sonido Boop/i });
+    const beepButton = screen.getByRole('button', { name: /Reproducir sonido Beep/i });
+  
+    expect(boopButton).toBeInTheDocument();
+    expect(beepButton).toBeInTheDocument();
+  });
   
   it('renders footer', () => {
     const footerText = screen.getByText(/© 2024 Casino. Todos los derechos reservados./i);
