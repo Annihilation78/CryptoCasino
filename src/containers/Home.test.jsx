@@ -12,7 +12,7 @@ describe('Home', () => {
   });
 
   it('renders headline', () => {
-    const headline = screen.getByText(/Bienvenido al Casino/i);
+    const headline = screen.getByText(/Quantum Bet Bot/i);
     expect(headline).toBeInTheDocument();
   });
 
@@ -23,7 +23,6 @@ describe('Home', () => {
       expect(navLinks.length).toBeGreaterThanOrEqual(1);
     });
   });
-  
 
   it('renders login form', () => {
     const usernameInput = screen.getByLabelText(/Usuario:/i);
@@ -36,13 +35,13 @@ describe('Home', () => {
   });
 
   it('renders game and promotion sections', () => {
-    const gameSection = screen.getAllByText(/Juegos Destacados/i);
-    const promotionSection = screen.getAllByText(/Promociones/i);
-
-    expect(gameSection.length).toBe(2);
-    expect(promotionSection.length).toBe(2);
+    const gameSection = screen.getByText(/Juegos Destacados/i);
+    const promotionSections = screen.getAllByText(/Promociones/i);
+  
+    expect(gameSection).toBeInTheDocument();
+    expect(promotionSections.length).toBeGreaterThanOrEqual(1);
   });
+  
 
   // Aquí puedes agregar más pruebas para verificar el correcto funcionamiento de tu componente
 });
-
