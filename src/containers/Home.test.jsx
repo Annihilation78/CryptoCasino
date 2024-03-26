@@ -24,6 +24,8 @@ describe('Home', () => {
       expect(navLinks.length).toBeGreaterThanOrEqual(1);
     });
   });
+
+ 
 /*  it('renders login form', () => {
     const usernameInput = screen.getByLabelText(/Usuario:/i);
     const passwordInput = screen.getByLabelText(/Contraseña:/i);
@@ -41,6 +43,14 @@ describe('Home', () => {
   
     expect(gameSection).toBeInTheDocument();
     expect(promotionSections.length).toBeGreaterThanOrEqual(1);
+  });
+  
+  it('renders footer', () => {
+    const footerText = screen.getByText(/© 2024 Casino. Todos los derechos reservados./i);
+    const cssValidImage = screen.getByAltText(/¡CSS Válido!/i);
+  
+    expect(footerText).toBeInTheDocument();
+    expect(cssValidImage).toBeInTheDocument();
   });
   
 
