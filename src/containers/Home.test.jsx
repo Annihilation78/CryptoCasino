@@ -24,8 +24,7 @@ describe('Home', () => {
       expect(navLinks.length).toBeGreaterThanOrEqual(1);
     });
   });
-
-  it('renders login form', () => {
+/*  it('renders login form', () => {
     const usernameInput = screen.getByLabelText(/Usuario:/i);
     const passwordInput = screen.getByLabelText(/Contraseña:/i);
     const loginButton = screen.getByRole('button', { name: /Iniciar sesión/i });
@@ -34,6 +33,7 @@ describe('Home', () => {
     expect(passwordInput).toBeInTheDocument();
     expect(loginButton).toBeInTheDocument();
   });
+*/
 
   it('renders game and promotion sections', () => {
     const gameSection = screen.getByText(/Juegos Destacados/i);

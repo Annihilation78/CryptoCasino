@@ -24,7 +24,7 @@ function Login() {
               type="text"
               name="usuario"
               {...register("usuario", { required: "Este campo es requerido" })}/>
-              {errors.nombre && <p>{errors.nombre.message}</p>}
+              {errors.usuario && <p>{errors.usuario.message}</p>}
           </div>
           <div class="input-group">
             <label for="password">Contraseña:</label>
