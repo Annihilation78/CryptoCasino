@@ -25,5 +25,12 @@ describe('Contact Component', () => {
     expect(input.value).toBe('Prueba');
   });
 
+
+  it('renders submit button', () => {
+    const submitButton = screen.getByRole('button', { name: /Enviar mensaje/i });
+  
+    expect(submitButton).toBeInTheDocument();
+  });
+  
   // Aquí puedes agregar más pruebas...
 });
