@@ -153,8 +153,8 @@ footer {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 400px;  /* reducido de 400px a 300px */
-  height: 380px; /* reducido de 700px a 500px */
+  width: 400px;
+  height: 480px;
 }
 
 .login-container h2 {
