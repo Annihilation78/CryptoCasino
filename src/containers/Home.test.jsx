@@ -48,7 +48,5 @@ describe('Home', () => {
     expect(footerText).toBeInTheDocument();
     expect(cssValidImage).toBeInTheDocument();
   });
-  
 
-  // Aquí puedes agregar más pruebas para verificar el correcto funcionamiento de tu componente
 });
