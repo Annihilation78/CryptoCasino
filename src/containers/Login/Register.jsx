@@ -4,6 +4,16 @@ import Navigation from '../Navigation.jsx';
 
 const Register = () => {
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    alert("¡Formulario enviado con éxito!");
+  };
   return (
         <div className="app">
         <header className="header">

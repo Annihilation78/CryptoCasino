@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    alert("¡Formulario enviado con éxito!");
+  };
   return (
         <div class="login-container">
         <h2>Ingresa a tu cuenta</h2>
