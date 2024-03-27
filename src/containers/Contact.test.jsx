@@ -24,6 +24,7 @@ describe('Contact Component', () => {
     fireEvent.change(input, { target: { value: 'Prueba' } });
     expect(input.value).toBe('Prueba');
   });
-
+ 
+  
   // Aquí puedes agregar más pruebas...
 });

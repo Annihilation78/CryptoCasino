@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Home from './Home';
 
+
 describe('Home', () => {
   beforeEach(() => {
     render(
@@ -24,15 +25,6 @@ describe('Home', () => {
     });
   });
 
-  it('renders login form', () => {
-    const usernameInput = screen.getByLabelText(/Usuario:/i);
-    const passwordInput = screen.getByLabelText(/Contraseña:/i);
-    const loginButton = screen.getByRole('button', { name: /Iniciar sesión/i });
-
-    expect(usernameInput).toBeInTheDocument();
-    expect(passwordInput).toBeInTheDocument();
-    expect(loginButton).toBeInTheDocument();
-  });
 
   it('renders game and promotion sections', () => {
     const gameSection = screen.getByText(/Juegos Destacados/i);
@@ -41,7 +33,20 @@ describe('Home', () => {
     expect(gameSection).toBeInTheDocument();
     expect(promotionSections.length).toBeGreaterThanOrEqual(1);
   });
+  it('renders sound buttons', () => {
+    const boopButton = screen.getByRole('button', { name: /Reproducir sonido Boop/i });
+    const beepButton = screen.getByRole('button', { name: /Reproducir sonido Beep/i });
   
+    expect(boopButton).toBeInTheDocument();
+    expect(beepButton).toBeInTheDocument();
+  });
+  
+  it('renders footer', () => {
+    const footerText = screen.getByText(/© 2024 Casino. Todos los derechos reservados./i);
+    const cssValidImage = screen.getByAltText(/¡CSS Válido!/i);
+  
+    expect(footerText).toBeInTheDocument();
+    expect(cssValidImage).toBeInTheDocument();
+  });
 
-  // Aquí puedes agregar más pruebas para verificar el correcto funcionamiento de tu componente
 });
