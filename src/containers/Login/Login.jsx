@@ -10,7 +10,7 @@ function Login() {
   const { login } = Auth();
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (usuario === localStorage.getItem(usuario) && password === localStorage.getItem(password)) {
+    if (usuario === "usuario" && password === "password") {
       await login({ e });
       alert("Bienvenido!");
     } else {
@@ -42,7 +42,7 @@ function Login() {
           <div className="input-group">
             <label name="password">Contraseña:</label>
             <input
-              type="text"
+              type="password"
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
