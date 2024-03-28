@@ -34,6 +34,8 @@ function Register() {
           alert("Error al registrar usuario!");
           <p>Error al registrar usuario!</p>
       } else { 
+          localStorage.setItem("usuario",e.usuario);
+          localStorage.setItem("password",e.password)
           await login({ e });
           setSubmitted(true); 
           setError(false); 

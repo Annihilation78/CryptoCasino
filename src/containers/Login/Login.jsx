@@ -3,7 +3,6 @@ import {Auth} from "./Auth";
 import { Link } from "react-router-dom";
 import Navigation from '../Navigation.jsx'; 
 import Home from "../Home.jsx";
-import Register from "./Register.jsx";
 
 function Login() {
   const [usuario, setUsuario] = useState("");
@@ -11,11 +10,9 @@ function Login() {
   const { login } = Auth();
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Here you would usually send a request to your backend to authenticate the user
-    // For the sake of this example, we're using a mock authentication
-    if (usuario === "usuario" && password === "password") {
-      <Home/>
+    if (usuario === localStorage.getItem(usuario) && password === localStorage.getItem(password)) {
       await login({ e });
+      alert("Bienvenido!");
     } else {
       alert("Usuario y/o contraseña inválido");
     }
@@ -37,7 +34,7 @@ function Login() {
           <div className="input-group">
             <label name="usuario">Usuario:</label>
             <input
-              id="usuario"
+              name="usuario"
               type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}/>
