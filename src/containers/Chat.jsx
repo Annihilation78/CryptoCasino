@@ -12,9 +12,10 @@ import {
 const API_KEY = "";
 
 const Chat = () => {
+  const [showChat, setShowChat] = useState(true);
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hola cryptobro. ¿Quieres dejar de ser un fucking mileurista con panza?, con mi método perderas todo tu dinero, !totalmente garantizado!",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -92,24 +93,65 @@ const Chat = () => {
 
   return (
     <div className="Chat">
-      <div style={{ position:"relative", height: "800px", width: "700px"  }}>
-        <MainContainer>
-          <ChatContainer>       
-            <MessageList 
-              scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
-            >
-              {messages.map((message, i) => (
-                <Message key={i} model={message} />
-              ))}
-            </MessageList>
-            <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
-          </ChatContainer>
-        </MainContainer>
-      </div>
+      {showChat ? (
+        <div style={{ position:"fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 2000 }}>
+          <button style={{
+            position: 'absolute', 
+            bottom: '100%', 
+            right: '0',
+            backgroundColor: '#008CBA', /* Blue */
+            border: 'none',
+            color: 'white',
+            padding: '15px 32px',
+            textAlign: 'center',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontSize: '16px',
+            borderRadius: '12px',
+            boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+            zIndex: 2000  // Increased z-index
+          }} onClick={() => setShowChat(!showChat)}>
+            Ocultar chat
+          </button>
+          <MainContainer>
+            <ChatContainer>       
+              <MessageList 
+                scrollBehavior="smooth" 
+                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+              >
+                {messages.map((message, i) => (
+                  <Message key={i} model={message} />
+                ))}
+              </MessageList>
+              <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
+            </ChatContainer>
+          </MainContainer>
+        </div>
+      ) : (
+        <button style={{
+          position: 'fixed', 
+          bottom: '10px', 
+          right: '20px',
+          backgroundColor: '#008CBA', /* Blue */
+          border: 'none',
+          color: 'white',
+          padding: '15px 32px',
+          textAlign: 'center',
+          textDecoration: 'none',
+          display: 'inline-block',
+          fontSize: '16px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+          zIndex: 2000  // Increased z-index
+        }} onClick={() => setShowChat(!showChat)}>
+          Mostrar chat
+        </button>
+      )}
     </div>
   );
+  
+   
+  
 };
 
 export default Chat;
-
