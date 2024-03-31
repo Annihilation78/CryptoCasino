@@ -1,48 +1,77 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import {Auth} from "./Auth";
 import { Link } from "react-router-dom";
+import Navigation from '../Navigation.jsx'; 
+import Home from "../Home.jsx";
 
 function Login() {
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-    alert("¡Formulario enviado con éxito!");
+  const [usuario, setUsuario] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = Auth();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (usuario === "usuario" && password === "password") {
+      await login({ e });
+      alert("Bienvenido!");
+    } else {
+      alert("Usuario y/o contraseña inválido");
+    }
   };
+
   return (
-        <div class="login-container">
+    <div className="app">
+    <header className="header">
+      <h1>
+      <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
+        Quantum Bet Bot
+      </h1>
+      <Navigation />
+    </header>
+    <main className="py-6" style={{position:"absolute", top:"10%", left:"36%"}}>
+      <div className="login-container" style={{height:"450px"}}>
         <h2>Ingresa a tu cuenta</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div class="input-group">
-            <label for="usuario">Usuario:</label>
+        <form onSubmit={handleLogin} name="sesion">
+          <div className="input-group">
+            <label name="usuario">Usuario:</label>
             <input
-              type="text"
               name="usuario"
-              {...register("usuario", { required: "Este campo es requerido" })}/>
-              {errors.usuario && <p>{errors.usuario.message}</p>}
+              type="text"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}/>
           </div>
-          <div class="input-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required />
+          <div className="input-group">
+            <label name="password">Contraseña:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <div>
-            <label htmlFor="Recuérdame">Recuérdame</label>
+            <label name="recuerdame">Recuérdame</label>
             <input type="checkbox" name="" id="" style={{position: "relative", right: "-5px"}}/>
           </div>
           <div>
             <li><Link to="">¿Has olvidado tu contraseña?</Link></li>
           </div>
-          <div><button type="submit" class="login-btn">Iniciar sesión</button></div>
+          <div><button type="submit" className="login-btn" onClick={(e) => handleLogin(e)}>Iniciar sesión</button></div>
           <div>
-            <li><Link to="/register">¿No tienes cuenta?</Link></li>
+            <li name="registro"><Link to="/register">¿No tienes cuenta?</Link></li>
           </div>
         </form>
-        </div>
+      </div>
+    </main>
+    <footer> 
+          <p>© 2024 Casino. Todos los derechos reservados.</p>
+          <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style={{ border: '0', width: '88px', height: '31px' }}
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="¡CSS Válido!" />
+            </a>
+          </p>
+        </footer>
+  </div>
   );
 }
 
