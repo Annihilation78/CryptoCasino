@@ -3,7 +3,7 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
-import {Auth} from "./Login/Auth";
+//import {Auth} from "./Login/Auth";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 
 // Resto del código de home.jsx
@@ -53,7 +53,7 @@ function Home() {
         <Navigation />
       </header>
       <main className="py-6">  
-      <div><button className="login-btn" onClick={handleLogout}>Cerrar sesión</button></div>
+      <div><button className="login-btn" onClick={handleLogout}>Cerrar sesión</button></div> 
         <div className="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>

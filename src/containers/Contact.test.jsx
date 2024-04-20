@@ -26,5 +26,5 @@ describe('Contact Component', () => {
   });
  
   
-  // Aquí puedes agregar más pruebas...
+
 });
