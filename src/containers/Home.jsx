@@ -67,7 +67,7 @@ function Home() {
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/ruleta.jpg" alt="juego de ruleta" />
                 <h3>Juego 2</h3>
                 <p>Descripción del Juego 2</p>
-                <button className="btn"><Link to="/contact">¡Jugar Ahora!</Link></button>
+                <button className="btn"><Link to="/BlackjackGame">¡Jugar Ahora!</Link></button>
               </div>
             </div>
           </section>
