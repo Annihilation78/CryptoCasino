@@ -6,7 +6,7 @@ import { ProtectedRoute } from "./containers/ProtectedRoute.jsx";
 import Login from './containers/Login/Login.jsx';
 import Register from './containers/Login/Register.jsx';
 import {Auth, AuthProvider} from './containers/Login/Auth.jsx';
-import BlackjackGame from './containers/games/blackjack/Login.jsx';
+import BlackjackGame from './containers/games/blackjack/BlackjackGame.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 
