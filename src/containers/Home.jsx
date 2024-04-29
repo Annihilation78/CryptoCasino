@@ -3,7 +3,7 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
-//import {Auth} from "./Login/Auth";
+import {Auth} from "./Login/Auth";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 
 // Resto del código de home.jsx
