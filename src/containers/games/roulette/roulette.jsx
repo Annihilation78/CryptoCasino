@@ -1,3 +1,5 @@
+
+import './roulette.css';
 import Weel from './components/weel/Weel';
 import RouletteTable from './components/table/Table';
 import { Container, Row, Col, Image } from 'react-bootstrap';

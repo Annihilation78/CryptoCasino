@@ -9,8 +9,6 @@ import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.js
 // Resto del código de home.jsx
 
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import Login from './Login/Login.jsx';
-import Register from './Login/Register.jsx'; 
 
 
 function Home() {
