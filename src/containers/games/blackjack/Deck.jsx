@@ -10,7 +10,7 @@ export const initializeDeck = () => {
       deck.push({
         suit,
         value,
-        imageUrl: `/assets/${value}_of_${suit}.png` // Asegúrate de tener imágenes para cada carta o ajusta según tus recursos
+        imageUrl: `../assets/${value}_of_${suit}.png` // Asegúrate de tener imágenes para cada carta o ajusta según tus recursos
       });
     }
   }
