@@ -4,6 +4,7 @@ import boopSfx from '../assets/urss.mp3';
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx'; 
 import {Auth} from "./Login/Auth";
+import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 
 // Resto del código de home.jsx
@@ -66,7 +67,7 @@ function Home() {
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/ruleta.jpg" alt="juego de ruleta" />
                 <h3>Juego 2</h3>
                 <p>Descripción del Juego 2</p>
-                <button className="btn">¡Jugar Ahora!</button>
+                <button className="btn"><Link to="/contact">¡Jugar Ahora!</Link></button>
               </div>
             </div>
           </section>
