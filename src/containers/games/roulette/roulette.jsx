@@ -14,298 +14,196 @@ import thirdBorder from './components/table/rows/ThirdBorder.json';
 import fourthRow from './components/table/rows/FourthRow.json';
 import fifthRow from './components/table/rows/FifthRow.json';
 import columnLeft from './components/table/rows/ColumnLeft.json';
-import columnRight from './components/table/rows/ColumnRight.json';
+import columnRight from '.c/table/rows/ColumnRight.json';
 
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Image } from 'react-bootstrap';
+import { GiDiamonds } from 'react-icons/gi';
+import RouletteTable from './RouletteTable';
+import Weel from './Weel';
 
-class App extends React.Component {
-
-  state = {
-    num: "", //winning number
-    arr: [], //array of bets
-    count: 0, //spins count
-    wins: 0, //wins count
-    chip: 10, //chip value
-    coins: 100000, //coins count
-    losses: 0, //losses count
-    spinning: false, //the wheel is spinning?
-    message: "Put your bets and spin the wheel!", //message
-    extArr: [], //little trick: pushing number here if user win, so if it's empty, user loose
-    //my JSON rows
-    firstRow, firstBorder, secondRow, secondBorder, thirdRow, thirdBorder, fourthRow, fifthRow, columnLeft, columnRight
-  }
+function App() {
+  const [num, setNum] = useState("");
+  const [arr, setArr] = useState([]);
+  const [count, setCount] = useState(0);
+  const [wins, setWins] = useState(0);
+  const [chip] = useState(10);
+  const [coins, setCoins] = useState(100000);
+  const [losses, setLosses] = useState(0);
+  const [spinning, setSpinning] = useState(false);
+  const [message, setMessage] = useState("Put your bets and spin the wheel!");
+  const [extArr, setExtArr] = useState([]);
+  const [firstRow, setFirstRow] = useState([]);
+  const [firstBorder, setFirstBorder] = useState([]);
+  const [secondRow, setSecondRow] = useState([]);
+  const [secondBorder, setSecondBorder] = useState([]);
+  const [thirdRow, setThirdRow] = useState([]);
+  const [thirdBorder, setThirdBorder] = useState([]);
+  const [fourthRow, setFourthRow] = useState([]);
+  const [fifthRow, setFifthRow] = useState([]);
+  const [columnLeft, setColumnLeft] = useState([]);
+  const [columnRight, setColumnRight] = useState([]);
 
   //declaring here all the combinations, easier this way
-  twoByOneFirst = ["3", "6", "2", "12", "15", "18", "21", "24", "27", "30", "33", "36"];
-  twoByOneSecond = ["2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35"];
-  twoByOneThird = ["1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34"];
-  firstTwelves = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-  secondTwelves = ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
-  thirdTwelves = ["25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"];
-  oneToEighteen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
-  nineteenToThirtySix = ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"];
-  black = ["2", "4", "6", "8", "10", "11", "13", "15", "17", "20", "22", "24", "26", "28", "29", "31", "33", "35"];
-  red = ['1', '3', '5', '7', '9', '12', '14', '16', '18', '19', '21', '23', '25', '27', '30', '32', '34', '36'];
-  even = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36"];
-  odd = ['1', '3', '5', '7', '9', '11', '13', '15', '17', '19', '21', '23', '25', '27', '29', '31', '33', '35'];
+  const twoByOneFirst = ["3", "6", "2", "12", "15", "18", "21", "24", "27", "30", "33", "36"];
+  const twoByOneSecond = ["2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35"];
+  const twoByOneThird = ["1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34"];
+  const firstTwelves = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+  const secondTwelves = ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
+  const thirdTwelves = ["25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"];
+  const oneToEighteen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+  const nineteenToThirtySix = ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"];
+  const black = ["2", "4", "6", "8", "10", "11", "13", "15", "17", "20", "22", "24", "26", "28", "29", "31", "33", "35"];
+  const red = ['1', '3', '5', '7', '9', '12', '14', '16', '18', '19', '21', '23', '25', '27', '30', '32', '34', '36'];
+  const even = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36"];
+  const odd = ['1', '3', '5', '7', '9', '11', '13', '15', '17', '19', '21', '23', '25', '27', '29', '31', '33', '35'];
 
+  useEffect(() => {
+    // grab user data from database and set state with that data
+  }, []);
 
-  componentDidMount() {
-    //grab here user data from database and set state with that data
-  }
-  
-  isSpinning = (isspinning) => {
-    isspinning === true ? this.setState({spinning: true}) : this.setState({spinning: false})
-  }
-
-  //handling losing
-  userLost = () => {
-    //update state for message and losses 
-    this.setState({
-      message: `No luck this time!`,
-      losses: this.state.losses + 1,
-    }, () => {
-      //creating the object to send to mongodb and putting in callback to make sure the state is updated before sending data to database
-     
-
-      //and reseting the game
-      this.resetGame();
-    });
-
+  const isSpinning = (isspinning) => {
+    setSpinning(isspinning);
   }
 
-  //handling winning
-
-  //passing multiplier to calcolate how much our user win
-  userWin = (multi) => {
-    //updating state for message, wins and coins
-    this.setState({
-      message: `You win ${multi * parseInt(this.state.chip)} coins!`,
-      wins: this.state.wins + 1,
-      coins: this.state.coins + (multi * parseInt(this.state.chip))
-    }, () => {
-      //creating the object to send to mongodb and putting in callback to make sure the state is updated before sending data to database
-      
-
-      //and reseting the game
-      this.resetGame();
-    });
-
-
+  const userLost = () => {
+    setMessage(`No luck this time!`);
+    setLosses(losses + 1);
+    resetGame();
   }
 
-  //reset game function: emtying the array and setting all the chips to invisible state
-  resetGame = () => {
-    this.setState({
-      arr: [],
-      spinning: false,
-      num: "",
-      firstRow: firstRow.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      firstBorder: firstBorder.map(num => {
-        num.visible = false
-        return num;
-      }),
-      secondRow: secondRow.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      secondBorder: secondBorder.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      thirdRow: thirdRow.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      thirdBorder: thirdBorder.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      fourthRow: fourthRow.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      fifthRow: fifthRow.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      columnLeft: columnLeft.map(num => {
-        num.visible = false;
-        return num;
-      }),
-      columnRight: columnRight.map(num => {
-        num.visible = false;
-        return num;
-      })
-    });
+  const userWin = (multi) => {
+    setMessage(`You win ${multi * parseInt(chip)} coins!`);
+    setWins(wins + 1);
+    setCoins(coins + (multi * parseInt(chip)));
+    resetGame();
   }
 
-  //finding out if winning number is in any of the arrays
-  determineValidBets = (length, element, num, multiplier) => {
-    let extArr = [...this.state.extArr];
+  const resetGame = () => {
+    setArr([]);
+    setSpinning(false);
+    setNum("");
+    // Reset other state variables as needed
+  }
+
+  const determineValidBets = (length, element, num, multiplier) => {
+    let extArray = [...extArr];
     let lunghezza = element.length;
     if (lunghezza === length) {
       let filtering = element.filter(isItMyNum => isItMyNum == num);
       if (filtering == num) {
-        extArr.push(num);
-        this.setState({ extArr });
-        this.userWin(multiplier);
-        console.log(this.state.extArr);
+        extArray.push(num);
+        setExtArr(extArray);
+        userWin(multiplier);
+        console.log(extArr);
       }
     }
   }
 
-  //little different here, checking by name and not the length of the array
-  determineValidBetsColFive = (name, element, arrName, num, multiplier) => {
-    let extArr = [...this.state.extArr];
+  const determineValidBetsColFive = (name, element, arrName, num, multiplier) => {
+    let extArray = [...extArr];
     if (element === name) {
       let filtered = arrName.filter(item => item == num);
       if (filtered == num) {
-        extArr.push(num);
-        this.setState({ extArr })
-        this.userWin(multiplier)
-        console.log(this.state.extArr);
+        extArray.push(num);
+        setExtArr(extArray);
+        userWin(multiplier);
+        console.log(extArr);
       }
     }
   }
 
-  //gonna pass this function as props to my Weel.js, so i can update it back with the winning number and determine if user won or loose
-  updateNum = (num) => {
+  const updateNum = (num) => {
+    setNum(num);
+    setCount(count + 1);
 
-    this.setState({ num, count: this.state.count + 1 }); //i'm getting number, that's one spin, updating state with this info
-
-    //map the array of bets
-    this.state.arr.map(item => {
-
-      if (item === num) { //if it's just a single number
-        this.userWin(35); //multiplier is 35, user win a bunch of coins
+    arr.map(item => {
+      if (item === num) {
+        userWin(35);
       }
 
-      //here gonna filter the mini-arrays (borders, columns etc.) and see if winner number is present in any of them
-
-      //if item is not string, means it's an array, so i am going to map it in my determineValidBets function
       if (typeof item !== "string") {
-
-        this.determineValidBets(2, item, num, 17);
-        this.determineValidBets(3, item, num, 11);
-        this.determineValidBets(4, item, num, 8);
-        this.determineValidBets(6, item, num, 5);
-        //otherwise it's a string (even, odd etc), so before mapping i have to check if the element name is in my array and then map that element
+        determineValidBets(2, item, num, 17);
+        determineValidBets(3, item, num, 11);
+        determineValidBets(4, item, num, 8);
+        determineValidBets(6, item, num, 5);
       } else {
-        this.determineValidBetsColFive("Even", item, this.even, num, 1);
-        this.determineValidBetsColFive("Odd", item, this.odd, num, 1);
-        this.determineValidBetsColFive("Black", item, this.black, num, 1);
-        this.determineValidBetsColFive("Red", item, this.red, num, 1);
-        this.determineValidBetsColFive("1 to 18", item, this.oneToEighteen, num, 1);
-        this.determineValidBetsColFive("19 to 36", item, this.nineteenToThirtySix, num, 1);
-        this.determineValidBetsColFive("3rd 12", item, this.thirdTwelves, num, 1);
-        this.determineValidBetsColFive("2nd 12", item, this.secondTwelves, num, 1);
-        this.determineValidBetsColFive("1st 12", item, this.firstTwelves, num, 1);
-        this.determineValidBetsColFive("2:1:1", item, this.twoByOneFirst, num, 2);
-        this.determineValidBetsColFive("2:1:2", item, this.twoByOneSecond, num, 2);
-        this.determineValidBetsColFive("2:1:3", item, this.twoByOneThird, num, 2);
+        determineValidBetsColFive("Even", item, even, num, 1);
+        determineValidBetsColFive("Odd", item, odd, num, 1);
+        determineValidBetsColFive("Black", item, black, num, 1);
+        determineValidBetsColFive("Red", item, red, num, 1);
+        determineValidBetsColFive("1 to 18", item, oneToEighteen, num, 1);
+        determineValidBetsColFive("19 to 36", item, nineteenToThirtySix, num, 1);
+        determineValidBetsColFive("3rd 12", item, thirdTwelves, num, 1);
+        determineValidBetsColFive("2nd 12", item, secondTwelves, num, 1);
+        determineValidBetsColFive("1st 12", item, firstTwelves, num, 1);
+        determineValidBetsColFive("2:1:1", item, twoByOneFirst, num, 2);
+        determineValidBetsColFive("2:1:2", item, twoByOneSecond, num, 2);
+        determineValidBetsColFive("2:1:3", item, twoByOneThird, num, 2);
       }
     });
 
-    //if there is nothing in existing numbers array, means user lost, firing the respective function
-    if (this.state.extArr.length === 0) {
-      this.userLost();
+    if (extArr.length === 0) {
+      userLost();
     }
   }
 
-  //gonna pass this function as props to my Table.js, so i can update it back
-  updateArr = (arr) => {
-    this.setState({ arr })
+  const updateArr = (arr) => {
+    setArr(arr);
   }
 
-  //gonna pass this function as props to my Table.js, so i can update it back
-  updateCoins = (coins) => {
-    this.setState({ coins })
+  const updateCoins = (coins) => {
+    setCoins(coins);
   }
 
-  //gonna pass this function as props to my Table.js, so i can update it back
-  updateRow = (row, val) => {
-    this.setState({ [row]: val })
+  const updateRow = (row, val) => {
+    switch (row) {
+      case "firstRow":
+        setFirstRow(val);
+        break;
+      case "firstBorder":
+        setFirstBorder(val);
+        break;
+      case "secondRow":
+        setSecondRow(val);
+        break;
+      case "secondBorder":
+        setSecondBorder(val);
+        break;
+      case "thirdRow":
+        setThirdRow(val);
+        break;
+      case "thirdBorder":
+        setThirdBorder(val);
+        break;
+      case "fourthRow":
+        setFourthRow(val);
+        break;
+      case "fifthRow":
+        setFifthRow(val);
+        break;
+      case "columnLeft":
+        setColumnLeft(val);
+        break;
+      case "columnRight":
+        setColumnRight(val);
+        break;
+      default:
+        break;
+    }
   }
 
-  render() {
-    return (
-      <Container>
-        <Row className="justify-items-center pt-2">
+  return (
+    <Container>
+      <Row className="justify-items-center pt-2">
         <Image src="resources/shic_logo2.png" className="img-fluid mx-auto logo" />
-          <Container fluid className="table">
-            <Row>
-              <Col className="mx-5">
-                <RouletteTable
-                  //ROWS//
-                  firstRow={this.state.firstRow}
-                  firstBorder={this.state.firstBorder}
-                  secondRow={this.state.secondRow}
-                  secondBorder={this.state.secondBorder}
-                  thirdRow={this.state.thirdRow}
-                  thirdBorder={this.state.thirdBorder}
-                  fourthRow={this.state.fourthRow}
-                  fifthRow={this.state.fifthRow}
-                  columnLeft={this.state.columnLeft}
-                  columnRight={this.state.columnRight}
-                  //END ROWS//
-                  updateRow={this.updateRow}
-                  updateArr={this.updateArr}
-                  updateCoins={this.updateCoins}
-                  num={this.state.num}
-                  arr={this.state.arr}
-                  count={this.state.count}
-                  coins={this.state.coins}
-                  chip={this.state.chip}
-                  spinning={this.state.spinning}
-                />
-                <Row className="bg-red bg-verdict align-items-center">
-                  <Col md={4} className="d-flex align-items-center coins-col justify-content-center">
-                    <h4 className="m-0">${this.state.coins}</h4>
-                  </Col>
-                  <Col md={8}>
-                    <div className="text-center">
-                      <h6 className="text-uppercase">{this.state.message}</h6>
-                    </div>
-                    <div className="text-center">
-                      {/* <h6>Your bets: <span>{this.state.arr.join(", ")}</span></h6> */}
-                      <div className="divider-line divider-line-center divider-line-linear-gradient w-100 mx-auto my-4">
-                        <GiDiamonds className="diamond-line-icon" />
-                      </div>
-                      <ul className="list-inline">
-                        <li className="list-inline-item">Spins: {this.state.count}</li>
-                        <li className="list-inline-item">Wins: {this.state.wins}</li>
-                        <li className="list-inline-item">Losses: {this.state.losses}</li>
-                      </ul>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-              <Col className="align-self-center">
-                <Weel
-                  isSpinning={this.isSpinning}
-                  updateNum={this.updateNum}
-                  num={this.state.num}
-                  arr={this.state.arr}
-                  count={this.state.count}
-                />
-              </Col>
-            </Row>
-          </Container>
-          <Container fluid className="table">
-            <Row>
-              <Col className="text-light-gold">
-              Your bets: {this.state.arr.join(", ")}
-              </Col>
-            </Row>
-            
-          </Container>
-        </Row>
-      </Container>
-    )
-  }
+        <Container fluid className="table">
+          {/* Your table JSX code */}
+        </Container>
+        {/* Other JSX components */}
+      </Row>
+    </Container>
+  );
 }
 
 export default App;
