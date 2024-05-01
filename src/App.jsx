@@ -8,7 +8,7 @@ import Register from './containers/Login/Register.jsx';
 import {Auth, AuthProvider} from './containers/Login/Auth.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
-import BlackJack from './containers/games/roulette/Game.jsx';
+import BlackJack from './containers/games/blackjack/Game.jsx';
 import Games from './containers/Games.jsx';
 import Promotions from './containers/Promotions.jsx';
 
