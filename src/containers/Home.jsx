@@ -66,7 +66,7 @@ function Home() {
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
               <div className="game-item">
-                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/ruleta.jpg" alt="juego de ruleta" />
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/roulette.png" alt="juego de ruleta" />
                 <h3>Juego 2</h3>
                 <p>Descripción del Juego 2</p>
                 <button className="btn"><Link to="/Roulette">¡Jugar Ahora!</Link></button>
