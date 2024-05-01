@@ -1,6 +1,6 @@
 import React from "react";
 import { Card as MuiCard, Box } from "@mui/material";
-import { makeStyles } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
 
 // Crear estilos personalizados para el componente Card
 const useCardStyles = makeStyles({
