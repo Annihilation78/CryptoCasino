@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'; // Importamos Framer Motion
 import '../css/Games.css'; // Importa tu archivo CSS
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx'; 
+import BlackJack from "./BlackJack";
 
 function MenuJuegos() {
     return (
