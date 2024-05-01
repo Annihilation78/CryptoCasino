@@ -42,7 +42,52 @@ body{
   gap: 100px
 }
 
-
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #1a2229;
+    color: #fff;
+    padding: 5px;
+  }
+  
+  .header h1 {
+    text-align: center;
+  }
+  
+  .header h1 img {
+    max-width: 80px;
+    max-height: 80px;
+    position: absolute;
+      left: 1%;
+      top: 9%;
+  }
+  .main-nav {
+    color: #fff;
+    padding: 5px 0;
+    text-align: right;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .main-nav ul li {
+    display: inline-block;
+    margin-right: 25px;
+  }
+  
+  .main-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    color: #008cba;
+  }
 /*  CONTAINER DE APUESTAS  */
 
 .bet-container {
