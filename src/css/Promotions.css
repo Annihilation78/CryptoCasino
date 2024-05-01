@@ -1,8 +1,9 @@
-@font-face {
-    font-family: 'FuenteEspecial', !important;
-    src: url('https://github.com/Annihilation78/CryptoCasino/blob/main/src/assets/fonts/Honk.ttf') format('truetype');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+.App {
+    background-image: url('../assets/backgroundPromotions.png');
+    background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
+    background-size: cover;
+  }
 .menu {
     display: flex;
     justify-content: center;
@@ -12,8 +13,9 @@
     width: fit-content; /* Ajusta el ancho del contenedor al contenido */
     margin: auto; /* Centra el contenedor en la página */
 }
+
 .titulo-promociones {
-    font-family: 'FuenteEspecial', sans-serif !important;
+    font-family: "Honk", system-ui;
     font-size: 2.5em; /* Cambia el tamaño de la fuente */
     color: #FF0000; /* Cambia el color del texto */
     text-shadow: 2px 2px #000000; /* Agrega una sombra al texto */
@@ -47,6 +49,7 @@ a {
     text-decoration: none;
 }
 header {
+    font-family: "Honk", system-ui;
     position: sticky;
     top: 0;
     z-index: 100;

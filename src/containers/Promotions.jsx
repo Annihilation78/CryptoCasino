@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Importamos Framer Motion
-import '../css/Games.css'; // Importa tu archivo CSS
+import '../css/Promotions.css'; // Importa tu archivo CSS
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import Tilt from 'react-parallax-tilt';
@@ -23,9 +23,9 @@ function MenuPromociones() {
                 <Tilt>
                     <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Promocion1.webp" alt="juego 1" />   
                     </Tilt> 
-                <motion.div whileHover={{ scale: 1.1 }}>
+                    <Tilt>
                     <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego 2" />
-                </motion.div>
+                    </Tilt> 
             </div> {/* Aquí faltaba cerrar la etiqueta */}
             <footer> 
                 <p>© 2024 Casino. Todos los derechos reservados.</p>
