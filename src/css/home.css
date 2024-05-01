@@ -35,6 +35,7 @@ header {
   background-color: #1a2229;
   color: #fff;
   padding: 5px;
+  height: 98px;
 }
 
 header h1 {
@@ -137,7 +138,7 @@ header h1 img {
 }
 
 footer {
-  position: static;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
