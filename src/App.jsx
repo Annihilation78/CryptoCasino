@@ -9,7 +9,7 @@ import {Auth, AuthProvider} from './containers/Login/Auth.jsx';
 import BlackjackGame from './containers/games/blackjack/BlackjackGame.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
-
+import Games from './containers/games/Games.jsx';
 
 
 
@@ -20,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/Games" element={<Games />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/BlackjackGame" element={<BlackjackGame />} />
             <Route path="/Roulette" element={<Roulette />} />
