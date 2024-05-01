@@ -19,6 +19,7 @@ function Roulette() {
         </h1>
         <Navigation />
       </header>
+      <main>
       <Context>
         <Balance />
         <Faucet />
@@ -34,6 +35,7 @@ function Roulette() {
           <Chips />
         </div>
       </Context>
+      </main>
     </div>
   );
 }
