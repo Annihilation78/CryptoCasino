@@ -1,29 +1,30 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material/styles';
 
-export const PlayArea = styled('div')({
+const PlayArea = styled('div')(({ theme }) => ({
   margin: '10px 25px',
-});
+}));
 
-export const CoinArea = styled('div')({
+const CoinArea = styled('div')(({ theme }) => ({
   height: '100px',
   padding: '10px',
   color: '#fff',
-});
+}));
 
-export const MessageArea = styled('div')({
+const MessageArea = styled('div')(({ theme }) => ({
   margin: '10px',
-});
+}));
 
-export const Message = styled('div')({
+const Message = styled('div')(({ theme }) => ({
   fontSize: '22px',
   color: 'white',
-});
+}));
 
-export const WinOrLoseContainer = styled('div')({
+const WinOrLoseContainer = styled('div')(({ theme }) => ({
   height: '50px',
-});
+  // margin: '-50px auto 0px',
+}));
 
-export const WinOrLose = styled('div')({
+const WinOrLose = styled('div')(({ theme }) => ({
   border: '1px solid black',
   backgroundColor: 'grey',
   height: '40px',
@@ -32,4 +33,4 @@ export const WinOrLose = styled('div')({
   color: 'white',
   lineHeight: '40px',
   opacity: 0.8,
-});
+}));
