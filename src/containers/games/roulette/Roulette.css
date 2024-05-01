@@ -259,7 +259,7 @@ body .bet-container .bet-active .bet-chip{opacity: 1;}
 .balance{
   position: absolute;
   right: 25px;
-  top: 20px;
+  top: 100px;
   margin: auto;
   display: flex;
   flex-direction: row;
