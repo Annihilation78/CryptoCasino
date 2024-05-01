@@ -5,7 +5,7 @@ import PlayArea from "./components/PlayArea";
 import BlackJackButtons from "./components/BlackJackButtons";
 import GameProgressButton from "./components/GameProgressButton";
 import * as BlackJackUtilities from "./utilities/BlackJackUtilities";
-import { toast, Toaster } from "react-hot-toast";
+import { toast, Toaster } from 'react-hot-toast';
 
 const initialDeck = BlackJackUtilities.getDeck(3);
 const penetration = 0.8;
