@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
 import { useState } from "react"; 
 import {Auth} from "./Auth";
-import '../css/home.css';
+import '../../css/home.css';
 import Navigation from '../Navigation.jsx'; 
 
 function Register() {
