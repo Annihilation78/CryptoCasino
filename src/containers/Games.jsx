@@ -6,7 +6,7 @@ import Navigation from './Navigation.jsx';
 
 function MenuJuegos() {
     return (
-        <div className="menu">
+        <div>
             <header>
                 <h1>
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
@@ -14,18 +14,22 @@ function MenuJuegos() {
                 </h1>
                 <Navigation />
             </header>
-            <motion.div whileHover={{ scale: 1.1 }}>
-                <Link to="/BlackJackGame">
-                    <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego 1" />
-                    <div className="descripcion-juego">BlackJack</div>
-                </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }}>
-                <Link to="/Roulette">
-                    <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png" alt="juego 2" />
-                    <div className="descripcion-juego">Roulette</div>
-                </Link>
-            </motion.div>
+
+            <div className="menu">
+                <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link to="/BlackJackGame">
+                        <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego 1" />
+                        <div className="descripcion-juego">BlackJack</div>
+                    </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }}>
+                    <Link to="/Roulette">
+                        <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png" alt="juego 2" />
+                        <div className="descripcion-juego">Roulette</div>
+                    </Link>
+                </motion.div>
+            </div>
+
             <footer> 
                 <p>© 2024 Casino. Todos los derechos reservados.</p>
                 <p>
