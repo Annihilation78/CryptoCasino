@@ -23,7 +23,7 @@ function App() {
             <Route path="/Games" element={<Games />} />
             <Route path="/Promotions" element={<Promotions />} />
             <Route path="/Register" element={<Register />} />
-            <Route path="/BlackJack" element={<Game />} />
+            <Route path="/BlackJack" element={<BlackJack />} />
             <Route path="/Roulette" element={<Roulette />} />
             <Route path="/Auth" element={<Auth />} />
             <Route path="/" element={<Home />} />
