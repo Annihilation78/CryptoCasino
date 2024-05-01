@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Chip } from "@material-ui/core";
+import { Box, Grid, Chip } from '@material-ui/core';
 import { useStyles } from "../hooks/useStyles";
 import Card from "./Card";
 import * as BJUtilities from "../utilities/BlackJackUtilities";
