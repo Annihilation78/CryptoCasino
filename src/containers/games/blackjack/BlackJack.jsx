@@ -1,12 +1,11 @@
 import React, { useEffect, useReducer } from "react";
-import Box from '@mui/material/Box';
-import useStyles from "./hooks/useStyles";
+import { Box } from '@mui/material';
+import {useStyles} from "./hooks/useStyles";
 import PlayArea from "./components/PlayArea";
 import BlackJackButtons from "./components/BlackJackButtons";
 import GameProgressButton from "./components/GameProgressButton";
 import * as BlackJackUtilities from "./utilities/BlackJackUtilities";
-import toast from "react-hot-toast";
-import Toaster from "react-hot-toast";
+import {toast, Toaster} from "react-hot-toast";
 
 const initialDeck = BlackJackUtilities.getDeck(3);
 const penetration = 0.8;
