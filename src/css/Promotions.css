@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'FuenteEspecial';
+    src: url('/src/assets/fonts/Honk-Regular-VariableFont_MORF\,SHLN.ttf') format('truetype');
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -6,6 +11,12 @@
     gap: 180px; /* Espacio reducido entre los elementos */
     width: fit-content; /* Ajusta el ancho del contenedor al contenido */
     margin: auto; /* Centra el contenedor en la página */
+}
+.titulo-promociones {
+    font-family: 'FuenteEspecial', sans-serif; /* Cambia la fuente */
+    font-size: 2.5em; /* Cambia el tamaño de la fuente */
+    color: #FF0000; /* Cambia el color del texto */
+    text-shadow: 2px 2px #000000; /* Agrega una sombra al texto */
 }
 
 .imagen-juego {

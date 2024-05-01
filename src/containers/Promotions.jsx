@@ -8,10 +8,15 @@ function MenuPromociones() {
     return (
         <div className='App'>
             <header>
-                <h1>
+                <motion.h1 
+                className="titulo-promociones"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+>
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-                    Promociones
-                </h1>
+                Promociones
+            </motion.h1>
                 <Navigation />
             </header>
             <div className="menu">
