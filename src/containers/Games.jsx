@@ -6,7 +6,7 @@ import Navigation from './Navigation.jsx';
 
 function MenuJuegos() {
     return (
-        <div className="app">
+        <div className="menu">
             <header>
                 <h1>
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
