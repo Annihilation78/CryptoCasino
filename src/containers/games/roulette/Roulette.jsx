@@ -7,10 +7,18 @@ import Balance from './components/Balance'
 import Faucet from './components/FaucetModal';
 import Board from './components/Board';
 import Confetti from './components/Confetti'
+import Navigation from '../../Navigation.jsx'; 
 
 function Roulette() {
   return (
     <div className="App">
+        <header className="header">
+        <h1>
+        <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
+          Roulette
+        </h1>
+        <Navigation />
+      </header>
       <Context>
         <Balance />
         <Faucet />
