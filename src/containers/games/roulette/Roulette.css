@@ -32,7 +32,7 @@ body{
     flex-direction: column;
 }
 
-.App, .header, .bottom-conteiner, .bet-container div, .board-container, .board-item, .profitContainer, .chips-container div, .last-numbers, .last-numbers div, .spin-container, .money-container, .icon-balance, .add-balance, .faucet, .faucet-content, .faucet-content-middle, .fcm-part1, .faucet-content-shape{
+.App, .bottom-conteiner, .bet-container div, .board-container, .board-item, .profitContainer, .chips-container div, .last-numbers, .last-numbers div, .spin-container, .money-container, .icon-balance, .add-balance, .faucet, .faucet-content, .faucet-content-middle, .fcm-part1, .faucet-content-shape{
   display: flex;
   justify-content: center;
   align-items: center;
