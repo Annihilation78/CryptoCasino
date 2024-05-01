@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from "react";
+import Box from "@material-ui/core";
 import useStyles from "./hooks/useStyles";
 import PlayArea from "./components/PlayArea";
 import BlackJackButtons from "./components/BlackJackButtons";
@@ -143,7 +144,7 @@ export default function Border7() {
   }
 
   return (
-    <div>
+    <Box>
       <div>
         <Toaster position="bottom-center" reverseOrder={false} />
       </div>
@@ -153,7 +154,7 @@ export default function Border7() {
         isTurnEnd={state.isTurnEnd}
       />
       <div className={classes.coinArea}>Coin area</div>
-      <div className={classes.messageArea}>{getButtons(state.playersHand)}</div>
-    </div>
+      <Box className={classes.messageArea}>{getButtons(state.playersHand)}</Box>
+    </Box>
   );
 }
