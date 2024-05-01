@@ -12,6 +12,7 @@ import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.js
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
 
+
 function Home() {
 
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
@@ -61,13 +62,14 @@ function Home() {
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego de blackjack" />
                 <h3 className="text-xl">Juego 1</h3>
                 <p className="text-gray-700">Descripción del Juego</p>
+                <button className="btn"><Link to="/BlackjackGame">¡Jugar Ahora!</Link></button>
                 <button className="btn">¡Jugar Ahora!</button>
               </div>
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/ruleta.jpg" alt="juego de ruleta" />
                 <h3>Juego 2</h3>
                 <p>Descripción del Juego 2</p>
-                <button className="btn"><Link to="/BlackjackGame">¡Jugar Ahora!</Link></button>
+                <button className="btn"><Link to="/Roulette">¡Jugar Ahora!</Link></button>
               </div>
             </div>
           </section>
