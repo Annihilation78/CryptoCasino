@@ -10,7 +10,7 @@ function MenuPromociones() {
             <header>
                 <h1>
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-                    Juegos
+                    Promociones
                 </h1>
                 <Navigation />
             </header>
