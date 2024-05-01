@@ -38,6 +38,10 @@ header {
   height: 98px;
 }
 
+.title {
+  text-align: center;
+}
+
 header h1 {
   text-align: center;
 }

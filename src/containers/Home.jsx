@@ -45,7 +45,7 @@ function Home() {
 
   return (
     <div className="app">
-      <h1>Quantum Bet Bot</h1>
+      <h1 className="title">Quantum Bet Bot</h1>
       <header>
         <h1>
         <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
