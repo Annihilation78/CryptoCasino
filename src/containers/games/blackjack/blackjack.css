@@ -127,6 +127,7 @@ html {
     width: 100px;
     height: 140px;
     border: 1px solid #000;
+    position: absolute;
     border-radius: 10px;
     display: inline-block;
     margin: 10px 100px 10px 0px;
@@ -156,7 +157,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png');
+    background-image: url('src/containers/games/roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     box-shadow: 2px 2px 3px #252525;
@@ -171,7 +172,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png');
+    background-image: url('src/containers/games/roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     /*vvisibility: hidden;*/
@@ -263,7 +264,7 @@ html {
     border: 1px solid white;
     margin: 20px;
     position: relative;
-    background-image: url('https://e7.pngegg.com/pngimages/428/473/png-clipart-texas-hold-em-casino-token-poker-gambling-poker-chips.png');
+    background-image: url('src/containers/games/roulette/chips/1.png');
     background-size: cover;
     background-position: center;
     display: inline-block;
