@@ -17,10 +17,10 @@ function MenuJuegos() {
 
 <div className="menu"> 
                 <motion.div whileHover={{ scale: 1.1 }}>
-                   
+                    <Link to="/BlackJack">
                         <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego 1" />
                         <div className="descripcion-juego">BlackJack</div> 
-                    
+                    </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }}>
                     <Link to="/Roulette">
