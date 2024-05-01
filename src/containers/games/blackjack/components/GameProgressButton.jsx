@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Button } from "@material-ui/core";
+import { Box, Button } from '@material-ui/core';
 
 export default function GameProgressButton(props) {
   useEffect(() => {
