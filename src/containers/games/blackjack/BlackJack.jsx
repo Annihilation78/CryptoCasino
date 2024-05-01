@@ -1,11 +1,12 @@
 import React, { useEffect, useReducer } from "react";
-import { Box } from "@material-ui/core";
-import { useStyles } from "./hooks/useStyles";
+import Box from "@material-ui/core";
+import useStyles from "./hooks/useStyles";
 import PlayArea from "./components/PlayArea";
 import BlackJackButtons from "./components/BlackJackButtons";
 import GameProgressButton from "./components/GameProgressButton";
 import * as BlackJackUtilities from "./utilities/BlackJackUtilities";
-import { toast, Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import Toaster from "react-hot-toast";
 
 const initialDeck = BlackJackUtilities.getDeck(3);
 const penetration = 0.8;
@@ -70,14 +71,12 @@ function reducer(state, action) {
       return { ...state, deck: newDeck, dealersHand: newHand, isTurnEnd: true };
     }
     case "check": {
-      // ディーラーまたはプレイヤーがブラックジャック
       if (
         BlackJackUtilities.isBlackJack(state.dealersHand) ||
         BlackJackUtilities.isBlackJack(state.playersHand)
       ) {
         return { ...state, isTurnEnd: true };
       }
-      // プレイヤーのスコアが 21 になったらディーラーがカードを引いてターンは終わり
       if (BlackJackUtilities.getTotal(state.playersHand) === 21) {
         const [newDeck, newHand] = dealForDealer(state.deck, state.dealersHand);
         return {
