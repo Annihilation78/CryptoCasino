@@ -325,39 +325,32 @@ export default function Game() {
   }
 
   function winResults() {
-    var winnings =
-      (chipBetRed * 1 +
-        chipBetBlack * 5 +
-        chipBetBlue * 25 +
-        chipBetGreen * 50) *
-      2;
+    // Calculate initial winnings based on the chips bet and their multipliers
+    var winnings = chipBetRed * 1 + chipBetBlack * 5 + chipBetBlue * 25 + chipBetGreen * 50;
+
     if (userTotal > 21) {
-      alert(
-        'The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' +
-          winnings +
-          '.'
-      );
-      winnings = winnings * -1;
+        // User loses if they go over 21
+        alert('The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' + winnings + '.');
+        winnings *= -1; // Convert winnings to a loss
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
-      alert('You won!\nYour earnings total to $' + winnings + '.');
+        // User wins by having a higher total than the dealer, without exceeding 21
+        alert('You won!\nYour earnings total to $' + winnings + '.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
-      alert(
-        'The dealer beat you, better luck next time!\nYou lost $' +
-          winnings +
-          '.'
-      );
-      winnings = winnings * -1;
+        // User loses by having a lower total than the dealer
+        alert('The dealer beat you, better luck next time!\nYou lost $' + winnings + '.');
+        winnings *= -1;
     } else if (userTotal == dealerTotal && dealerTotal <= 21) {
-      alert(
-        'You tied with the dealer. You will receive half of the winnings, totalling to $' +
-          winnings / 2 +
-          '.'
-      );
-      winnings = winnings / 2;
+        // Handle tie scenario
+        var tieWinnings = winnings / 2; // User gets half of the winnings in a tie
+        alert('You tied with the dealer. You will receive half of the winnings, totaling to $' + tieWinnings + '.');
+        winnings = tieWinnings;
     }
+
+    // Update the user's bank balance with the new winnings or losses
     setUserBank(userBank + winnings);
-    refreshGame();
-  }
+    refreshGame(); // Refresh or update the game state
+}
+
 
   function refreshGame() {
     setTurnDirections('- Press DEAL to play again');
