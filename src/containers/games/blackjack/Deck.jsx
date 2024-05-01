@@ -1,7 +1,14 @@
 // Blackjack/Deck.js
-
 const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
 const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+const images = values.reduce((acc, value) => {
+  suits.forEach(suit => {
+    // Importa y asigna cada imagen a un objeto
+    acc[`${value}_of_${suit}`] = require(`../assets/${value}_of_${suit}.png`);
+  });
+  return acc;
+}, {});
 
 export const initializeDeck = () => {
   let deck = [];
@@ -10,7 +17,7 @@ export const initializeDeck = () => {
       deck.push({
         suit,
         value,
-        imageUrl: `../assets/${value}_of_${suit}.png` // Asegúrate de tener imágenes para cada carta o ajusta según tus recursos
+        imageUrl: images[`${value}_of_${suit}`] // Usamos el objeto con las imágenes importadas
       });
     }
   }
