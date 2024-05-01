@@ -59,17 +59,10 @@ function Home() {
             <h2 className="text-2xl">Juegos Destacados</h2>
             <div className="game-list">
               <div className="game-item">
-                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego de blackjack" />
-                <h3 className="text-xl">Juego 1</h3>
-                <p className="text-gray-700">Descripción del Juego</p>
-                <button className="btn"><Link to="/BlackjackGame">¡Jugar Ahora!</Link></button>
-                <button className="btn">¡Jugar Ahora!</button>
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego de blackjack" />   
               </div>
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png" alt="juego de ruleta" />
-                <h3>Juego 2</h3>
-                <p>Descripción del Juego 2</p>
-                <button className="btn"><Link to="/Roulette">¡Jugar Ahora!</Link></button>
               </div>
             </div>
           </section>
