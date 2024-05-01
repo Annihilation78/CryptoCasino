@@ -19,7 +19,7 @@ function Roulette() {
         </h1>
         <Navigation />
       </header>
-      <main>
+      <main className="py-6">
       <Context>
         <Balance />
         <Faucet />
