@@ -669,28 +669,28 @@ export default function Game() {
       <div id="all-cashier-chips">
         <SingleCashierChip
           amount={cashierChipAmountRed}
-          chipColor="https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png"
+          chipColor="src/containers/games/roulette/chips/2.png"
           bgSize="109%"
           unique="red"
           price="1"
         />
         <SingleCashierChip
           amount={cashierChipAmountBlack}
-          chipColor="https://sc04.alicdn.com/kf/H221f87790a01400098ad28f86c1bf75aN.jpg"
+          chipColor="src/containers/games/roulette/chips/4.png"
           bgSize="cover"
           unique="black"
           price="5"
         />
         <SingleCashierChip
           amount={cashierChipAmountBlue}
-          chipColor="https://cutewallpaper.org/24/poker-chip-png/table-of-green-poker-chip-free-transparent-png-clipart-images-download.png"
+          chipColor="src/containers/games/roulette/chips/1.png"
           bgSize="150%"
           unique="blue"
           price="25"
         />
         <SingleCashierChip
           amount={cashierChipAmountGreen}
-          chipColor="https://image.pngaaa.com/618/3217618-middle.png"
+          chipColor="src/containers/games/roulette/chips/3.png"
           bgSize="199%"
           unique="green"
           price="50"
@@ -704,22 +704,22 @@ export default function Game() {
       <div id="all-cashier-chips">
         <SinglePurchasedChip
           amount={chipAmountRed}
-          chipColor="https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png"
+          chipColor="src/containers/games/roulette/chips/2.png"
           bgSize="109%"
         />
         <SinglePurchasedChip
           amount={chipAmountBlack}
-          chipColor="https://sc04.alicdn.com/kf/H221f87790a01400098ad28f86c1bf75aN.jpg"
+          chipColor="src/containers/games/roulette/chips/4.png"
           bgSize="cover"
         />
         <SinglePurchasedChip
           amount={chipAmountBlue}
-          chipColor="https://cutewallpaper.org/24/poker-chip-png/table-of-green-poker-chip-free-transparent-png-clipart-images-download.png"
+          chipColor="src/containers/games/roulette/chips/1.png"
           bgSize="150%"
         />
         <SinglePurchasedChip
           amount={chipAmountGreen}
-          chipColor="https://image.pngaaa.com/618/3217618-middle.png"
+          chipColor="src/containers/games/roulette/chips/3.png"
           bgSize="199%"
         />
       </div>
