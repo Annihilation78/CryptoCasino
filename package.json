@@ -19,7 +19,9 @@
   "dependencies": {
     "@chatscope/chat-ui-kit-react": "^2.0.3",
     "@chatscope/chat-ui-kit-styles": "^1.4.0",
-    "@mui/material": "^5.15.15",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.16",
     "@supabase/supabase-js": "^2.39.7",
     "@tensorflow-models/qna": "^1.0.2",
     "@tensorflow/tfjs": "^4.17.0",
