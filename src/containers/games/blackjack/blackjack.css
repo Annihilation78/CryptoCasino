@@ -132,7 +132,7 @@ html {
     display: inline-block;
     margin: 10px 100px 10px 0px;
     vertical-align: middle;
-    background-image: url('https://i.pinimg.com/originals/09/a5/8d/09a58d561b2a7b92bd506c83414ef1ab.png');
+    content: url('https://i.pinimg.com/originals/09/a5/8d/09a58d561b2a7b92bd506c83414ef1ab.png');
     background-size: contain;
     box-shadow: 5px 5px 5px rgb(36, 36, 36);
   }
@@ -157,7 +157,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('../roulette/chips/2.png');
+    content: url('../roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     box-shadow: 2px 2px 3px #252525;
@@ -172,7 +172,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('../roulette/chips/2.png');
+    content: url('../roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     /*vvisibility: hidden;*/
@@ -264,7 +264,7 @@ html {
     border: 1px solid white;
     margin: 20px;
     position: relative;
-    background-image: url('../roulette/chips/1.png');
+    content: url('../roulette/chips/1.png');
     background-size: cover;
     background-position: center;
     display: inline-block;
