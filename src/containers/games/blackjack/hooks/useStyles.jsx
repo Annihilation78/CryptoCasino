@@ -31,3 +31,5 @@ export const useStyles = makeStyles({
     opacity: 0.8
   }
 });
+
+export default useStyles;
