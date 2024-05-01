@@ -12,7 +12,7 @@ function Navigation(){
                 <Link to="/Games">Juegos</Link>
             </li>
             <li>
-                <Link to="/promociones">Promociones</Link>
+                <Link to="/Promotions">Promociones</Link>
             </li>
             <li>
                 <Link to="/soporte">Soporte</Link>

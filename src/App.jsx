@@ -10,7 +10,7 @@ import BlackjackGame from './containers/games/blackjack/BlackjackGame.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
 import Games from './containers/Games.jsx';
-
+import Promotions from './containers/Promotions.jsx';
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Games" element={<Games />} />
+            <Route path="/Promotions" element={<Promotions />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/BlackjackGame" element={<BlackjackGame />} />
             <Route path="/Roulette" element={<Roulette />} />
