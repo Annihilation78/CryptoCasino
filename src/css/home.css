@@ -28,20 +28,20 @@
 }
 
 
-.header {
+header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   background-color: #1a2229;
   color: #fff;
   padding: 5px;
 }
 
-.header h1 {
+header h1 {
   text-align: center;
 }
 
-.header h1 img {
+header h1 img {
   max-width: 80px;
   max-height: 80px;
   position: absolute;
@@ -105,14 +105,12 @@
   text-decoration: none;
   border-radius: 5px;
   margin-top: 15px;
-  text-align: center; /* Para centrar el texto */
-  transition: background-color 0.3s ease; /* Animación de cambio de color */
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Cambia de color al pasar el cursor */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  opacity: 0.8;
 }
+
 
 .section {
   padding: 10px;
@@ -139,7 +137,7 @@
 }
 
 footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   width: 100%;
