@@ -1,29 +1,29 @@
 import React, { useEffect } from "react";
 import { Box, Button } from "@mui/material";
 
-export default function BlackJackButtons(props) {
+export default function BlackJackButtons({ onClickHit, onClickStand }) {
   useEffect(() => {
-    function click(event) {
+    const handleKeyDown = (event) => {
       switch (event.key) {
         case "h":
-          props.onClickHit();
+          onClickHit();
           break;
         case "s":
-          props.onClickStand();
+          onClickStand();
           break;
         default:
           break;
       }
-    }
-    document.body.addEventListener("keydown", click, {
-      passive: false
-    });
-    return () => {
-      document.body.removeEventListener("keydown", click, {
-        passive: false
-      });
     };
-  }, []);
+
+    // Agregar el listener de eventos
+    document.body.addEventListener("keydown", handleKeyDown, { passive: false });
+
+    // Función de limpieza para remover el listener de eventos
+    return () => {
+      document.body.removeEventListener("keydown", handleKeyDown, { passive: false });
+    };
+  }, [onClickHit, onClickStand]); // Incluir funciones en el array de dependencias
 
   return (
     <Box
@@ -35,12 +35,12 @@ export default function BlackJackButtons(props) {
       mt={"auto"}
     >
       <Box mx={1}>
-        <Button variant="contained" onClick={props.onClickHit}>
+        <Button variant="contained" onClick={onClickHit}>
           HIT
         </Button>
       </Box>
       <Box mx={1}>
-        <Button variant="contained" onClick={props.onClickStand}>
+        <Button variant="contained" onClick={onClickStand}>
           STAND
         </Button>
       </Box>

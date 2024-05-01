@@ -4,8 +4,9 @@ import { useStyles } from "../hooks/useStyles";
 import Card from "./Card";
 import * as BJUtilities from "../utilities/BlackJackUtilities";
 
-export default function PlayArea(props) {
+export default function PlayArea({ dealersHand, playersHand, isTurnEnd }) {
   const classes = useStyles();
+
   return (
     <Box className={classes.playArea}>
       <Grid
@@ -18,47 +19,38 @@ export default function PlayArea(props) {
         <Grid item>
           <Box
             className="arrow_box_common arrow_box_dealer"
-            visibility={props.isTurnEnd ? "visible" : "hidden"}
+            style={{ visibility: isTurnEnd ? 'visible' : 'hidden' }}
           >
-            {props.dealersHand.length !== 0 &&
-              BJUtilities.getScoreForDisplay(props.dealersHand)}
+            {dealersHand.length > 0 && BJUtilities.getScoreForDisplay(dealersHand)}
           </Box>
           <Grid container direction="row">
-            {props.dealersHand.map((card, index) => {
-              let marginLeft = index === 0 ? "0px" : "-35px";
-              const hide = index === 1 && !props.isTurnEnd ? true : false;
-              return (
-                <Grid item key={index} style={{ marginLeft: marginLeft }}>
-                  <Card card={card} hide={hide} />
-                </Grid>
-              );
-            })}
+            {dealersHand.map((card, index) => (
+              <Grid item key={index} style={{ marginLeft: index === 0 ? '0px' : '-35px' }}>
+                <Card card={card} hide={index === 1 && !isTurnEnd} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="row" className="satya">
-            {props.playersHand.map((card, index) => {
-              let marginLeft = index === 0 ? "0px" : "-35px";
-              return (
-                <Grid item key={index} style={{ marginLeft: marginLeft }}>
-                  <Card card={card} hide={false} />
-                </Grid>
-              );
-            })}
+          <Grid container direction="row">
+            {playersHand.map((card, index) => (
+              <Grid item key={index} style={{ marginLeft: index === 0 ? '0px' : '-35px' }}>
+                <Card card={card} hide={false} />
+              </Grid>
+            ))}
           </Grid>
           <Box className={classes.winOrLoseContainer}>
-            {props.isTurnEnd && (
+            {isTurnEnd && (
               <Chip
-                label={BJUtilities.judge(props.dealersHand, props.playersHand)}
+                label={BJUtilities.judge(dealersHand, playersHand)}
                 className={classes.winOrLose}
               />
             )}
           </Box>
         </Grid>
       </Grid>
-      <Box className="arrow_box_common arrow_box_player" mt="20px">
-        {props.playersHand.length !== 0 &&
-          BJUtilities.getScoreForDisplay(props.playersHand)}
+      <Box className="arrow_box_common arrow_box_player" mt={2}>
+        {playersHand.length > 0 && BJUtilities.getScoreForDisplay(playersHand)}
       </Box>
     </Box>
   );

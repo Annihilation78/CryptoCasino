@@ -2,24 +2,17 @@ import React from "react";
 import { Card as MuiCard, Box } from "@mui/material";
 import { makeStyles } from "@mui/material/styles";
 
+// Crear estilos personalizados para el componente Card
 const useCardStyles = makeStyles({
   root: {
     width: "60px",
     height: "90px",
     color: (props) => {
-      if (props.card === null) {
+      // Determina el color de la fuente basado en las propiedades de la carta
+      if (props.card === null || props.hide) {
         return "black";
       }
-      if (props.hide) {
-        return "black";
-      }
-      switch (props.card.suit) {
-        case "❤":
-        case "♦":
-          return "red";
-        default:
-          return "black";
-      }
+      return props.card.suit === "❤" || props.card.suit === "♦" ? "red" : "black";
     },
     border: "3px solid grey",
     borderRadius: "8px",
@@ -54,12 +47,15 @@ const useCardStyles = makeStyles({
   }
 });
 
-export default function Card(props) {
-  const classes = useCardStyles(props);
-  const topAndBottom = props.card === null || props.hide ? "" : props.card.rank;
-  const middle = props.card === null || props.hide ? "" : props.card.suit;
+export default function Card({ card, hide }) {
+  const classes = useCardStyles({ card, hide });
+  const displayContent = card !== null && !hide;
 
-  const cardClass = topAndBottom !== "" ? classes.root : classes.rootBack;
+  // Simplificar la selección de clases y contenido condicional
+  const cardClass = displayContent ? classes.root : classes.rootBack;
+  const topAndBottom = displayContent ? card.rank : "";
+  const middle = displayContent ? card.suit : "";
+
   return (
     <MuiCard className={cardClass}>
       <Box className={classes.content} display="flex" flexDirection="column">
