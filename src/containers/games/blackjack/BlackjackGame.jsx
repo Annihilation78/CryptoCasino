@@ -1,7 +1,10 @@
-// Blackjack/BlackjackGame.js
+// Blackjack/BlackjackGame.jsx
 
 import React, { useState, useEffect } from 'react';
-import { initializeDeck, shuffleDeck } from './Deck';
+import { initializeDeck, shuffleDeck } from './Deck';  // Asegúrate de que la ruta es correcta
+
+// El resto del componente sigue aquí...
+
 
 const BlackjackGame = () => {
   const [deck, setDeck] = useState([]);
@@ -10,35 +13,48 @@ const BlackjackGame = () => {
   const [status, setStatus] = useState("Place your bets!");
 
   useEffect(() => {
-    setDeck(shuffleDeck(initializeDeck()));
+    const newDeck = shuffleDeck(initializeDeck());
+    setDeck(newDeck);
   }, []);
 
   const dealCards = () => {
-    setPlayerHand([deck.pop(), deck.pop()]);
-    setDealerHand([deck.pop(), deck.pop()]);
-    setStatus("Playing");
+    setDeck(currentDeck => {
+      const newDeck = [...currentDeck];
+      const newPlayerHand = [newDeck.pop(), newDeck.pop()];
+      const newDealerHand = [newDeck.pop(), newDeck.pop()];
+      setPlayerHand(newPlayerHand);
+      setDealerHand(newDealerHand);
+      setStatus("Playing");
+      return newDeck;
+    });
   };
 
   const hit = () => {
     if (status !== "Playing") return;
-    setPlayerHand([...playerHand, deck.pop()]);
+    setDeck(currentDeck => {
+      const newDeck = [...currentDeck];
+      setPlayerHand(currentHand => [...currentHand, newDeck.pop()]);
+      return newDeck;
+    });
   };
 
   const stand = () => {
     if (status !== "Playing") return;
-    setDealerHand([...dealerHand, deck.pop()]);
     setStatus("Dealer's turn");
     dealerPlays();
   };
 
   const dealerPlays = () => {
-    // Simple AI for dealer: keep hitting until reaching 17 or more
-    let points = calculatePoints(dealerHand);
-    while (points < 17) {
-      setDealerHand([...dealerHand, deck.pop()]);
-      points = calculatePoints(dealerHand);
-    }
-    determineWinner();
+    setDealerHand(currentHand => {
+      let newHand = [...currentHand];
+      let points = calculatePoints(newHand);
+      while (points < 17) {
+        newHand = [...newHand, deck.pop()];
+        points = calculatePoints(newHand);
+      }
+      determineWinner(newHand);
+      return newHand;
+    });
   };
 
   const calculatePoints = (hand) => {
@@ -61,7 +77,7 @@ const BlackjackGame = () => {
     return points;
   };
 
-  const determineWinner = () => {
+  const determineWinner = (dealerHand) => {
     const playerPoints = calculatePoints(playerHand);
     const dealerPoints = calculatePoints(dealerHand);
     if (playerPoints > 21) {
@@ -82,12 +98,12 @@ const BlackjackGame = () => {
       <h1>Blackjack</h1>
       <div>
         <h2>Player's Hand:</h2>
-        {playerHand.map(card => (
-          <img key={card.suit + card.value} src={card.imageUrl} alt={`${card.value} of ${card.suit}`} />
+        {playerHand.map((card, index) => (
+          <img key={index} src={card.imageUrl} alt={`${card.value} of ${card.suit}`} />
         ))}
         <h2>Dealer's Hand:</h2>
-        {dealerHand.map(card => (
-          <img key={card.suit + card.value} src={card.imageUrl} alt={`${card.value} of ${card.suit}`} />
+        {dealerHand.map((card, index) => (
+          <img key={index} src={card.imageUrl} alt={`${card.value} of ${card.suit}`} />
         ))}
       </div>
       <div>
