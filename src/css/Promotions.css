@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'FuenteEspecial';
-    src: url('/src/assets/fonts/Honk.ttf') format('truetype');
+    font-family: 'FuenteEspecial', !important;
+    src: url('https://github.com/Annihilation78/CryptoCasino/blob/main/src/assets/fonts/Honk.ttf') format('truetype');
 }
 
 .menu {
@@ -13,7 +13,7 @@
     margin: auto; /* Centra el contenedor en la página */
 }
 .titulo-promociones {
-    font-family: 'FuenteEspecial', sans-serif; /* Cambia la fuente */
+    font-family: 'FuenteEspecial', sans-serif !important;
     font-size: 2.5em; /* Cambia el tamaño de la fuente */
     color: #FF0000; /* Cambia el color del texto */
     text-shadow: 2px 2px #000000; /* Agrega una sombra al texto */
