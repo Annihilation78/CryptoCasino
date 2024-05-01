@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.imagen-juego {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.5s;
+}
+
+.imagen-juego:hover {
+    opacity: 0.7; /* La imagen se ilumina al pasar el ratón por encima */
+}
+
+.boton-juego {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s; /* Transición suave del color de fondo */
+}
+
+.boton-juego:hover {
+    background-color: lightblue; /* El botón se ilumina al pasar el ratón por encima */
+}

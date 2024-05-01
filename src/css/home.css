@@ -105,12 +105,14 @@
   text-decoration: none;
   border-radius: 5px;
   margin-top: 15px;
+  text-align: center; /* Para centrar el texto */
+  transition: background-color 0.3s ease; /* Animación de cambio de color */
 }
 
 .btn:hover {
-  opacity: 0.8;
+  background-color: #0056b3; /* Cambia de color al pasar el cursor */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
 }
-
 
 .section {
   padding: 10px;
