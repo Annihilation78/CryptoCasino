@@ -9,7 +9,7 @@ import {Auth, AuthProvider} from './containers/Login/Auth.jsx';
 import BlackjackGame from './containers/games/blackjack/BlackjackGame.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
-import Games from './containers/games/Games.jsx';
+import Games from './containers/Games.jsx';
 
 
 

@@ -9,7 +9,7 @@ function Navigation(){
                 <Link to="/">Inicio</Link>
             </li>
             <li>
-                <Link to="/juegos">Juegos</Link>
+                <Link to="/Games">Juegos</Link>
             </li>
             <li>
                 <Link to="/promociones">Promociones</Link>
