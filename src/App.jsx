@@ -6,7 +6,7 @@ import { ProtectedRoute } from "./containers/ProtectedRoute.jsx";
 import Login from './containers/Login/Login.jsx';
 import Register from './containers/Login/Register.jsx';
 import {Auth, AuthProvider} from './containers/Login/Auth.jsx';
-import BlackjackGame from './containers/games/blackjack/BlackjackGame.jsx';
+import BlackJack from './containers/games/blackjack/BlackJack.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
 import Games from './containers/Games.jsx';
@@ -23,7 +23,7 @@ function App() {
             <Route path="/Games" element={<Games />} />
             <Route path="/Promotions" element={<Promotions />} />
             <Route path="/Register" element={<Register />} />
-            <Route path="/BlackjackGame" element={<BlackjackGame />} />
+            <Route path="/BlackJack" element={<BlackJack />} />
             <Route path="/Roulette" element={<Roulette />} />
             <Route path="/Auth" element={<Auth />} />
             <Route path="/" element={
