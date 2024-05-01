@@ -25,9 +25,7 @@ function App() {
             <Route path="/Roulette" element={<Roulette />} />
             <Route path="/Auth" element={<Auth />} />
             <Route path="/" element={
-                <ProtectedRoute>
                   <Home />
-                </ProtectedRoute>
               }
           />
           </Routes>
