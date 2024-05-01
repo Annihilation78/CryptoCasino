@@ -1,6 +1,6 @@
 import './blackjack.css';
 import React from 'react';
-import Deck from './Deck.js';
+import Deck from './Deck.jsx';
 import $ from 'jquery';
 import { useState } from 'react';
 
