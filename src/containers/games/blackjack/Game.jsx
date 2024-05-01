@@ -470,25 +470,25 @@ export default function Game() {
           <Deck />
           <BetChip
             amount={chipBetRed}
-            chipColor="https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png"
+            chipColor="src/containers/games/roulette/chips/2.png"
             bgSize="109%"
             show={chipVisibilityRed}
           />
           <BetChip
             amount={chipBetBlack}
-            chipColor="https://sc04.alicdn.com/kf/H221f87790a01400098ad28f86c1bf75aN.jpg"
+            chipColor="src/containers/games/roulette/chips/4.png"
             bgSize="cover"
             show={chipVisibilityBlack}
           />
           <BetChip
             amount={chipBetBlue}
-            chipColor="https://cutewallpaper.org/24/poker-chip-png/table-of-green-poker-chip-free-transparent-png-clipart-images-download.png"
+            chipColor="src/containers/games/roulette/chips/1.png"
             bgSize="150%"
             show={chipVisibilityBlue}
           />
           <BetChip
             amount={chipBetGreen}
-            chipColor="https://image.pngaaa.com/618/3217618-middle.png"
+            chipColor="src/containers/games/roulette/chips/3.png"
             bgSize="199%"
             show={chipVisibilityGreen}
           />
@@ -525,25 +525,25 @@ export default function Game() {
         <br />
         <Chip
           amount={chipAmountRed}
-          chipColor="https://www.pngitem.com/pimgs/m/518-5181524_red-poker-chip-png-transparent-png.png"
+          chipColor="src/containers/games/roulette/chips/2.png"
           bgSize="109%"
           clickHandlerName={handleOnClickChipRed}
         />
         <Chip
           amount={chipAmountBlack}
-          chipColor="https://sc04.alicdn.com/kf/H221f87790a01400098ad28f86c1bf75aN.jpg"
+          chipColor="src/containers/games/roulette/chips/4.png"
           bgSize="cover"
           clickHandlerName={handleOnClickChipBlack}
         />
         <Chip
           amount={chipAmountBlue}
-          chipColor="https://cutewallpaper.org/24/poker-chip-png/table-of-green-poker-chip-free-transparent-png-clipart-images-download.png"
+          chipColor="src/containers/games/roulette/chips/1.png"
           bgSize="150%"
           clickHandlerName={handleOnClickChipBlue}
         />
         <Chip
           amount={chipAmountGreen}
-          chipColor="https://image.pngaaa.com/618/3217618-middle.png"
+          chipColor="src/containers/games/roulette/chips/3.png"
           bgSize="199%"
           clickHandlerName={handleOnClickChipGreen}
         />
