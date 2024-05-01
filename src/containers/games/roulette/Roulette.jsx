@@ -19,7 +19,7 @@ function Roulette() {
         </h1>
         <Navigation />
       </header>
-      <main className='main'>
+      <div className='main'>
       <Context>
             <Balance />
             <Faucet />
@@ -35,7 +35,7 @@ function Roulette() {
           <Chips />
         </div>
       </Context>
-      </main>
+      </div>
       <footer> 
           <p>© 2024 Casino. Todos los derechos reservados.</p>
           <p>
