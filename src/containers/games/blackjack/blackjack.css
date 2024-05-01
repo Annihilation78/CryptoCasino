@@ -157,7 +157,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('src/containers/games/roulette/chips/2.png');
+    background-image: url('../roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     box-shadow: 2px 2px 3px #252525;
@@ -172,7 +172,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    background-image: url('src/containers/games/roulette/chips/2.png');
+    background-image: url('../roulette/chips/2.png');
     background-position: center;
     background-size: cover;
     /*vvisibility: hidden;*/
@@ -264,7 +264,7 @@ html {
     border: 1px solid white;
     margin: 20px;
     position: relative;
-    background-image: url('src/containers/games/roulette/chips/1.png');
+    background-image: url('../roulette/chips/1.png');
     background-size: cover;
     background-position: center;
     display: inline-block;
