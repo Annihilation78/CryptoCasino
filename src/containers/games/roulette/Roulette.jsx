@@ -20,8 +20,11 @@ function Roulette() {
         <Navigation />
       </header>
       <Context>
-        <Balance />
-        <Faucet />
+
+        <div>
+            <Balance />
+            <Faucet />
+        </div>
 
         <div className='upper-container'>
           <Board />
