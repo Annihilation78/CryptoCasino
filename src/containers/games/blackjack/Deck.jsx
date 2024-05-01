@@ -7,7 +7,7 @@ const loadImages = async () => {
     const images = {};
     for (let suit of suits) {
         for (let value of values) {
-            const image = await import(`/assets/${value}_of_${suit}.png`);
+            const image = await import(`src/containers/games/blackjack/assets/${value}_of_${suit}.png`);
             images[`${value}_of_${suit}`] = image.default;
         }
     }
