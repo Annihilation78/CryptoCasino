@@ -10,6 +10,11 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: './src/containers/setup.js',
   },
+  build: {
+    rollupOptions: {
+      external: ['@material-ui/core']
+    }
+  },
 
   base: process.env.NODE_ENV === 'production' ? '/CryptoCasino/' : '/',
 })
