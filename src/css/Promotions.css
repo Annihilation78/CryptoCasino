@@ -1,0 +1,57 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 180px; /* Espacio reducido entre los elementos */
+    width: fit-content; /* Ajusta el ancho del contenedor al contenido */
+    margin: auto; /* Centra el contenedor en la página */
+}
+
+.imagen-juego {
+    width: 550px; /* Tamaño de la imagen aumentado */
+    height: 550px; /* Tamaño de la imagen aumentado */
+    object-fit: cover;
+    transition: opacity 0.5s;
+    margin-top: 280px;
+}
+
+.imagen-juego:hover {
+    opacity: 0.7; /* La imagen se ilumina al pasar el ratón por encima */
+}
+
+.descripcion-juego {
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: color 0.5s; /* Transición suave del color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 10px; /* Añade un espacio arriba de la descripción */
+}
+
+.descripcion-juego:hover {
+    color: lightblue; /* El texto se ilumina al pasar el ratón por encima */
+}
+
+a {
+    text-decoration: none;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #1a2229;
+    color: #fff;
+    padding: 5px;
+    height: 98px;
+  }
+ 
+footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a2229;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
