@@ -40,6 +40,9 @@ header {
 
 .title {
   text-align: center;
+  z-index: 110;
+  height: 0px;
+  position: static;
 }
 
 header h1 {
