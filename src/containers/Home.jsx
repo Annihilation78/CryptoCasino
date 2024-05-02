@@ -62,18 +62,14 @@ function Home() {
               </div>
             </div>
           </section>
-          <section className="section">
-            <h2>Promociones</h2>
-            <div className="promotion-list">
-              <div className="promotion-item">
-                <h3>Promoción 1</h3>
-                <p>Descripción de la Promoción 1</p>
-                <button className="btn">¡Ver Más!</button>
+          <section className="container">
+            <h2 className="text-2xl">Promociones</h2>
+            <div className="game-list">
+              <div className="game-item">
+              <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Promocion1.webp" alt="juego de blackjack" />
               </div>
-              <div className="promotion-item">
-                <h3>Promoción 2</h3>
-                <p>Descripción de la Promoción 2</p>
-                <button className="btn">¡Ver Más!</button>
+              <div className="game-item">
+              <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
               </div>
             </div>
           </section>
