@@ -63,13 +63,7 @@ html {
     padding: 200px 100px 100px;
     background-color: #fff;
   }
-  
-  h1 {
-    font-size: 92px;
-    margin: 35px 0px;
-    text-shadow: 4px 4px 8px rgb(129, 129, 129);
-    -webkit-text-stroke: 1.5px #ccc;
-  }
+
   
   #header p {
     font-size: 22px;
