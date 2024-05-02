@@ -94,12 +94,15 @@ const Chat = () => {
   return (
     <div className="Chat">
       {showChat ? (
-        <div style={{ position:"fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 2000 }}>
+        <div style={{
+          position: "fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 2000,
+          backgroundColor: "#333", // Fondo más oscuro para el UI del chat
+        }}>
           <button style={{
             position: 'absolute', 
             bottom: '100%', 
             right: '0',
-            backgroundColor: '#008CBA', /* Blue */
+            backgroundColor: '#008CBA', /* Azul */
             border: 'none',
             color: 'white',
             padding: '15px 32px',
@@ -109,7 +112,8 @@ const Chat = () => {
             fontSize: '16px',
             borderRadius: '12px',
             boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
-            zIndex: 2000  // Increased z-index
+            zIndex: 2000,
+            transition: 'all 0.3s ease' // Transición suave para hover y clic
           }} onClick={() => setShowChat(!showChat)}>
             Ocultar chat
           </button>
@@ -117,13 +121,13 @@ const Chat = () => {
             <ChatContainer>       
               <MessageList 
                 scrollBehavior="smooth" 
-                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT está escribiendo..." /> : null}
               >
                 {messages.map((message, i) => (
                   <Message key={i} model={message} />
                 ))}
               </MessageList>
-              <MessageInput placeholder="Send a Message" onSend={handleSendRequest} />        
+              <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />        
             </ChatContainer>
           </MainContainer>
         </div>
@@ -132,7 +136,7 @@ const Chat = () => {
           position: 'fixed', 
           bottom: '10px', 
           right: '20px',
-          backgroundColor: '#008CBA', /* Blue */
+          backgroundColor: '#008CBA', /* Azul */
           border: 'none',
           color: 'white',
           padding: '15px 32px',
@@ -142,7 +146,8 @@ const Chat = () => {
           fontSize: '16px',
           borderRadius: '12px',
           boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
-          zIndex: 2000  // Increased z-index
+          zIndex: 2000,
+          transition: 'all 0.3s ease' // Transición suave para hover y clic
         }} onClick={() => setShowChat(!showChat)}>
           Mostrar chat
         </button>
@@ -150,7 +155,6 @@ const Chat = () => {
     </div>
   );
   
-   
   
 };
 
