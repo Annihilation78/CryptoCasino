@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Importamos Framer Motion
-import '../css/Promotions.css'; // Importa tu archivo CSS
+import { motion } from 'framer-motion'; 
+import '../css/Promotions.css'; 
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import Tilt from 'react-parallax-tilt';

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
 
 
-import "../css/contacto.css";
+import "../css/Contacto.css";
 
 function Contact() {
   const {
