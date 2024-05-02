@@ -15,7 +15,7 @@ const Chat = () => {
   const [showChat, setShowChat] = useState(true);
   const [messages, setMessages] = useState([
     {
-      message: "Hola cryptobro. ¿Quieres dejar de ser un fucking mileurista con panza?, con mi método perderas todo tu dinero, !totalmente garantizado!",
+      message: "Hola, soy tu asistente virtual y estoy aquí para ayudarte: ¿Qué necesitas?",
       sentTime: "just now",
       sender: "ChatGPT",
     },
