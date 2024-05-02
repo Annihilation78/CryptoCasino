@@ -1,4 +1,4 @@
-import './blackjack.css';
+import './Blackjack.css';
 import React from 'react';
 
 export default function Deck() {
