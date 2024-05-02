@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Button, Box, ChakraProvider } from '@chakra-ui/react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import {
   MainContainer,
@@ -12,7 +13,7 @@ import {
 const API_KEY = "";
 
 const Chat = () => {
-  const [showChat, setShowChat] = useState(true);
+  const [showChat, setShowChat] = useState(false); // Inicialmente oculto
   const [messages, setMessages] = useState([
     {
       message: "Hola, soy tu asistente virtual y estoy aquí para ayudarte: ¿Qué necesitas?",
@@ -39,14 +40,12 @@ const Chat = () => {
       if (lastMessage.sender === 'user') {
         try {
           const response = await processMessageToChatGPT(messages);
-          console.log("Response from ChatGPT:", response); // Verifica la respuesta de la API
           const content = response.choices[0]?.message?.content;
           if (content) {
             const chatGPTResponse = {
               message: content,
               sender: "ChatGPT",
             };
-            console.log("ChatGPT Response:", chatGPTResponse); // Verifica el mensaje de ChatGPT
             setMessages((prevMessages) => [...prevMessages, chatGPTResponse]);
           }
         } catch (error) {
@@ -92,31 +91,12 @@ const Chat = () => {
   }
 
   return (
-    <div className="Chat">
-      {showChat ? (
-        <div style={{
-          position: "fixed", right: "20px", bottom: "10px", height: "400px", width: "300px", zIndex: 2000,
-          backgroundColor: "#333", // Fondo más oscuro para el UI del chat
-        }}>
-          <button style={{
-            position: 'absolute', 
-            bottom: '100%', 
-            right: '0',
-            backgroundColor: '#008CBA', /* Azul */
-            border: 'none',
-            color: 'white',
-            padding: '15px 32px',
-            textAlign: 'center',
-            textDecoration: 'none',
-            display: 'inline-block',
-            fontSize: '16px',
-            borderRadius: '12px',
-            boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
-            zIndex: 2000,
-            transition: 'all 0.3s ease' // Transición suave para hover y clic
-          }} onClick={() => setShowChat(!showChat)}>
+    <ChakraProvider>
+      {showChat && (
+        <Box className="Chat" position="fixed" right="20px" bottom="10px" h="400px" w="300px" zIndex="2000" bg="#333">
+          <Button position="absolute" bottom="100%" right="0" colorScheme="blue" onClick={() => setShowChat(false)}>
             Ocultar chat
-          </button>
+          </Button>
           <MainContainer>
             <ChatContainer>       
               <MessageList 
@@ -130,32 +110,15 @@ const Chat = () => {
               <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />        
             </ChatContainer>
           </MainContainer>
-        </div>
-      ) : (
-        <button style={{
-          position: 'fixed', 
-          bottom: '10px', 
-          right: '20px',
-          backgroundColor: '#008CBA', /* Azul */
-          border: 'none',
-          color: 'white',
-          padding: '15px 32px',
-          textAlign: 'center',
-          textDecoration: 'none',
-          display: 'inline-block',
-          fontSize: '16px',
-          borderRadius: '12px',
-          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
-          zIndex: 2000,
-          transition: 'all 0.3s ease' // Transición suave para hover y clic
-        }} onClick={() => setShowChat(!showChat)}>
-          Mostrar chat
-        </button>
+        </Box>
       )}
-    </div>
+      {!showChat && (
+        <Button position="fixed" bottom="10px" right="20px" colorScheme="blue" onClick={() => setShowChat(true)}>
+          Mostrar chat
+        </Button>
+      )}
+    </ChakraProvider>
   );
-  
-  
 };
 
 export default Chat;
