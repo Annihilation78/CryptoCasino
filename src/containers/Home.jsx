@@ -2,7 +2,8 @@ import React from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
-import Navigation from './Navigation.jsx'; 
+import Navigation from './Navigation.jsx';
+import {Header, Footer} from './Header.jsx' 
 import {Auth} from "./login/Auth";
 import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
@@ -45,12 +46,7 @@ function Home() {
 
   return (
     <div className="app">
-      <header>
-        <h1 className="title">
-        <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>Quantum Bet Bot
-        </h1>
-        <Navigation />
-      </header>
+      <Header title="Quantum Bet Bot"/>
       <main className="py-6">  
       <div><button className="login-btn" onClick={handleLogout}>Cerrar sesión</button></div> 
         <div className="content-container">
@@ -83,24 +79,7 @@ function Home() {
         </div>
       </main>
       <Chat />
-      <footer>
-      
-      <img src={urlDelGif} alt="Mi Gif" style={{ display: 'block', marginLeft: '0', width: '200px', height: '200px' }} />
-      <button onClick={handleBoopClick}>
-          {isBoopPlaying ? 'Detener sonido Boop' : 'Reproducir sonido Boop'}
-        </button>
-        <button onClick={handleBeepClick}>
-          {isBeepPlaying ? 'Detener sonido Beep' : 'Reproducir sonido Beep'}
-        </button>
-        <p>© 2024 Casino. Todos los derechos reservados.</p>
-        <p>
-          <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style={{ border: '0', width: '88px', height: '31px' }}
-              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="¡CSS Válido!" />
-          </a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
