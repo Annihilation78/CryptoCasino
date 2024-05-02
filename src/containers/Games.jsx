@@ -25,18 +25,28 @@ function MenuJuegos() {
       <Header title="Juegos"/>
 
       <div className="menu"> 
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <Link to="/BlackJack">
-            <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego 1" />
-            <div className="descripcion-juego">BlackJack</div> 
-          </Link>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <Link to="/Roulette">
-            <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png" alt="juego 2" />
-            <div className="descripcion-juego">Roulette</div>
-          </Link>
-        </motion.div>
+      <motion.div whileHover={{ scale: 1.1 }}>
+  <Link to="/BlackJack">
+    <motion.img
+      className="imagen-juego"
+      src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg"
+      alt="juego 1"
+      whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
+    />
+    <div className="descripcion-juego">BlackJack</div>
+  </Link>
+</motion.div>
+<motion.div whileHover={{ scale: 1.1 }}>
+  <Link to="/Roulette">
+    <motion.img
+      className="imagen-juego"
+      src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png"
+      alt="juego 2"
+      whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
+    />
+    <div className="descripcion-juego">Roulette</div>
+  </Link>
+</motion.div>
       </div>
 
       <ReactAudioPlayer
