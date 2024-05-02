@@ -43,7 +43,7 @@ header {
   z-index: 110;
   height: 0px;
   position: sticky;
-  font-size: 92px;
+  font-size: 50px;
   text-shadow: 4px 4px 8px rgb(129, 129, 129);
   -webkit-text-stroke: 1.5px #ccc;
 }
@@ -56,12 +56,11 @@ header h1 img {
   max-width: 80px;
   max-height: 80px;
   position: absolute;
-    left: 1%;
-    top: 9%;
+  margin: 5px 5px;
 }
 .main-nav {
   color: #fff;
-  padding: 5px 0;
+  padding: 60px 0;
   text-align: right;
 }
 
