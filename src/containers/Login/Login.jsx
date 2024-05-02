@@ -3,7 +3,7 @@ import {Auth} from "./Auth";
 import { Link } from "react-router-dom";
 import Navigation from '../Navigation.jsx'; 
 import Home from "../Home.jsx";
-import '../../css/Home.css';
+import '../../css/Home.css'; 
 
 function Login() {
   const [usuario, setUsuario] = useState("");
