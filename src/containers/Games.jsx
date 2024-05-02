@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import '../css/Games.css';
 import { Link } from 'react-router-dom';
-import Navigation from './Navigation.jsx'; 
-
+import Navigation from './Navigation.jsx';
+import ReactAudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de react-h5-audio-player
 import audioFile from '../assets/music/promociones.mp3';
 
 function MenuJuegos() {
@@ -13,7 +12,7 @@ function MenuJuegos() {
   useEffect(() => {
     const audioDelay = setTimeout(() => {
       setIsPlaying(true);
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 2000); // 2000 milisegundos = 2 segundos
 
     return () => clearTimeout(audioDelay); // Limpiar el temporizador al desmontar el componente
   }, []); // Ejecutar solo una vez al montar el componente
@@ -54,12 +53,12 @@ function MenuJuegos() {
         </p>
       </footer>
 
-      <audio
+      <ReactAudioPlayer
         src={audioFile}
         autoPlay={isPlaying}
         volume={volume}
-        loop
         onEnded={() => setIsPlaying(false)}
+        controls // Agregar controles de reproducción
       />
 
       <button onClick={() => setIsPlaying(!isPlaying)}>
