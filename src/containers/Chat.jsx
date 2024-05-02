@@ -92,33 +92,35 @@ const Chat = () => {
 
   return (
     <ChakraProvider>
-      {showChat && (
-        <Box className="Chat" position="fixed" right="20px" bottom="10px" h="400px" w="300px" zIndex="2000" bg="#333">
-          <Button position="absolute" bottom="100%" right="0" colorScheme="blue" onClick={() => setShowChat(false)}>
-            Ocultar chat
+      <Box position="fixed" right="20px" bottom="10px" zIndex="2000">
+        {showChat ? (
+          <Box bg="#333" w="300px" h="400px">
+            <Button position="absolute" bottom="100%" right="0" colorScheme="blue" onClick={() => setShowChat(false)}>
+              Ocultar chat
+            </Button>
+            <MainContainer>
+              <ChatContainer>       
+                <MessageList 
+                  scrollBehavior="smooth" 
+                  typingIndicator={isTyping ? <TypingIndicator content="ChatGPT está escribiendo..." /> : null}
+                >
+                  {messages.map((message, i) => (
+                    <Message key={i} model={message} />
+                  ))}
+                </MessageList>
+                <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />        
+              </ChatContainer>
+            </MainContainer>
+          </Box>
+        ) : (
+          <Button colorScheme="blue" onClick={() => setShowChat(true)}>
+            Mostrar chat
           </Button>
-          <MainContainer>
-            <ChatContainer>       
-              <MessageList 
-                scrollBehavior="smooth" 
-                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT está escribiendo..." /> : null}
-              >
-                {messages.map((message, i) => (
-                  <Message key={i} model={message} />
-                ))}
-              </MessageList>
-              <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />        
-            </ChatContainer>
-          </MainContainer>
-        </Box>
-      )}
-      {!showChat && (
-        <Button position="fixed" bottom="10px" right="20px" colorScheme="blue" onClick={() => setShowChat(true)}>
-          Mostrar chat
-        </Button>
-      )}
+        )}
+      </Box>
     </ChakraProvider>
   );
 };
 
 export default Chat;
+
