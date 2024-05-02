@@ -7,18 +7,14 @@ import Balance from './components/Balance'
 import Faucet from './components/FaucetModal';
 import Board from './components/Board';
 import Confetti from './components/Confetti'
-import Navigation from '../../Navigation.jsx'; 
+import Navigation from '../../Navigation.jsx';
+import Header from '../../Header.jsx'; 
+import Footer from '../../Footer.jsx'; 
 
 function Roulette() {
   return (
     <div className="App">
-        <header>
-        <h1 className="title">
-        <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-          Roulette
-        </h1>
-        <Navigation />
-      </header>
+      <Header title="Roulette"/>
       <Context>
 
         <div>
@@ -37,16 +33,7 @@ function Roulette() {
           <Chips />
         </div>
       </Context>
-      <footer> 
-          <p>© 2024 Quantum BetBot. Todos los derechos reservados.</p>
-          <p>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer">
-              <img style={{ border: '0', width: '88px', height: '31px' }}
-                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-                alt="¡CSS Válido!" />
-            </a>
-          </p>
-        </footer>
+      <Footer />
     </div>
   );
 }

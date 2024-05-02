@@ -3,6 +3,8 @@ import React from 'react';
 import Deck from './Deck.jsx';
 import $ from 'jquery';
 import { useState } from 'react';
+import Header from '../../Header.jsx'; 
+import Footer from '../../Footer.jsx'; 
 
 export default function Game() {
   // DEALER CARDS
@@ -431,6 +433,7 @@ export default function Game() {
 
   return (
     <div>
+      <Header title="Blackjack"/>
       <div className="section" id="game">
         <h2>
           Dealer <em>{dealerDirections}</em>
@@ -565,6 +568,7 @@ export default function Game() {
           Restart
         </div>
       </div>
+      <Footer />
     </div>
   );
 

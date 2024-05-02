@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react"; 
 import {Auth} from "./Auth";
 import '../../css/Home.css';
-import Navigation from '../Navigation.jsx'; 
+import Navigation from '../Navigation.jsx';
+import Header from '../Header.jsx'; 
+import Footer from '../Footer.jsx'; 
 
 function Register() {
   const [usuario, setUsuario] = useState(""); 
@@ -50,13 +52,7 @@ function Register() {
 
   return (
     <div className="app">
-      <header className="header">
-        <h1 className="title">
-          <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-          Quantum Bet Bot
-        </h1>
-        <Navigation />
-      </header>
+      <Header title="Quantum Bet Bot"/>
       <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
         <div className="login-container" style={{height:"450px"}}>
           <h2>Crea tu cuenta</h2>
@@ -99,16 +95,7 @@ function Register() {
           </div>
         </div>
       </main>
-      <footer> 
-        <p>© 2024 Casino. Todos los derechos reservados.</p>
-        <p>
-          <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style={{ border: '0', width: '88px', height: '31px' }}
-              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="¡CSS Válido!" />
-          </a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
