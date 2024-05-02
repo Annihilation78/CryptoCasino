@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 .App {
     background-color: rgba(154, 151, 151, 0.387) !important; /* Añade una capa blanca con 50% de opacidad encima de la imagen de fondo */
-    background-image: url('../assets/backgroundRoulette.png') !important;
+    background-image: url('../assets/background.png') !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     
