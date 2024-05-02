@@ -5,6 +5,8 @@ import ReactAudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de react-h5-audio-player
 import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
+import Header from './Header.jsx'; 
+import Footer from './Footer.jsx';
 
 function MenuJuegos() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,13 +22,7 @@ function MenuJuegos() {
 
   return (
     <div className='App'>
-      <header>
-        <h1 className='title'>
-          <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-          Juegos
-        </h1>
-        <Navigation />
-      </header>
+      <Header title="Juegos"/>
 
       <div className="menu"> 
         <motion.div whileHover={{ scale: 1.1 }}>
@@ -42,17 +38,6 @@ function MenuJuegos() {
           </Link>
         </motion.div>
       </div>
-
-      <footer> 
-        <p>© 2024 Casino. Todos los derechos reservados.</p>
-        <p>
-          <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style={{ border: '0', width: '88px', height: '31px' }}
-              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="¡CSS Válido!" />
-          </a>
-        </p>
-      </footer>
 
       <ReactAudioPlayer
         src={audioFile}
@@ -74,7 +59,9 @@ function MenuJuegos() {
         value={volume}
         onChange={(e) => setVolume(parseFloat(e.target.value))}
       />
+      <Footer />
     </div>
+    
   );
 }
 

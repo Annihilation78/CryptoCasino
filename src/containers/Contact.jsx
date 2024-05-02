@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
+import Header from './Header.jsx'; 
+import Footer from './Footer.jsx';
 
 
 import "../css/Contacto.css";
@@ -19,16 +21,7 @@ function Contact() {
 
   return (
     <div className="app">
-      
-      <header className="header">
-      
-        <h1 className="title">
-        <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
-          Contacto
-          </h1>
-        <Navigation />
-      </header>
-      
+      <Header title="Contacto"/>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>
@@ -88,18 +81,8 @@ function Contact() {
             </form>
           </div>
         </div>
-      </section>
-      
-      <footer> 
-        <p>© 2024 Casino. Todos los derechos reservados.</p>
-        <p>
-          <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style={{ border: '0', width: '88px', height: '31px' }}
-              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="¡CSS Válido!" />
-          </a>
-        </p>
-      </footer>
+      </section>      
+      <Footer />
       
     </div>
   );
