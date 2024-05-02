@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 .App {
-    background-image: url('../assets/backgroundPromotions.png');
-    background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
-    background-size: cover;
-  }
+    background-image: url('../assets/backgroundPromotions.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-color: rgba(255, 255, 255, 0.5) !important; /* Añade una capa blanca con 50% de opacidad encima de la imagen de fondo */
+}
 .menu {
     display: flex;
     justify-content: center;
