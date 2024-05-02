@@ -30,6 +30,7 @@
 .descripcion-juego {
     padding: 10px 20px;
     font-size: 20px;
+    color: coral;
     transition: color 0.5s; /* Transición suave del color del texto */
     text-align: center; /* Centra el texto horizontalmente */
     margin-top: 10px; /* Añade un espacio arriba de la descripción */
