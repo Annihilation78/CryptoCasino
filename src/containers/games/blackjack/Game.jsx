@@ -1,4 +1,4 @@
-import './blackjack.css';
+import './Blackjack.css';
 import React from 'react';
 import Deck from './Deck.jsx';
 import $ from 'jquery';
