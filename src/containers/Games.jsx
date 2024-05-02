@@ -56,19 +56,6 @@ function MenuJuegos() {
         onEnded={() => setIsPlaying(false)}
         controls // Agregar controles de reproducción
       />
-
-      <button onClick={() => setIsPlaying(!isPlaying)}>
-        {isPlaying ? 'Pausar' : 'Reproducir'}
-      </button>
-      
-      <input
-        type='range'
-        min='0'
-        max='1'
-        step='0.1'
-        value={volume}
-        onChange={(e) => setVolume(parseFloat(e.target.value))}
-      />
       <Footer />
     </div>
     
