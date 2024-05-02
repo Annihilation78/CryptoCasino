@@ -12,7 +12,6 @@
     gap: 180px; /* Espacio reducido entre los elementos */
     width: fit-content; /* Ajusta el ancho del contenedor al contenido */
     margin: auto; /* Centra el contenedor en la página */
-    box-shadow: ;
 }
 
 .imagen-juego {
