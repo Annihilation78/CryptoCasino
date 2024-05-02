@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import '../css/Games.css';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,14 @@ import audioFile from '../assets/music/promociones.mp3';
 function MenuJuegos() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.2);
+
+  useEffect(() => {
+    const audioDelay = setTimeout(() => {
+      setIsPlaying(true);
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+    return () => clearTimeout(audioDelay); // Limpiar el temporizador al desmontar el componente
+  }, []); // Ejecutar solo una vez al montar el componente
 
   return (
     <div className='App'>
