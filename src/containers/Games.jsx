@@ -4,6 +4,7 @@ import Navigation from './Navigation.jsx';
 import ReactAudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de react-h5-audio-player
 import audioFile from '../assets/music/promociones.mp3';
+import { motion } from 'framer-motion';
 
 function MenuJuegos() {
   const [isPlaying, setIsPlaying] = useState(false);
