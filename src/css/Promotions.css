@@ -17,7 +17,7 @@
 }
 
 .titulo-promociones {
-    font-family: "Honk", system-ui;
+    font-family: "Pixelify Sans", sans-serif;
     font-size: 2.5em; /* Cambia el tamaño de la fuente */
     color: #FF0000; /* Cambia el color del texto */
     text-shadow: 2px 2px #000000; /* Agrega una sombra al texto */
@@ -51,7 +51,7 @@ a {
     text-decoration: none;
 }
 header {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Honk", system-ui;
     position: sticky;
     top: 0;
     z-index: 100;
