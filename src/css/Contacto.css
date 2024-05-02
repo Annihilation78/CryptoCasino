@@ -1,10 +1,13 @@
 .contact-section {
-    background-color: #fff;
+    background-color: rgba(116, 155, 187, 0.97); /* Gris azulado oscuro con opacidad */
     padding: 60px;
     margin: 50px 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Transiciones suaves para el color de fondo y la opacidad */
+    border-radius: 8px; /* Bordes redondeados para un aspecto más suave */
 }
+
+
 
 .contact-section h2 {
     color: #303F9F;
