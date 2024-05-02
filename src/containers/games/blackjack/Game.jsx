@@ -432,7 +432,7 @@ export default function Game() {
   }
 
   return (
-    <div>
+    <div className="App">
       <Header title="Blackjack"/>
       <div className="section" id="game">
         <h2>
