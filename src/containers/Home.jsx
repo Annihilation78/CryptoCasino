@@ -3,7 +3,8 @@ import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3'; 
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
-import {Header, Footer} from './Header.jsx' 
+import Header from './Header.jsx'; 
+import Footer from './Footer.jsx'; 
 import {Auth} from "./login/Auth";
 import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
