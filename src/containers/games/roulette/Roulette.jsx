@@ -13,7 +13,7 @@ function Roulette() {
   return (
     <div className="App">
         <header>
-        <h1>
+        <h1 className="title">
         <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
           Roulette
         </h1>

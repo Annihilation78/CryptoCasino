@@ -22,7 +22,7 @@ function Login() {
   return (
     <div className="app">
     <header>
-      <h1>
+      <h1 className="title">
       <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>
         Quantum Bet Bot
       </h1>
