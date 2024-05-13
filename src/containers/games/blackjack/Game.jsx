@@ -26,19 +26,15 @@ export default function Game() {
   const [dealerDirections, setDealerDirections] = useState('');
 
   // Betting chip values
-  const [chipVisibilityRed, setChipVisibilityRed] = useState('hidden');
   const [chipAmountRed, setChipAmountRed] = useState(0);
   const [chipBetRed, setChipBetRed] = useState(0);
 
-  const [chipVisibilityBlack, setChipVisibilityBlack] = useState('hidden');
   const [chipAmountBlack, setChipAmountBlack] = useState(0);
   const [chipBetBlack, setChipBetBlack] = useState(0);
 
-  const [chipVisibilityBlue, setChipVisibilityBlue] = useState('hidden');
   const [chipAmountBlue, setChipAmountBlue] = useState(0);
   const [chipBetBlue, setChipBetBlue] = useState(0);
 
-  const [chipVisibilityGreen, setChipVisibilityGreen] = useState('hidden');
   const [chipAmountGreen, setChipAmountGreen] = useState(0);
   const [chipBetGreen, setChipBetGreen] = useState(0);
 
@@ -51,13 +47,6 @@ export default function Game() {
   const [chipCostSubtotal, setChipCostSubtotal] = useState(0);
   const [userBank, setUserBank] = useState(100);
 
-  // Temporary card values
-  let url = '';
-  let card1 = '';
-  let card2 = '';
-  let card3 = '';
-  let card4 = '';
-
   // Hit button visibility
   const [pec1Visibility, setPec1Visibility] = useState('hidden');
   const [pec2Visibility, setPec2Visibility] = useState('hidden');
@@ -67,6 +56,12 @@ export default function Game() {
   const [dec2Visibility, setDec2Visibility] = useState('hidden');
   const [dec3Visibility, setDec3Visibility] = useState('hidden');
 
+  let url = '';
+  let card1 = '';
+  let card2 = '';
+  let card3 = '';
+  let card4 = '';
+
   let extraCard1 = '';
   let extraCard2 = '';
   let extraCard3 = '';
@@ -75,17 +70,10 @@ export default function Game() {
   let extraDCard2 = '';
   let extraDCard3 = '';
 
-  // Deal button clicked
   function handleOnDeal() {
-    if (
-      chipAmountRed === 0 &&
-      chipAmountBlack === 0 &&
-      chipAmountBlue === 0 &&
-      chipAmountGreen === 0
-    ) {
+    if (chipAmountRed === 0 && chipAmountBlack === 0 && chipAmountBlue === 0 && chipAmountGreen === 0) {
       alert("Oh no, you don't have any chips!\nPurchase chips in the cashier section prior to beginning a game.");
     } else {
-      // Shuffle new deck
       $.ajax({
         url: 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
         dataType: 'json',
@@ -101,7 +89,6 @@ export default function Game() {
         },
       });
 
-      // Deal cards to player and dealer
       $.ajax({
         url: url,
         dataType: 'json',
@@ -166,13 +153,7 @@ export default function Game() {
 
   function checkCardValue(value) {
     value = value.toUpperCase();
-    if (
-      value.indexOf('J') > -1 ||
-      value.indexOf('Q') > -1 ||
-      value.indexOf('K') > -1 ||
-      value.indexOf('0') > -1 ||
-      value.indexOf('1') > -1
-    ) {
+    if (value.indexOf('J') > -1 || value.indexOf('Q') > -1 || value.indexOf('K') > -1 || value.indexOf('0') > -1 || value.indexOf('1') > -1) {
       return 10;
     } else if (value.indexOf('A') > -1) {
       return 1;
@@ -288,17 +269,11 @@ export default function Game() {
         setDec1Visibility('visible');
         dealerTotal = dealerCard1 + dealerCard2 + dealerCard3;
       }
-      if (
-        dec1Visibility === 'visible' &&
-        dealerCard1 + dealerCard2 + dealerCard3 < 17
-      ) {
+      if (dec1Visibility === 'visible' && dealerTotal < 17) {
         setDec2Visibility('visible');
         dealerTotal = dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4;
       }
-      if (
-        dec2Visibility === 'visible' &&
-        dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4 < 17
-      ) {
+      if (dec2Visibility === 'visible' && dealerTotal < 17) {
         setDec3Visibility('visible');
         dealerTotal = dealerCard1 + dealerCard2 + dealerCard3 + dealerCard4 + dealerCard5;
       }
@@ -308,30 +283,24 @@ export default function Game() {
   }
 
   function winResults() {
-    // Calculate initial winnings based on the chips bet and their multipliers
     let winnings = chipBetRed * 1 + chipBetBlack * 5 + chipBetBlue * 25 + chipBetGreen * 50;
 
     if (userTotal > 21) {
-      // User loses if they go over 21
       alert('The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' + winnings + '.');
-      winnings *= -1; // Convert winnings to a loss
+      winnings *= -1;
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
-      // User wins by having a higher total than the dealer, without exceeding 21
       alert('You won!\nYour earnings total to $' + winnings + '.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
-      // User loses by having a lower total than the dealer
       alert('The dealer beat you, better luck next time!\nYou lost $' + winnings + '.');
       winnings *= -1;
     } else if (userTotal === dealerTotal && dealerTotal <= 21) {
-      // Handle tie scenario
-      let tieWinnings = winnings / 2; // User gets half of the winnings in a tie
+      let tieWinnings = winnings / 2;
       alert('You tied with the dealer. You will receive half of the winnings, totaling to $' + tieWinnings + '.');
       winnings = tieWinnings;
     }
 
-    // Update the user's bank balance with the new winnings or losses
     setUserBank(userBank + winnings);
-    refreshGame(); // Refresh or update the game state
+    refreshGame();
   }
 
   function refreshGame() {
@@ -346,11 +315,11 @@ export default function Game() {
     document.querySelector('#game-start').style.backgroundColor = '#d12d36';
     document.querySelector('#game-start').style.borderColor = '#d12d36';
 
-    document.querySelector('#pc1').style.visibility = 'visible';
-    document.querySelector('#pc2').style.visibility = 'visible';
+    document.querySelector('#pc1').style.visibility = 'hidden';
+    document.querySelector('#pc2').style.visibility = 'hidden';
 
-    document.querySelector('#dc1').style.visibility = 'visible';
-    document.querySelector('#dc1').style.visibility = 'visible';
+    document.querySelector('#dc1').style.visibility = 'hidden';
+    document.querySelector('#dc2').style.visibility = 'hidden';
 
     setPec1Visibility('hidden');
     setPec2Visibility('hidden');
@@ -364,17 +333,11 @@ export default function Game() {
     setChipBetBlack(0);
     setChipBetBlue(0);
     setChipBetGreen(0);
-
-    setChipVisibilityRed('hidden');
-    setChipVisibilityBlack('hidden');
-    setChipVisibilityBlue('hidden');
-    setChipVisibilityGreen('hidden');
   }
 
   // Bet chip and user chip actions
   function handleOnClickChipRed() {
     if (chipAmountRed > 0) {
-      setChipVisibilityRed('visible');
       setChipAmountRed(chipAmountRed - 1);
       setChipBetRed(chipBetRed + 1);
     }
@@ -382,7 +345,6 @@ export default function Game() {
 
   function handleOnClickChipBlack() {
     if (chipAmountBlack > 0) {
-      setChipVisibilityBlack('visible');
       setChipAmountBlack(chipAmountBlack - 1);
       setChipBetBlack(chipBetBlack + 1);
     }
@@ -390,7 +352,6 @@ export default function Game() {
 
   function handleOnClickChipBlue() {
     if (chipAmountBlue > 0) {
-      setChipVisibilityBlue('visible');
       setChipAmountBlue(chipAmountBlue - 1);
       setChipBetBlue(chipBetBlue + 1);
     }
@@ -398,190 +359,9 @@ export default function Game() {
 
   function handleOnClickChipGreen() {
     if (chipAmountGreen > 0) {
-      setChipVisibilityGreen('visible');
       setChipAmountGreen(chipAmountGreen - 1);
       setChipBetGreen(chipBetGreen + 1);
     }
-  }
-
-  // Coming soon page
-  function handleComingSoon() {
-    open('https://static.vecteezy.com/system/resources/previews/002/115/431/original/coming-soon-business-sign-free-vector.jpg');
-  }
-
-  return (
-    <div className="App">
-      <Header title="Blackjack" />
-      <div className="section" id="game">
-        <h2>
-          Dealer <em>{dealerDirections}</em>
-        </h2>
-        <img className="card" id="dc1" src={card1BG} alt="dealer card 1" />
-        <img className="card" id="dc2" src={card2BG} alt="dealer card 2" />
-        <img
-          className="card"
-          id="dec1"
-          src={dCardExtra1BG}
-          alt="dealer extra card 1"
-          style={{ visibility: dec1Visibility }}
-        />
-        <img
-          className="card"
-          id="dec2"
-          src={dCardExtra2BG}
-          alt="dealer extra card 2"
-          style={{ visibility: dec2Visibility }}
-        />
-        <img
-          className="card"
-          id="dec3"
-          src={dCardExtra3BG}
-          alt="dealer extra card 3"
-          style={{ visibility: dec3Visibility }}
-        />
-        <div id="bets-placed">
-          <div id="player-turn">
-            <div className="hit-pass" onClick={handleOnHit}>
-              Hit
-            </div>
-            <div className="hit-pass" onClick={handleOnPass}>
-              Pass
-            </div>
-          </div>
-          <Deck />
-          <BetChip
-            amount={chipBetRed}
-            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-            bgSize="109%"
-            show={chipVisibilityRed}
-          />
-          <BetChip
-            amount={chipBetBlack}
-            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
-            bgSize="cover"
-            show={chipVisibilityBlack}
-          />
-          <BetChip
-            amount={chipBetBlue}
-            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-            bgSize="150%"
-            show={chipVisibilityBlue}
-          />
-          <BetChip
-            amount={chipBetGreen}
-            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-            bgSize="199%"
-            show={chipVisibilityGreen}
-          />
-          <div className="button" id="game-start" onClick={handleOnDeal}>
-            DEAL
-          </div>
-        </div>
-        <h2>
-          You <em> {turnDirections}</em>
-        </h2>
-        <img className="card" id="pc1" src={card3BG} alt="player card 1" />
-        <img className="card" id="pc2" src={card4BG} alt="player card 2" />
-        <img
-          className="card"
-          id="pec1"
-          src={userCardExtra1BG}
-          alt="player extra card 1"
-          style={{ visibility: pec1Visibility }}
-        />
-        <img
-          className="card"
-          id="pec2"
-          src={userCardExtra2BG}
-          alt="player extra card 2"
-          style={{ visibility: pec2Visibility }}
-        />
-        <img
-          className="card"
-          id="pec3"
-          src={userCardExtra3BG}
-          alt="player extra card 3"
-          style={{ visibility: pec3Visibility }}
-        />
-        <br />
-        <Chip
-          amount={chipAmountRed}
-          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-          bgSize="109%"
-          clickHandlerName={handleOnClickChipRed}
-        />
-        <Chip
-          amount={chipAmountBlack}
-          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
-          bgSize="cover"
-          clickHandlerName={handleOnClickChipBlack}
-        />
-        <Chip
-          amount={chipAmountBlue}
-          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-          bgSize="150%"
-          clickHandlerName={handleOnClickChipBlue}
-        />
-        <Chip
-          amount={chipAmountGreen}
-          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-          bgSize="199%"
-          clickHandlerName={handleOnClickChipGreen}
-        />
-      </div>
-      <div className="section" id="cashier">
-        <h2>Cashier</h2>
-        <CashierChips />
-        <PurchasedChips />
-        <h3>
-          SUBTOTAL: $<span>{chipCostSubtotal}</span>
-        </h3>
-        <h3>
-          Bank Account: $<span>{userBank}</span>
-        </h3>
-        <div className="button" id="purchase" onClick={handleOnPurchase}>
-          Purchase
-        </div>
-        <div className="button" id="refresh" onClick={handleOnRefresh}>
-          Restart
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-
-  function BetChip(props) {
-    return (
-      <div id="bets">
-        <div
-          id="bet-chip"
-          style={{
-            content: 'url(' + props.chipColor + ')',
-            backgroundSize: props.bgSize,
-            visibility: props.show,
-          }}
-        >
-          <p id="chip-amt">{props.amount}x</p>
-        </div>
-      </div>
-    );
-  }
-
-  function Chip(props) {
-    return (
-      <div id="bets">
-        <div
-          id="chip"
-          onClick={() => props.clickHandlerName()}
-          style={{
-            content: 'url(' + props.chipColor + ')',
-            backgroundSize: props.bgSize,
-          }}
-        >
-          <p id="chip-amt">{props.amount}x</p>
-        </div>
-      </div>
-    );
   }
 
   function onClickPlus(u) {
@@ -744,4 +524,220 @@ export default function Game() {
       </div>
     );
   }
+
+  return (
+    <div className="App">
+      <Header title="Blackjack" />
+      <div className="section" id="game">
+        <h2>
+          Dealer <em>{dealerDirections}</em>
+        </h2>
+        <img className="card" id="dc1" src={card1BG} alt="dealer card 1" />
+        <img className="card" id="dc2" src={card2BG} alt="dealer card 2" />
+        <img
+          className="card"
+          id="dec1"
+          src={dCardExtra1BG}
+          alt="dealer extra card 1"
+          style={{ visibility: dec1Visibility }}
+        />
+        <img
+          className="card"
+          id="dec2"
+          src={dCardExtra2BG}
+          alt="dealer extra card 2"
+          style={{ visibility: dec2Visibility }}
+        />
+        <img
+          className="card"
+          id="dec3"
+          src={dCardExtra3BG}
+          alt="dealer extra card 3"
+          style={{ visibility: dec3Visibility }}
+        />
+        <div id="bets-placed">
+          <div id="player-turn">
+            <div className="hit-pass" onClick={handleOnHit}>
+              Hit
+            </div>
+            <div className="hit-pass" onClick={handleOnPass}>
+              Pass
+            </div>
+          </div>
+          <Deck />
+          <BetChip
+            amount={chipBetRed}
+            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
+            bgSize="109%"
+            show="visible"
+          />
+          <BetChip
+            amount={chipBetBlack}
+            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
+            bgSize="cover"
+            show="visible"
+          />
+          <BetChip
+            amount={chipBetBlue}
+            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
+            bgSize="150%"
+            show="visible"
+          />
+          <BetChip
+            amount={chipBetGreen}
+            chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
+            bgSize="199%"
+            show="visible"
+          />
+          <div className="button" id="game-start" onClick={handleOnDeal}>
+            DEAL
+          </div>
+        </div>
+        <h2>
+          You <em> {turnDirections}</em>
+        </h2>
+        <img className="card" id="pc1" src={card3BG} alt="player card 1" />
+        <img className="card" id="pc2" src={card4BG} alt="player card 2" />
+        <img
+          className="card"
+          id="pec1"
+          src={userCardExtra1BG}
+          alt="player extra card 1"
+          style={{ visibility: pec1Visibility }}
+        />
+        <img
+          className="card"
+          id="pec2"
+          src={userCardExtra2BG}
+          alt="player extra card 2"
+          style={{ visibility: pec2Visibility }}
+        />
+        <img
+          className="card"
+          id="pec3"
+          src={userCardExtra3BG}
+          alt="player extra card 3"
+          style={{ visibility: pec3Visibility }}
+        />
+        <br />
+        <Chip
+          amount={chipAmountRed}
+          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
+          bgSize="109%"
+          clickHandlerName={handleOnClickChipRed}
+        />
+        <Chip
+          amount={chipAmountBlack}
+          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
+          bgSize="cover"
+          clickHandlerName={handleOnClickChipBlack}
+        />
+        <Chip
+          amount={chipAmountBlue}
+          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
+          bgSize="150%"
+          clickHandlerName={handleOnClickChipBlue}
+        />
+        <Chip
+          amount={chipAmountGreen}
+          chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
+          bgSize="199%"
+          clickHandlerName={handleOnClickChipGreen}
+        />
+      </div>
+      <div className="section" id="cashier">
+        <h2>Cashier</h2>
+        <CashierChips />
+        <PurchasedChips />
+        <h3>
+          SUBTOTAL: $<span>{chipCostSubtotal}</span>
+        </h3>
+        <h3>
+          Bank Account: $<span>{userBank}</span>
+        </h3>
+        <div className="button" id="purchase" onClick={handleOnPurchase}>
+          Purchase
+        </div>
+        <div className="button" id="refresh" onClick={handleOnRefresh}>
+          Restart
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+function BetChip(props) {
+  return (
+    <div id="bets">
+      <div
+        id="bet-chip"
+        style={{
+          content: 'url(' + props.chipColor + ')',
+          backgroundSize: props.bgSize,
+          visibility: props.show,
+        }}
+      >
+        <p id="chip-amt">{props.amount}x</p>
+      </div>
+    </div>
+  );
+}
+
+function Chip(props) {
+  return (
+    <div id="bets">
+      <div
+        id="chip"
+        onClick={props.clickHandlerName}
+        style={{
+          content: 'url(' + props.chipColor + ')',
+          backgroundSize: props.bgSize,
+        }}
+      >
+        <p id="chip-amt">{props.amount}x</p>
+      </div>
+    </div>
+  );
+}
+
+function SingleCashierChip(props) {
+  let chipCost = parseInt(props.price) * props.amount;
+  return (
+    <div id="cashier-chip-ctn">
+      <div id="minus-icon" onClick={() => props.onClickMinus(props.unique)}>
+        -
+      </div>
+      <div id="plus-icon" onClick={() => props.onClickPlus(props.unique)}>
+        +
+      </div>
+      <div
+        id="cashier-chips"
+        style={{
+          content: 'url(' + props.chipColor + ')',
+          backgroundSize: props.bgSize,
+        }}
+      >
+        <p id="cashier-chip-amt">
+          {props.amount}x = ${chipCost}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function SinglePurchasedChip(props) {
+  return (
+    <div id="cashier-chip-ctn">
+      <div
+        id="cashier-chips"
+        style={{
+          content: 'url(' + props.chipColor + ')',
+          backgroundSize: props.bgSize,
+        }}
+      >
+        <p id="cashier-chip-amt">{props.amount}x</p>
+      </div>
+    </div>
+  );
 }
