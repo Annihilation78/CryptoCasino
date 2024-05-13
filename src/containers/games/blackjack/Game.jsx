@@ -473,25 +473,25 @@ export default function Game() {
           <Deck />
           <BetChip
             amount={chipBetRed}
-            chipColor="../roulette/chips/2.png"
+            chipColor="./chips/2.png"
             bgSize="109%"
             show={chipVisibilityRed}
           />
           <BetChip
             amount={chipBetBlack}
-            chipColor="../roulette/chips/4.png"
+            chipColor="./chips/4.png"
             bgSize="cover"
             show={chipVisibilityBlack}
           />
           <BetChip
             amount={chipBetBlue}
-            chipColor="../roulette/chips/1.png"
+            chipColor="./chips/1.png"
             bgSize="150%"
             show={chipVisibilityBlue}
           />
           <BetChip
             amount={chipBetGreen}
-            chipColor="../roulette/chips/3.png"
+            chipColor="./chips/3.png"
             bgSize="199%"
             show={chipVisibilityGreen}
           />
@@ -528,25 +528,25 @@ export default function Game() {
         <br />
         <Chip
           amount={chipAmountRed}
-          chipColor="../roulette/chips/2.png"
+          chipColor="./chips/2.png"
           bgSize="109%"
           clickHandlerName={handleOnClickChipRed}
         />
         <Chip
           amount={chipAmountBlack}
-          chipColor="../roulette/chips/4.png"
+          chipColor="./chips/4.png"
           bgSize="cover"
           clickHandlerName={handleOnClickChipBlack}
         />
         <Chip
           amount={chipAmountBlue}
-          chipColor="../roulette/chips/1.png"
+          chipColor="./chips/1.png"
           bgSize="150%"
           clickHandlerName={handleOnClickChipBlue}
         />
         <Chip
           amount={chipAmountGreen}
-          chipColor="../roulette/chips/3.png"
+          chipColor="./chips/3.png"
           bgSize="199%"
           clickHandlerName={handleOnClickChipGreen}
         />
@@ -673,28 +673,28 @@ export default function Game() {
       <div id="all-cashier-chips">
         <SingleCashierChip
           amount={cashierChipAmountRed}
-          chipColor="../roulette/chips/2.png"
+          chipColor="./chips/2.png"
           bgSize="109%"
           unique="red"
           price="1"
         />
         <SingleCashierChip
           amount={cashierChipAmountBlack}
-          chipColor="../roulette/chips/4.png"
+          chipColor="./chips/4.png"
           bgSize="cover"
           unique="black"
           price="5"
         />
         <SingleCashierChip
           amount={cashierChipAmountBlue}
-          chipColor="../roulette/chips/1.png"
+          chipColor="./chips/1.png"
           bgSize="150%"
           unique="blue"
           price="25"
         />
         <SingleCashierChip
           amount={cashierChipAmountGreen}
-          chipColor="../roulette/chips/3.png"
+          chipColor="./chips/3.png"
           bgSize="199%"
           unique="green"
           price="50"
@@ -708,22 +708,22 @@ export default function Game() {
       <div id="all-cashier-chips">
         <SinglePurchasedChip
           amount={chipAmountRed}
-          chipColor="../roulette/chips/2.png"
+          chipColor="./chips/2.png"
           bgSize="109%"
         />
         <SinglePurchasedChip
           amount={chipAmountBlack}
-          chipColor="../roulette/chips/4.png"
+          chipColor="./chips/4.png"
           bgSize="cover"
         />
         <SinglePurchasedChip
           amount={chipAmountBlue}
-          chipColor="../roulette/chips/1.png"
+          chipColor="./chips/1.png"
           bgSize="150%"
         />
         <SinglePurchasedChip
           amount={chipAmountGreen}
-          chipColor="../roulette/chips/3.png"
+          chipColor="./chips/3.png"
           bgSize="199%"
         />
       </div>
