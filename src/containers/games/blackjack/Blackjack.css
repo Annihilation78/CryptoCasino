@@ -151,7 +151,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    content: url('./chips/1.png');
+    content: url('/chips/1.png');
     background-position: center;
     background-size: cover;
     box-shadow: 2px 2px 3px #252525;
@@ -166,7 +166,7 @@ html {
     margin: 20px;
     vertical-align: middle;
     position: relative;
-    content: url('./chips/2.png');
+    content: url('/chips/2.png');
     background-position: center;
     background-size: cover;
     /*vvisibility: hidden;*/
