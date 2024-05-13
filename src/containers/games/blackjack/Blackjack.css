@@ -178,6 +178,7 @@ html {
     position: absolute;
     top: 65px;
     left: 18px;
+    z-index: 100;
   }
   
   #bets {
@@ -274,6 +275,7 @@ html {
     left: 75px;
     width: 150px;
     text-align: left;
+    z-index: 100;
   }
   
   #all-cashier-chips {
