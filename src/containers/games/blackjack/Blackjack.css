@@ -172,14 +172,16 @@ html {
     /*vvisibility: hidden;*/
   }
   
-  #chip-amt {
-    padding: 0px;
-    margin: 0px;
+  #chip-amt, #cashier-chip-amt {
+    padding: 0;
+    margin: 0;
     position: absolute;
     top: 65px;
     left: 18px;
-    z-index: 100;
+    color: white; /* Asegúrate de que el texto sea visible */
+    font-weight: bold;
   }
+  
   
   #bets {
     display: inline-block;
@@ -268,14 +270,6 @@ html {
   
   #caashier-chip-ctn {
     width: 200px;
-  }
-  
-  #cashier-chip-amt {
-    position: absolute;
-    left: 75px;
-    width: 150px;
-    text-align: left;
-    z-index: 100;
   }
   
   #all-cashier-chips {
