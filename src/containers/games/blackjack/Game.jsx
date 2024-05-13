@@ -3,8 +3,8 @@ import React from 'react';
 import Deck from './Deck.jsx';
 import $ from 'jquery';
 import { useState } from 'react';
-import Header from '../../Header.jsx'; 
-import Footer from '../../Footer.jsx'; 
+import Header from '../../Header.jsx';
+import Footer from '../../Footer.jsx';
 
 export default function Game() {
   // DEALER CARDS
@@ -331,27 +331,27 @@ export default function Game() {
     var winnings = chipBetRed * 1 + chipBetBlack * 5 + chipBetBlue * 25 + chipBetGreen * 50;
 
     if (userTotal > 21) {
-        // User loses if they go over 21
-        alert('The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' + winnings + '.');
-        winnings *= -1; // Convert winnings to a loss
+      // User loses if they go over 21
+      alert('The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' + winnings + '.');
+      winnings *= -1; // Convert winnings to a loss
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
-        // User wins by having a higher total than the dealer, without exceeding 21
-        alert('You won!\nYour earnings total to $' + winnings + '.');
+      // User wins by having a higher total than the dealer, without exceeding 21
+      alert('You won!\nYour earnings total to $' + winnings + '.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
-        // User loses by having a lower total than the dealer
-        alert('The dealer beat you, better luck next time!\nYou lost $' + winnings + '.');
-        winnings *= -1;
+      // User loses by having a lower total than the dealer
+      alert('The dealer beat you, better luck next time!\nYou lost $' + winnings + '.');
+      winnings *= -1;
     } else if (userTotal == dealerTotal && dealerTotal <= 21) {
-        // Handle tie scenario
-        var tieWinnings = winnings / 2; // User gets half of the winnings in a tie
-        alert('You tied with the dealer. You will receive half of the winnings, totaling to $' + tieWinnings + '.');
-        winnings = tieWinnings;
+      // Handle tie scenario
+      var tieWinnings = winnings / 2; // User gets half of the winnings in a tie
+      alert('You tied with the dealer. You will receive half of the winnings, totaling to $' + tieWinnings + '.');
+      winnings = tieWinnings;
     }
 
     // Update the user's bank balance with the new winnings or losses
     setUserBank(userBank + winnings);
     refreshGame(); // Refresh or update the game state
-}
+  }
 
 
   function refreshGame() {
@@ -433,7 +433,7 @@ export default function Game() {
 
   return (
     <div className="App">
-      <Header title="Blackjack"/>
+      <Header title="Blackjack" />
       <div className="section" id="game">
         <h2>
           Dealer <em>{dealerDirections}</em>
