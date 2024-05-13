@@ -734,7 +734,6 @@ export default function Game() {
       <div id="cashier-chip-ctn">
         <div
           id="cashier-chips"
-          onClick={() => props.clickHandlerName(props.unique)}
           style={{
             content: 'url(' + props.chipColor + ')',
             backgroundSize: props.bgSize,
