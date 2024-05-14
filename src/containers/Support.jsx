@@ -9,7 +9,7 @@ import { FaTwitter, FaFacebook } from 'react-icons/fa';
 function Support() {
     return (
         <div className="support-container">
-                <Header title="Soporte"/>
+            <Header title="Soporte"/>
             <div className="social-icons">
             <FaTwitter />
             <FaFacebook />
