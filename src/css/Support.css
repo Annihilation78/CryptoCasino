@@ -17,6 +17,18 @@
     font-size: 2em;
 }
 
+.support-h1 {
+    font-size: 2em;
+    text-align: left;
+}
+
+.support-p1 {
+    margin: 0 auto;
+    width: 50%;
+    line-height: 1.6;
+    text-align: left;
+}
+
 .support-text {
     margin: 0 auto;
     width: 50%;
