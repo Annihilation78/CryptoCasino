@@ -19,6 +19,7 @@
 
 .support-h1 {
     font-size: 2em;
+    list-style-type: circle;
     margin: 0 auto;
     width: 50%;
     line-height: 1.6;

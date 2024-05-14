@@ -12,7 +12,7 @@ function Support() {
             <h1 className="support-title">Bienvenido a nuestra página de soporte.</h1>
             <p className="support-text">Nuestro objetivo es proporcionarte la mejor experiencia posible. Si tienes alguna pregunta o necesitas asistencia, estamos aquí para ayudarte las 24 horas del día, los 7 días de la semana.</p>
             <div>
-                <h1 className="support-h1">Preguntas Frequentes (FAQ)</h1>
+                <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
                 <h1 className="support-h1">Cuenta y Registro</h1>
                 <p className="support-p1">¿Cómo creo una cuenta?</p>
@@ -28,7 +28,7 @@ function Support() {
                 <p className="support-p1">¿Cómo reclamo un bono?</p>
                 <p className="support-p1">¿Cuáles son los términos y condiciones de los bonos?</p>
 
-                <h1 className="support-h1">Contacto Directo</h1>
+                <h1 className="support-title">Contacto Directo</h1>
 
                 <h1 className="support-h1">Chat en Vivo</h1>
                 <p className="support-p1">Habla en tiempo real con uno de nuestros agentes. Disponible 24/7.</p>
