@@ -15,7 +15,6 @@ function Support() {
             <FaFacebook />
             </div>
             <div className="support-div">
-                <MapComponent/>
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
                 <h1 className="support-h1">Cuenta y Registro</h1>
@@ -42,6 +41,8 @@ function Support() {
                 
                 <h1 className="support-h1">Teléfono</h1>
                 <p className="support-p1">Llámanos al +34 911 21 00 90. Atención disponible de 8 AM a 10 PM (horario local).</p>
+
+                <MapComponent/>
             </div>
             <Footer />
         </div>
