@@ -15,7 +15,7 @@ function Navigation(){
                 <Link to="/Promotions">Promociones</Link>
             </li>
             <li>
-                <Link to="/soporte">Soporte</Link>
+                <Link to="/Support">Soporte</Link>
             </li>
             <li>
                 <Link to="/contact">Contacto</Link>

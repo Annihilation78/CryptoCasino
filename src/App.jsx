@@ -11,7 +11,7 @@ import Roulette from './containers/games/roulette/Roulette.jsx';
 import BlackJack from './containers/games/blackjack/Game.jsx';
 import Games from './containers/Games.jsx';
 import Promotions from './containers/Promotions.jsx';
-
+import Support from './containers/Support.jsx';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/Games" element={<Games />} />
             <Route path="/Promotions" element={<Promotions />} />
+            <Route path="/Support" element={<Support />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/BlackJack" element={<BlackJack />} />
             <Route path="/Roulette" element={<Roulette />} />
