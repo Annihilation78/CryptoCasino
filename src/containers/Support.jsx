@@ -12,11 +12,20 @@ function Support() {
             <div className="header-footer-container header">
                 <Header title="Soporte"/>
             </div>
+<<<<<<< HEAD
             <div className="social-icons">
             <FaTwitter />
             <FaFacebook />
             </div>
             <div>
+=======
+            <h1 className="support-title">Página de Soporte</h1>
+            <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
+            
+            <MapComponent />
+
+            <div className="container">
+>>>>>>> ea1291e4586a5cf07b194b453cb8c9be6c6f5a2a
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
                 <h1 className="support-h1">Cuenta y Registro</h1>
