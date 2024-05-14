@@ -10,10 +10,9 @@ function Support() {
     return (
         <div className="support-container">
             <Header title="Soporte"/>
-            <div className="social-icons">
-            <FaTwitter />
-            <FaFacebook />
-            </div>
+            <h1 className="support-title">Página de Soporte</h1>
+            <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
+            
             <div className="support-div">
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
@@ -41,8 +40,13 @@ function Support() {
                 
                 <h1 className="support-h1">Teléfono</h1>
                 <p className="support-p1">Llámanos al +34 911 21 00 90. Atención disponible de 8 AM a 10 PM (horario local).</p>
-                
+
                 <div><MapComponent/></div>
+                
+                <div className="social-icons">
+                    <FaTwitter />
+                    <FaFacebook />
+                </div>
             </div>
             <Footer />
         </div>
