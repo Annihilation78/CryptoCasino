@@ -7,7 +7,6 @@ import MapComponent from './Map.jsx';
 function Support() {
     return (
         <div className="support-container">
-<<<<<<< HEAD
             <div className="header-footer-container header">
                 <Header title="Soporte"/>
             </div>
@@ -15,12 +14,6 @@ function Support() {
             <MapComponent />
             <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
             {/* Puedes agregar más contenido aquí */}
-            <div className="header-footer-container footer">
-                <Footer />
-=======
-            <Header title="Soporte"/>
-            <h1 className="support-title">Bienvenido a nuestra página de soporte.</h1>
-            <p className="support-text">Nuestro objetivo es proporcionarte la mejor experiencia posible. Si tienes alguna pregunta o necesitas asistencia, estamos aquí para ayudarte las 24 horas del día, los 7 días de la semana.</p>
             <div>
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
@@ -48,10 +41,10 @@ function Support() {
                 
                 <h1 className="support-h1">Teléfono</h1>
                 <p className="support-p1">Llámanos al +34 911 21 00 90. Atención disponible de 8 AM a 10 PM (horario local).</p>
->>>>>>> d72c4fbc3806cb3fa593b0cab8fb9adc31b47b0c
             </div>
-            
-            <Footer />
+            <div className="header-footer-container footer">
+                <Footer />
+            </div>
         </div>
     );
 }
