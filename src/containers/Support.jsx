@@ -5,7 +5,7 @@ import '../css/Support.css';
 
 function Support() {
     return (
-        <div className="support-container">
+        <div className="App">
             <Header title="Soporte"/>
             <h1 className="support-title">Bienvenido a nuestra página de soporte.</h1>
             <p className="support-text">Nuestro objetivo es proporcionarte la mejor experiencia posible. Si tienes alguna pregunta o necesitas asistencia, estamos aquí para ayudarte las 24 horas del día, los 7 días de la semana.</p>
