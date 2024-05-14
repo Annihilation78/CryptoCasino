@@ -55,3 +55,16 @@
 .footer {
     bottom: 0;
 }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Añade position: relative para habilitar z-index */
+  z-index: 1; /* Asigna un valor de z-index más alto para traer al frente los iconos */
+  }
+  
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 8px;
+  }

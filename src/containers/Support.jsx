@@ -3,6 +3,8 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import '../css/Support.css';
 import MapComponent from './Map.jsx';
+import { FaTwitter, FaFacebook } from 'react-icons/fa';
+
 
 function Support() {
     return (
@@ -10,10 +12,10 @@ function Support() {
             <div className="header-footer-container header">
                 <Header title="Soporte"/>
             </div>
-            <h1 className="support-title">Página de Soporte</h1>
-            <MapComponent />
-            <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
-            {/* Puedes agregar más contenido aquí */}
+            <div className="social-icons">
+            <FaTwitter />
+            <FaFacebook />
+            </div>
             <div>
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
