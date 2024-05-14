@@ -14,7 +14,7 @@ function Support() {
             <FaTwitter />
             <FaFacebook />
             </div>
-            <div>
+            <div className="support-div">
                 <MapComponent/>
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
