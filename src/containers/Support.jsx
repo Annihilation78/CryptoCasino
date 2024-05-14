@@ -9,9 +9,7 @@ import { FaTwitter, FaFacebook } from 'react-icons/fa';
 function Support() {
     return (
         <div className="support-container">
-            <div className="header-footer-container header">
                 <Header title="Soporte"/>
-            </div>
             <div className="social-icons">
             <FaTwitter />
             <FaFacebook />
@@ -45,9 +43,7 @@ function Support() {
                 <h1 className="support-h1">Teléfono</h1>
                 <p className="support-p1">Llámanos al +34 911 21 00 90. Atención disponible de 8 AM a 10 PM (horario local).</p>
             </div>
-            <div className="header-footer-container footer">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }
