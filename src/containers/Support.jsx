@@ -11,10 +11,11 @@ function Support() {
                 <Header title="Soporte"/>
             </div>
             <h1 className="support-title">Página de Soporte</h1>
-            <MapComponent />
             <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
-            {/* Puedes agregar más contenido aquí */}
-            <div>
+            
+            <MapComponent />
+
+            <div className="container">
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
 
                 <h1 className="support-h1">Cuenta y Registro</h1>
