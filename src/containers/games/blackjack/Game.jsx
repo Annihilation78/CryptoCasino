@@ -724,6 +724,9 @@ export default function Game() {
           <p id="cashier-chip-amt">
             {props.amount}x = ${chipCost}
           </p>
+          <p id="cashier-chip-value">
+            Valor del chip: ${props.price}
+          </p>
         </div>
       </div>
     );
