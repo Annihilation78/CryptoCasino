@@ -39,14 +39,16 @@
     margin: 0 auto;
     width: 50%;
     line-height: 1.6;
+    padding: 30px 0px;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Añade position: relative para habilitar z-index */
-  z-index: 1; /* Asigna un valor de z-index más alto para traer al frente los iconos */
+    position: relative;
+    z-index: 1;
+    padding: 10px;
   }
   
   .social-icons svg {
