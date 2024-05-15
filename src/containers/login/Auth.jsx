@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import auth from "./FirebaseConfig";
+import auth from "../Firebase.jsx";
 
 export const AuthContext = createContext(null);
 
