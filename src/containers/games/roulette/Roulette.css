@@ -695,8 +695,3 @@ body .bet-container .bet-active .bet-chip{opacity: 1;}
   background: linear-gradient(to top,#101627,#0e1730);
   text-shadow: 0 0 4px #54bef0;
 }
-
-#cashier-chips{
-  color: white;
-  font-size: medium;
-}
