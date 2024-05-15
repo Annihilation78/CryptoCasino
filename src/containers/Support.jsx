@@ -4,6 +4,7 @@ import Footer from './Footer.jsx';
 import '../css/Support.css';
 import MapComponent from './Map.jsx';
 import { FaTwitter, FaFacebook } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 function Support() {
