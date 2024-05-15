@@ -15,7 +15,13 @@
     font-family: Arial, sans-serif;
 }
 .support-container li {
-    list-style-type: circle;
+    display: list-item;
+    list-style-type: disc;
+    font-size: 2em;
+    margin: 0 auto;
+    width: 90%;
+    line-height: 1.6;
+    text-align: left;
 }
 .support-title {
     font-size: 2em;
