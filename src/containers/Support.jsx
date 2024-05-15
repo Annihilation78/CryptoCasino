@@ -14,7 +14,7 @@ function Support() {
             
             <div className="support-div">
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
-                <ul className="support-list">
+                <ul>
                     <li><h1 className="support-h1">Cuenta y Registro</h1></li>
                     <p className="support-p1">¿Cómo creo una cuenta?</p>
                     <p className="support-p1">¿Cómo restablezco mi contraseña?</p>
@@ -31,7 +31,7 @@ function Support() {
                 </ul>
 
                 <h1 className="support-title">Contacto Directo</h1>
-                <ul className="support-list">
+                <ul>
                     <li><h1 className="support-h1">Chat en Vivo</h1></li>
                     <p className="support-p1">Habla en tiempo real con uno de nuestros agentes. Disponible 24/7.</p>
 
