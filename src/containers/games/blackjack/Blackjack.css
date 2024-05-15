@@ -171,12 +171,22 @@ body {
   background-size: cover;
 }
 
-#chip-amt, #cashier-chip-amt, #cashier-chip-value {
+#chip-amt, #cashier-chip-amt {
   padding: 0;
   margin: 0;
   position: absolute;
   top: 50px;
   left: 15px;
+  color: white; /* Asegúrate de que el texto sea visible */
+  font-weight: bold;
+}
+
+#cashier-chip-value{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50px;
+  left: 0px;
   color: white; /* Asegúrate de que el texto sea visible */
   font-weight: bold;
 }
