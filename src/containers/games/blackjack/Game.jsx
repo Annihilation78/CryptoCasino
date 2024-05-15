@@ -83,7 +83,7 @@ export default function Game() {
       chipAmountBlue === 0 &&
       chipAmountGreen === 0
     ) {
-      alert("Oh no, you don't have any chips!\nPurchase chips in the cashier section prior to beginning a game.");
+      alert("¡No tienes ninguna ficha!\nCompra fichas abajo en la sección de compra.");
     } else {
       // Shuffle new deck
       $.ajax({
@@ -731,7 +731,11 @@ export default function Game() {
   function SingleCashierChip(props) {
     let chipCost = parseInt(props.price) * props.amount;
     return (
+
       <div id="cashier-chip-ctn">
+        <p id="cashier-chip-amt">
+          {props.amount}x = ${chipCost}
+        </p>
         <div id="minus-icon" onClick={() => onClickMinus(props.unique)}>
           -
         </div>
