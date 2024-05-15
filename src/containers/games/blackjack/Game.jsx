@@ -745,7 +745,6 @@ export default function Game() {
             backgroundSize: props.bgSize,
           }}
         >
-          {chipCost}
           <p id="cashier-chip-amt">
             {props.amount}x = ${chipCost}
           </p>
@@ -767,7 +766,6 @@ export default function Game() {
             backgroundSize: props.bgSize,
           }}
         >
-          {props.amount}x
           <p id="cashier-chip-amt">{props.amount}x</p>
         </div>
       </div>
