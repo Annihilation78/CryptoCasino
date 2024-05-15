@@ -767,6 +767,7 @@ export default function Game() {
             backgroundSize: props.bgSize,
           }}
         >
+          {props.amount}x
           <p id="cashier-chip-amt">{props.amount}x</p>
         </div>
       </div>
