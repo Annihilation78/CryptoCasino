@@ -746,7 +746,7 @@ export default function Game() {
           }}
         >
           <p id="cashier-chip-value">
-            {props.amount} x {props.price}€
+            {props.amount}x{props.price}€
           </p>
         </div>
       </div>
