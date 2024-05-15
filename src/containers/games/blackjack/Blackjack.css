@@ -151,7 +151,7 @@ body {
   margin: 20px;
   vertical-align: middle;
   position: relative;
-  content: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png');
+  background-image: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png');
   background-position: center;
   background-size: cover;
   box-shadow: 2px 2px 3px #252525;
@@ -166,7 +166,7 @@ body {
   margin: 20px;
   vertical-align: middle;
   position: relative;
-  content: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png');
+  background-image: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png');
   background-position: center;
   background-size: cover;
 }
@@ -260,7 +260,7 @@ body {
   border: 1px solid white;
   margin: 20px;
   position: relative;
-  content: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png');
+  background-image: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png');
   background-size: cover;
   background-position: center;
   display: inline-block;

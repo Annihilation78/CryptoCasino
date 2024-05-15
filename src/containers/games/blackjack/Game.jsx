@@ -572,7 +572,7 @@ export default function Game() {
         <div
           id="bet-chip"
           style={{
-            content: 'url(' + props.chipColor + ')',
+            backgroundImage: 'url(' + props.chipColor + ')',
             backgroundSize: props.bgSize,
             visibility: props.show,
           }}
@@ -590,7 +590,7 @@ export default function Game() {
           id="chip"
           onClick={() => props.clickHandlerName()}
           style={{
-            content: 'url(' + props.chipColor + ')',
+            backgroundImage: 'url(' + props.chipColor + ')',
             backgroundSize: props.bgSize,
           }}
         >
@@ -741,7 +741,7 @@ export default function Game() {
         <div
           id="cashier-chips"
           style={{
-            content: 'url(' + props.chipColor + ')',
+            backgroundImage: 'url(' + props.chipColor + ')',
             backgroundSize: props.bgSize,
           }}
         >
@@ -763,7 +763,7 @@ export default function Game() {
         <div
           id="cashier-chips"
           style={{
-            content: 'url(' + props.chipColor + ')',
+            backgroundImage: 'url(' + props.chipColor + ')',
             backgroundSize: props.bgSize,
           }}
         >
