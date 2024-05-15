@@ -454,24 +454,32 @@ export default function Game() {
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
             bgSize="109%"
             show={chipVisibilityRed}
+            unique="red"
+            price="1"
           />
           <BetChip
             amount={chipBetBlack}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
             bgSize="cover"
             show={chipVisibilityBlack}
+            unique="black"
+            price="5"
           />
           <BetChip
             amount={chipBetBlue}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
             bgSize="150%"
             show={chipVisibilityBlue}
+            unique="blue"
+            price="25"
           />
           <BetChip
             amount={chipBetGreen}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
             bgSize="199%"
             show={chipVisibilityGreen}
+            unique="green"
+            price="50"
           />
           <div className="button" id="game-start" onClick={handleOnDeal}>
             DEAL
@@ -509,24 +517,32 @@ export default function Game() {
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
           bgSize="109%"
           clickHandlerName={handleOnClickChipRed}
+          unique="red"
+          price="1"
         />
         <Chip
           amount={chipAmountBlack}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
           bgSize="cover"
           clickHandlerName={handleOnClickChipBlack}
+          unique="black"
+          price="5"
         />
         <Chip
           amount={chipAmountBlue}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
           bgSize="150%"
           clickHandlerName={handleOnClickChipBlue}
+          unique="blue"
+          price="25"
         />
         <Chip
           amount={chipAmountGreen}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
           bgSize="199%"
           clickHandlerName={handleOnClickChipGreen}
+          unique="green"
+          price="50"
         />
       </div>
       <div className="section" id="cashier">
@@ -684,21 +700,29 @@ export default function Game() {
           amount={chipAmountRed}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
           bgSize="109%"
+          unique="red"
+          price="1"
         />
         <SinglePurchasedChip
           amount={chipAmountBlack}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/4.png"
           bgSize="cover"
+          unique="black"
+          price="5"
         />
         <SinglePurchasedChip
           amount={chipAmountBlue}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
           bgSize="150%"
+          unique="blue"
+          price="25"
         />
         <SinglePurchasedChip
           amount={chipAmountGreen}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
           bgSize="199%"
+          unique="green"
+          price="50"
         />
       </div>
     );
