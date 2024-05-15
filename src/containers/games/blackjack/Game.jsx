@@ -452,7 +452,7 @@ export default function Game() {
           <BetChip
             amount={chipBetRed}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-            bgSize="109%"
+            bgSize="cover"
             show={chipVisibilityRed}
             unique="red"
             price="1"
@@ -468,7 +468,7 @@ export default function Game() {
           <BetChip
             amount={chipBetBlue}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-            bgSize="150%"
+            bgSize="cover"
             show={chipVisibilityBlue}
             unique="blue"
             price="25"
@@ -476,7 +476,7 @@ export default function Game() {
           <BetChip
             amount={chipBetGreen}
             chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-            bgSize="199%"
+            bgSize="cover"
             show={chipVisibilityGreen}
             unique="green"
             price="50"
@@ -515,7 +515,7 @@ export default function Game() {
         <Chip
           amount={chipAmountRed}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-          bgSize="109%"
+          bgSize="cover"
           clickHandlerName={handleOnClickChipRed}
           unique="red"
           price="1"
@@ -531,7 +531,7 @@ export default function Game() {
         <Chip
           amount={chipAmountBlue}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-          bgSize="150%"
+          bgSize="cover"
           clickHandlerName={handleOnClickChipBlue}
           unique="blue"
           price="25"
@@ -539,7 +539,7 @@ export default function Game() {
         <Chip
           amount={chipAmountGreen}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-          bgSize="199%"
+          bgSize="cover"
           clickHandlerName={handleOnClickChipGreen}
           unique="green"
           price="50"
@@ -664,7 +664,7 @@ export default function Game() {
         <SingleCashierChip
           amount={cashierChipAmountRed}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-          bgSize="109%"
+          bgSize="cover"
           unique="red"
           price="1"
         />
@@ -678,14 +678,14 @@ export default function Game() {
         <SingleCashierChip
           amount={cashierChipAmountBlue}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-          bgSize="150%"
+          bgSize="cover"
           unique="blue"
           price="25"
         />
         <SingleCashierChip
           amount={cashierChipAmountGreen}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-          bgSize="199%"
+          bgSize="cover"
           unique="green"
           price="50"
         />
@@ -699,7 +699,7 @@ export default function Game() {
         <SinglePurchasedChip
           amount={chipAmountRed}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/2.png"
-          bgSize="109%"
+          bgSize="cover"
           unique="red"
           price="1"
         />
@@ -713,14 +713,14 @@ export default function Game() {
         <SinglePurchasedChip
           amount={chipAmountBlue}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/1.png"
-          bgSize="150%"
+          bgSize="cover"
           unique="blue"
           price="25"
         />
         <SinglePurchasedChip
           amount={chipAmountGreen}
           chipColor="https://github.com/Annihilation78/CryptoCasino/raw/main/src/containers/games/blackjack/chips/3.png"
-          bgSize="199%"
+          bgSize="cover"
           unique="green"
           price="50"
         />
@@ -746,7 +746,7 @@ export default function Game() {
           }}
         >
           <p id="cashier-chip-value">
-            Valor del chip: ${props.price}
+            {props.price}€
           </p>
         </div>
       </div>
