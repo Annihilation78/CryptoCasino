@@ -153,7 +153,7 @@ export default function Game() {
             item.style.visibility = 'visible';
           });
 
-          setTurnDirections('- Apuesta y juega o pasa');
+          setTurnDirections('- Apuesta y luego pide o pasa');
           console.log(card1 + ', ' + card2 + ', ' + card3 + ', ' + card4);
         },
         error: function (error) {
@@ -442,10 +442,10 @@ export default function Game() {
         <div id="bets-placed">
           <div id="player-turn">
             <div className="hit-pass" onClick={handleOnHit}>
-              Hit
+              Pedir
             </div>
             <div className="hit-pass" onClick={handleOnPass}>
-              Pass
+              Pasar
             </div>
           </div>
           <Deck />
