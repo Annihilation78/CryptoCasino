@@ -153,7 +153,7 @@ export default function Game() {
             item.style.visibility = 'visible';
           });
 
-          setTurnDirections('- Bet, then Hit or Pass');
+          setTurnDirections('- Apuesta y juega o pasa');
           console.log(card1 + ', ' + card2 + ', ' + card3 + ', ' + card4);
         },
         error: function (error) {
@@ -196,28 +196,28 @@ export default function Game() {
       if (pec1Visibility === 'hidden') {
         setPec1Visibility('visible');
         if (playerCard1 + playerCard2 + playerCard3 >= 21) {
-          alert('21 Reached or exceeded!');
+          alert('¡Te pasaste de 21!');
           userTotal = playerCard1 + playerCard2 + playerCard3;
           setTurnDirections('- Total: ' + userTotal);
           let hitPassBtns = document.querySelectorAll('.hit-pass');
           hitPassBtns.forEach((item) => {
             item.style.visibility = 'hidden';
           });
-          setDealerDirections('- turn');
+          setDealerDirections('- turno');
           setTurnDirections('- Total: ' + userTotal);
           setTimeout(dealerTurn, 2000);
         }
       } else if (pec2Visibility === 'hidden') {
         setPec2Visibility('visible');
         if (playerCard1 + playerCard2 + playerCard3 + playerCard4 >= 21) {
-          alert('21 Reached or exceeded!');
+          alert('¡Te pasaste de 21!');
           userTotal = playerCard1 + playerCard2 + playerCard3 + playerCard4;
           setTurnDirections('- Total: ' + userTotal);
           let hitPassBtns = document.querySelectorAll('.hit-pass');
           hitPassBtns.forEach((item) => {
             item.style.visibility = 'hidden';
           });
-          setDealerDirections('- turn');
+          setDealerDirections('- turno');
           setTurnDirections('- Total: ' + userTotal);
           setTimeout(dealerTurn, 2000);
         }
@@ -252,17 +252,17 @@ export default function Game() {
       hitPassBtns.forEach((item) => {
         item.style.visibility = 'hidden';
       });
-      setDealerDirections('- turn');
+      setDealerDirections('- turno');
       setTimeout(dealerTurn, 2000);
     }
   }
 
   function dealerTurn() {
-    setDealerDirections('- hit or pass');
+    setDealerDirections('- igualas o pasas');
     setCard2BG(tempCard2);
 
     setTimeout(dealerBets, 2000);
-    setDealerDirections('- doubling bets');
+    setDealerDirections('- doble');
 
     setTimeout(dealerTotaled, 2000);
   }
@@ -313,19 +313,19 @@ export default function Game() {
 
     if (userTotal > 21) {
       // User loses if they go over 21
-      alert('The dealer beat you, better luck next time!\nYou went over 21.\nYou lost $' + winnings + '.');
+      alert('Gana la casa, ¡suerte la próxima vez!\nTe pasaste de 21.\nPerdiste ' + winnings + '€.');
       winnings *= -1; // Convert winnings to a loss
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
       // User wins by having a higher total than the dealer, without exceeding 21
-      alert('You won!\nYour earnings total to $' + winnings + '.');
+      alert('¿Ganaste?\nGanaste ' + winnings + '€.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
       // User loses by having a lower total than the dealer
-      alert('The dealer beat you, better luck next time!\nYou lost $' + winnings + '.');
+      alert('Gana la casa, ¡suerte la próxima vez!\nPerdiste ' + winnings + '€.');
       winnings *= -1;
     } else if (userTotal === dealerTotal && dealerTotal <= 21) {
       // Handle tie scenario
       let tieWinnings = winnings / 2; // User gets half of the winnings in a tie
-      alert('You tied with the dealer. You will receive half of the winnings, totaling to $' + tieWinnings + '.');
+      alert('Habéis empatado. Recibirás la mitad del dinero, unos ' + tieWinnings + '€.');
       winnings = tieWinnings;
     }
 
@@ -335,7 +335,7 @@ export default function Game() {
   }
 
   function refreshGame() {
-    setTurnDirections('- Press DEAL to play again');
+    setTurnDirections('- Haz click en DEAL para jugar de nuevo');
 
     let hitPassBtns = document.querySelectorAll('.hit-pass');
     hitPassBtns.forEach((item) => {
@@ -634,7 +634,7 @@ export default function Game() {
 
   function handleOnPurchase() {
     if (chipCostSubtotal > userBank) {
-      alert('Not enough money in account. Decrease cost of chips.\n\n If bank account is negative, you went bankrupt. Please restart the game to keep playing.');
+      alert('No tienes suficiente dinero. Selecciona menos fichas.\n\n Si estás en negativo, estás en bancarrota. Reinicia para volver a empezar.');
     } else {
       setUserBank(userBank - chipCostSubtotal);
 
@@ -652,7 +652,7 @@ export default function Game() {
   }
 
   function handleOnRefresh() {
-    let userResponse = prompt('Are you sure you want to restart the game?\nthis will clear all progress.\n\nType "y" for yes, all other characters assume no.');
+    let userResponse = prompt('¿Seguro que quieres reiniciar?\nEsto eliminará tu progreso.\n\nTeclea "y" si quieres, cualquier otra cosa es un no.');
     if (userResponse.toLowerCase() === 'y') {
       window.location.reload(false);
     }
