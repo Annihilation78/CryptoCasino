@@ -43,7 +43,7 @@ function Home() {
 
   return (
     <div className="app">
-      <Header title="Quantum Bet Bot"/>
+      <Header title="Quantum Bet Bot"/> <Link to="/">Inicio</Link>
       <main className="py-6">  
       <div><Logout /></div> 
         <div className="content-container">

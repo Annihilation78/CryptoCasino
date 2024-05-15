@@ -6,6 +6,7 @@ function Header({title}){
       <header>
             <h1 className="title">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo"/>{title}
+                <Link to="/">Inicio</Link>
             </h1>
             <Navigation />
       </header>

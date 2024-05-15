@@ -22,7 +22,7 @@ export default function Game() {
   const [dCardExtra3BG, setDCardExtra3BG] = useState('');
 
   // Game directions
-  const [turnDirections, setTurnDirections] = useState('- Press DEAL to begin');
+  const [turnDirections, setTurnDirections] = useState('- Pincha en Jugar para jugar');
   const [dealerDirections, setDealerDirections] = useState('');
 
   // Betting chip values
@@ -153,7 +153,7 @@ export default function Game() {
             item.style.visibility = 'visible';
           });
 
-          setTurnDirections('- Apuesta y juega o pasa');
+          setTurnDirections('- Apuesta y luego pide o pasa');
           console.log(card1 + ', ' + card2 + ', ' + card3 + ', ' + card4);
         },
         error: function (error) {
@@ -442,10 +442,10 @@ export default function Game() {
         <div id="bets-placed">
           <div id="player-turn">
             <div className="hit-pass" onClick={handleOnHit}>
-              Hit
+              Pedir
             </div>
             <div className="hit-pass" onClick={handleOnPass}>
-              Pass
+              Pasar
             </div>
           </div>
           <Deck />
@@ -482,11 +482,11 @@ export default function Game() {
             price="50"
           />
           <div className="button" id="game-start" onClick={handleOnDeal}>
-            DEAL
+            Jugar
           </div>
         </div>
         <h2>
-          You <em> {turnDirections}</em>
+          Tu <em> {turnDirections}</em>
         </h2>
         <img className="card" id="pc1" src={card3BG} alt="player card 1" />
         <img className="card" id="pc2" src={card4BG} alt="player card 2" />
