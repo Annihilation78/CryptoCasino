@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx'; 
 import Footer from './Footer.jsx';
-import { Link } from 'react-router-dom';
+
 
 import "../css/Contacto.css";
 
@@ -21,7 +21,7 @@ function Contact() {
 
   return (
     <div className="app">
-      <Link to="/"><Header title="Contacto"/></Link>
+      <Header title="Contacto"/>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>

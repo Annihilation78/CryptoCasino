@@ -11,7 +11,7 @@ import Footer from './Footer.jsx';
 function MenuPromociones() {
     return (
         <div className='App'>
-            <Link to="/"><Header title="Promociones"/></Link>
+            <Header title="Promociones"/>
             <div className="menu">
                 <Tilt>
                     <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Promocion1.webp" alt="juego 1" />   

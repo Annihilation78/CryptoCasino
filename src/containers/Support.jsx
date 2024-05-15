@@ -4,13 +4,12 @@ import Footer from './Footer.jsx';
 import '../css/Support.css';
 import MapComponent from './Map.jsx';
 import { FaTwitter, FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 
 function Support() {
     return (
         <div className="support-container">
-            <Link to="/"><Header title="Soporte"/></Link>
+            <Header title="Soporte"/>
             <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
             
             <div className="support-div">
