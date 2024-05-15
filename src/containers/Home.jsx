@@ -8,7 +8,7 @@ import Footer from './Footer.jsx';
 import {Auth} from "./login/Auth";
 import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
-
+import Logout from '../containers/login/Logout.jsx';
 // Resto del código de home.jsx
 
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
@@ -39,17 +39,13 @@ function Home() {
     }
   };
   
-  const { logout } = Auth();
-
-  const handleLogout = () => {
-    logout();
-  };
+ 
 
   return (
     <div className="app">
       <Header title="Quantum Bet Bot"/>
       <main className="py-6">  
-      <div><button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button></div> 
+      <div><Logout /></div> 
         <div className="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
