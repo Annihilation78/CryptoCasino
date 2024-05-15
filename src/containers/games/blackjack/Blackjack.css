@@ -175,8 +175,8 @@ body {
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 65px;
-  left: 18px;
+  top: 50px;
+  left: 15px;
   color: white; /* Asegúrate de que el texto sea visible */
   font-weight: bold;
 }
