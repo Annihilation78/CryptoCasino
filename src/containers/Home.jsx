@@ -1,11 +1,11 @@
 import React from 'react';
 import useSound from 'use-sound';
-import boopSfx from '../assets/urss.mp3'; 
+import boopSfx from '../assets/urss.mp3';
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
-import Header from './Header.jsx'; 
-import Footer from './Footer.jsx'; 
-import {Auth} from "./login/Auth";
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+import { Auth } from "./login/Auth";
 import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import Logout from '../containers/login/Logout.jsx';
@@ -29,7 +29,7 @@ function Home() {
       playBoop();
     }
   };
-  
+
   const handleBeepClick = () => {
     if (isBeepPlaying) {
       stopBeep();
@@ -38,20 +38,20 @@ function Home() {
       playBeep();
     }
   };
-  
- 
+
+
 
   return (
     <div className="app">
-      <Header title="Quantum Bet Bot"/> <Link to="/">Inicio</Link>
-      <main className="py-6">  
-      <div><Logout /></div> 
+      <Link to="/"><Header title="Quantum Bet Bot" /></Link>
+      <main className="py-6">
+        <div><Logout /></div>
         <div className="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
             <div className="game-list">
               <div className="game-item">
-                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego de blackjack" />   
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg" alt="juego de blackjack" />
               </div>
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png" alt="juego de ruleta" />
@@ -62,10 +62,10 @@ function Home() {
             <h2 className="text-2xl">Promociones</h2>
             <div className="game-list">
               <div className="game-item">
-              <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Promocion1.webp" alt="juego de blackjack" />
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Promocion1.webp" alt="juego de blackjack" />
               </div>
               <div className="game-item">
-              <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
+                <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
               </div>
             </div>
           </section>
