@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react"; 
 import {Auth} from "./Auth";
 import '../../css/Home.css';
@@ -8,7 +8,7 @@ import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
 import {auth,db} from '../Firebase.jsx';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
 
@@ -50,6 +50,9 @@ function Register() {
             })
             .then(() => {
                 alert("Usuario registrado con éxito!");
+                const user = userCredential.user;
+                signInWithEmailAndPassword(auth, email, password);
+                navigate("/");
                 setSubmitted(true); 
                 setError(false); 
             })

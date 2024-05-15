@@ -6,13 +6,12 @@
     min-height: 100vh;
     min-width: 100vw;
     flex-wrap: wrap;
-    display: flow;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #555;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
 }
 .support-list {
     display: list-item;

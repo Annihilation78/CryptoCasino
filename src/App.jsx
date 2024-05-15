@@ -27,7 +27,9 @@ function App() {
             <Route path="/BlackJack" element={<BlackJack />} />
             <Route path="/Roulette" element={<Roulette />} />
             <Route path="/Auth" element={<Auth />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>} />
           </Routes>
         </AuthProvider>
       </Router>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth,signInWithEmailAndPassword } from '../Firebase.jsx'; // Importa la autenticación de Firebase
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
@@ -15,6 +15,7 @@ function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password); // Usa la autenticación de Firebase
       alert('Inicio de sesión exitoso!');
+      navigate("/");
       // Redirigir a la página principal o a donde sea necesario después del inicio de sesión
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
