@@ -9,7 +9,7 @@ import { FaTwitter, FaFacebook } from 'react-icons/fa';
 function Support() {
     return (
         <div className="support-container">
-            <Header title="Soporte"/>
+            <Link to="/"><Header title="Soporte"/></Link>
             <p className="support-text">Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.</p>
             
             <div className="support-div">

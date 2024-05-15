@@ -22,7 +22,7 @@ function MenuJuegos() {
 
   return (
     <div className='App'>
-      <Header title="Juegos"/>
+      <Link to="/"><Header title="Juegos"/></Link>
 
       <div className="menu"> 
       <motion.div whileHover={{ scale: 1.1 }}>

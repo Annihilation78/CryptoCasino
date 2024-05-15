@@ -21,7 +21,7 @@ function Contact() {
 
   return (
     <div className="app">
-      <Header title="Contacto"/>
+      <Link to="/"><Header title="Contacto"/></Link>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>
