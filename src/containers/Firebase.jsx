@@ -1,5 +1,9 @@
 // Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
+// Tu configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyASp1N2mdEe_mYuu6FRWLlzVk5wYA53aQI",
   authDomain: "cryptocasino-5b8a3.firebaseapp.com",
@@ -10,4 +14,9 @@ const firebaseConfig = {
   measurementId: "G-NGP1PE8G89"
 };
 
-firebase.initializeApp(firebaseConfig);
+// Inicializa Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export { auth, db, signInWithEmailAndPassword};

@@ -7,6 +7,10 @@ import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
+import {auth,db} from '../Firebase.jsx';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
 
 function Register() {
   const [usuario, setUsuario] = useState(""); 
@@ -31,20 +35,33 @@ function Register() {
   }; 
 
   const handleSubmit = async (e) => { 
-      e.preventDefault(); 
-      if (usuario === "" || email === "" || password === "") { 
-          setError(true);
-          alert("Error al registrar usuario!");
-          <p>Error al registrar usuario!</p>
-      } else { 
-          localStorage.setItem("usuario",e.usuario);
-          localStorage.setItem("password",e.password)
-          await login({ e });
-          setSubmitted(true); 
-          setError(false); 
-          alert("Usuario registrado con éxito!");
-      } 
-  }; 
+    e.preventDefault(); 
+    if (usuario === "" || email === "" || password === "") { 
+        setError(true);
+        alert("Error al registrar usuario!");
+    } else { 
+        // Register the user in Firebase Authentication
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // User registered successfully, now save the additional data in Firestore
+            setDoc(doc(db, 'users', userCredential.user.uid), {
+                usuario: usuario,
+                email: email
+            })
+            .then(() => {
+                alert("Usuario registrado con éxito!");
+                setSubmitted(true); 
+                setError(false); 
+            })
+            .catch((error) => {
+                console.error("Error al guardar los datos del usuario: ", error);
+            });
+        })
+        .catch((error) => {
+            console.error("Error al registrar el usuario: ", error);
+        });
+    } 
+}; 
 
   const {
       register
@@ -101,3 +118,4 @@ function Register() {
 }
 
 export default Register;
+
