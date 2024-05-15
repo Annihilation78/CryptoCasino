@@ -731,11 +731,7 @@ export default function Game() {
   function SingleCashierChip(props) {
     let chipCost = parseInt(props.price) * props.amount;
     return (
-
       <div id="cashier-chip-ctn">
-        <p id="cashier-chip-amt">
-          {props.amount}x = ${chipCost}
-        </p>
         <div id="minus-icon" onClick={() => onClickMinus(props.unique)}>
           -
         </div>
@@ -749,6 +745,7 @@ export default function Game() {
             backgroundSize: props.bgSize,
           }}
         >
+          {chipCost}
           <p id="cashier-chip-amt">
             {props.amount}x = ${chipCost}
           </p>
