@@ -1,25 +1,27 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react"; 
-import {Auth} from "./Auth";
+import { useContext, useState } from "react";
+import { AuthContext } from "./Auth.jsx";
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
-import {auth,db} from '../Firebase.jsx';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-
 
 function Register() {
-  const [usuario, setUsuario] = useState(""); 
-  const [email, setEmail] = useState(""); 
-  const { login } = Auth();
-  const [password, setPassword] = useState(""); 
+  const { createUser, user, loading } = useContext(AuthContext);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const navigate = useNavigate();
 
-  const [submitted, setSubmitted] = useState(false); 
-  const [error, setError] = useState(false); 
+  if (loading) {
+    return (
+      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
+    );
+  }
+  
+  if (user) {
+    navigate("/");
+  }
 
   const handleUsuario = (e) => { 
       setUsuario(e.target.value); 
@@ -41,7 +43,7 @@ function Register() {
         alert("Error al registrar usuario!");
     } else { 
         // Register the user in Firebase Authentication
-        createUserWithEmailAndPassword(auth, email, password)
+        createUser(email, password)
         .then((userCredential) => {
             // User registered successfully, now save the additional data in Firestore
             setDoc(doc(db, 'users', userCredential.user.uid), {

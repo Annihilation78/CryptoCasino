@@ -1,35 +1,58 @@
-import { createContext, useContext, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
-import { LocalStorage } from "./LocalStorage";
-const AuthContext = createContext();
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import auth from "./FirebaseConfig";
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = LocalStorage("user", null);
-  const navigate = useNavigate();
+export const AuthContext = createContext(null);
 
-  // call this function when you want to authenticate the user
-  const login = async (data) => {
-    setUser(data);
-    navigate("/");
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  // call this function to sign out logged in user
-  const logout = () => {
-    setUser(null);
-    navigate("/login", { replace: true });
+  const loginUser = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const value = useMemo(
-    () => ({
-      user,
-      login,
-      logout,
-    }),
-    [user]
-  );
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const authValue = {
+    createUser,
+    user,
+    loginUser,
+    logOut,
+    loading,
+  };
+
+  return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;
 };
 
-export const Auth = () => {
-  return useContext(AuthContext);
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
+
+export default AuthProvider;

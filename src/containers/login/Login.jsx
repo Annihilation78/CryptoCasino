@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth,signInWithEmailAndPassword } from '../Firebase.jsx'; // Importa la autenticación de Firebase
+import { useContext } from "react";
+import { AuthContext } from "./AuthProvider";
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import '../../css/Home.css';
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => {
+  const { loginUser, loading, user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  // If authentication is still loading, display a loading indicator
+  if (loading) {
+    return (
+      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
+    );
+  }
+
+  // If the user is already authenticated, redirect to the home page
+  if (user) {
+    navigate("/");
+  }
   const handleLogin = async (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     try {
-      await signInWithEmailAndPassword(auth, email, password); // Usa la autenticación de Firebase
+      await loginUser(email, password); // Usa la autenticación de Firebase
       alert('Inicio de sesión exitoso!');
       navigate("/");
       // Redirigir a la página principal o a donde sea necesario después del inicio de sesión
