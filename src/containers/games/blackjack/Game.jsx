@@ -550,16 +550,16 @@ export default function Game() {
         <CashierChips />
         <PurchasedChips />
         <h3>
-          SUBTOTAL: $<span>{chipCostSubtotal}</span>
+          SUBTOTAL: <span>{chipCostSubtotal}</span>€
         </h3>
         <h3>
-          Bank Account: $<span>{userBank}</span>
+          Cuenta bancaria: <span>{userBank}</span>€
         </h3>
         <div className="button" id="purchase" onClick={handleOnPurchase}>
-          Purchase
+          Comprar
         </div>
         <div className="button" id="refresh" onClick={handleOnRefresh}>
-          Restart
+          Restablecer
         </div>
       </div>
       <Footer />
@@ -746,6 +746,7 @@ export default function Game() {
           }}
         >
           <p id="cashier-chip-value">
+            {props.amount}x = {chipCost}€
             {props.price}€
           </p>
         </div>
