@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
+import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
@@ -11,7 +11,7 @@ import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructu
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 function Register() {
-  const { createUser, user } = useAuth(); // Usa el hook useAuth
+  const { createUser, user, loading } = useContext(AuthContext); // Usa el hook useAuth
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +20,12 @@ function Register() {
   const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
   const navigate = useNavigate();
 
+  if (loading) {
+    return (
+      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
+    );
+  }
+  
   if (user) {
     navigate("/");
   }
@@ -72,7 +78,8 @@ function Register() {
         .catch((error) => {
           console.error("Error al registrar el usuario: ", error);
         });
-    } 
+    }
+    e.target.reset(); 
   }; 
 
   const { register } = useForm();

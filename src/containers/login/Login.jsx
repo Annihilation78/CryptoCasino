@@ -1,32 +1,37 @@
 // Login.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
+import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import '../../css/Home.css';
 
 const Login = () => {
-  const { loginUser, user } = useAuth(); // Usa el hook useAuth
+  const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  if (loading) {
+    return (
+      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
+    );
+  }
 
   // If the user is already authenticated, redirect to the home page
   if (user) {
     navigate("/");
   }
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     try {
-      await loginUser(email, password); // Usa la autenticación de Firebase
+      loginUser(email, password); // Usa la autenticación de Firebase
       alert('Inicio de sesión exitoso!');
       navigate("/");
       // Redirigir a la página principal o a donde sea necesario después del inicio de sesión
     } catch (error) {
-      console.error('Error al iniciar sesión:', error);
       alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
     }
   };
