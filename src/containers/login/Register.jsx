@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { Auth } from "./Auth.jsx";
+import { useAuth } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
+import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
+import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 function Register() {
-  const { createUser, user } = useContext(Auth);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const { createUser, user } = useAuth(); // Usa el hook useAuth
+  const [usuario, setUsuario] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
   const navigate = useNavigate();
 
   if (user) {
@@ -18,53 +25,57 @@ function Register() {
   }
 
   const handleUsuario = (e) => { 
-      setUsuario(e.target.value); 
-      setSubmitted(false); 
+    setUsuario(e.target.value); 
+    setSubmitted(false); 
   }; 
+
   const handleEmail = (e) => { 
-      setEmail(e.target.value); 
-      setSubmitted(false); 
+    setEmail(e.target.value); 
+    setSubmitted(false); 
   }; 
+
   const handlePassword = (e) => { 
-      setPassword(e.target.value); 
-      setSubmitted(false); 
+    setPassword(e.target.value); 
+    setSubmitted(false); 
   }; 
 
   const handleSubmit = async (e) => { 
     e.preventDefault(); 
     if (usuario === "" || email === "" || password === "") { 
-        setError(true);
-        alert("Error al registrar usuario!");
+      setError(true);
+      alert("Error al registrar usuario!");
     } else { 
-        // Register the user in Firebase Authentication
-        createUser(email, password)
+      // Register the user in Firebase Authentication
+      createUser(email, password)
         .then((userCredential) => {
-            // User registered successfully, now save the additional data in Firestore
-            setDoc(doc(db, 'users', userCredential.user.uid), {
-                usuario: usuario,
-                email: email
-            })
-            .then(() => {
-                alert("Usuario registrado con éxito!");
-                const user = userCredential.user;
-                signInWithEmailAndPassword(auth, email, password);
+          // User registered successfully, now save the additional data in Firestore
+          setDoc(doc(db, 'users', userCredential.user.uid), {
+            usuario: usuario,
+            email: email
+          })
+          .then(() => {
+            alert("Usuario registrado con éxito!");
+            signInWithEmailAndPassword(auth, email, password)
+              .then(() => {
                 navigate("/");
-                setSubmitted(true); 
-                setError(false); 
-            })
-            .catch((error) => {
-                console.error("Error al guardar los datos del usuario: ", error);
-            });
+              })
+              .catch((error) => {
+                console.error("Error al iniciar sesión después del registro: ", error);
+              });
+            setSubmitted(true); 
+            setError(false); 
+          })
+          .catch((error) => {
+            console.error("Error al guardar los datos del usuario: ", error);
+          });
         })
         .catch((error) => {
-            console.error("Error al registrar el usuario: ", error);
+          console.error("Error al registrar el usuario: ", error);
         });
     } 
-}; 
+  }; 
 
-  const {
-      register
-    } = useForm();
+  const { register } = useForm();
 
   return (
     <div className="app">
@@ -82,19 +93,18 @@ function Register() {
                 onChange={handleUsuario}/>
             </div>
             <div className="input-group">
-                <label name="email">Correo:</label>
-                <input
-                  type="email"
-                  name="email"
-                  {...register("email", {
-                    required: "Este campo es requerido",
-                    pattern: {
-                      value: /^\S+@\S+$/i,
-                      message:
-                        "Por favor, ingresa una dirección de correo válida",
-                    },
-                  })}
-                  onChange={handleEmail}/>
+              <label name="email">Correo:</label>
+              <input
+                type="email"
+                name="email"
+                {...register("email", {
+                  required: "Este campo es requerido",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Por favor, ingresa una dirección de correo válida",
+                  },
+                })}
+                onChange={handleEmail}/>
             </div>
             <div className="input-group">
               <label name="password">Contraseña:</label>
@@ -117,4 +127,3 @@ function Register() {
 }
 
 export default Register;
-
