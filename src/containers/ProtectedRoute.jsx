@@ -19,8 +19,8 @@ const ProtectedRoute = ({ children }) => {
 
 
 
-PrivateRoute.propTypes = {
+ProtectedRoute.propTypes = {
   children: PropTypes.node,
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;
