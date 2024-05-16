@@ -5,18 +5,11 @@ import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import { AuthProvider } from "./login/Auth.jsx";
-import { Link } from "react-router-dom";
+import { useAuth } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
-
-// Resto del código de home.jsx
-
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
-
-
 function Home() {
-
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
   const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
   const urlDelGif = "https://media.tenor.com/9eXlgcljmCAAAAAM/cat-money.gif";
@@ -39,7 +32,7 @@ function Home() {
     }
   };
 
-  const { logOut } = AuthProvider();
+  const { logOut } = useAuth(); // Usa el hook useAuth para obtener la función logOut
 
   const handleLogout = () => {
     logOut();
