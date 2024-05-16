@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
-import ReactAudioPlayer from 'react-h5-audio-player';
+import AudioPlayer from './AudioPlayer.jsx';
 import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de react-h5-audio-player
 import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
@@ -9,17 +9,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 
 function MenuJuegos() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.2);
-
-  useEffect(() => {
-    const audioDelay = setTimeout(() => {
-      setIsPlaying(true);
-    }, 2000); // 2000 milisegundos = 2 segundos
-
-    return () => clearTimeout(audioDelay); // Limpiar el temporizador al desmontar el componente
-  }, []); // Ejecutar solo una vez al montar el componente
-
+  
   return (
     <div className='App'>
       <Header title="Juegos"/>
@@ -49,11 +39,8 @@ function MenuJuegos() {
 </motion.div>
       </div>
 
-      <ReactAudioPlayer
-        src={audioFile}
-        autoPlay={isPlaying}
-        volume={volume}
-        onEnded={() => setIsPlaying(false)}
+      <AudioPlayer
+        audioFile={audioFile}
         controls // Agregar controles de reproducción
       />
       <Footer />
