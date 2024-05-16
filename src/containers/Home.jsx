@@ -5,7 +5,7 @@ import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import { AuthProvider } from "./login/Auth.jsx";
+import { AuthContext } from "./login/Auth.jsx";
 import { Link } from "react-router-dom";
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 
