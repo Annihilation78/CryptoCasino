@@ -5,7 +5,7 @@ import Contact from './containers/Contact.jsx';
 import { ProtectedRoute } from "./containers/ProtectedRoute.jsx";
 import Login from './containers/login/Login.jsx';
 import Register from './containers/login/Register.jsx';
-import { AuthContext} from './containers/login/Auth.jsx';
+import { AuthProvider, Auth } from './containers/login/Auth.jsx';
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import Roulette from './containers/games/roulette/Roulette.jsx';
 import BlackJack from './containers/games/blackjack/Game.jsx';
@@ -16,7 +16,7 @@ import Support from './containers/Support.jsx';
 function App() {
   return (
       <Router>
-        <AuthContext>
+        <AuthProvider>
           <Routes>
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
@@ -31,7 +31,7 @@ function App() {
                   <Home />
                 </ProtectedRoute>} />
           </Routes>
-        </AuthContext>
+        </AuthProvider>
       </Router>
       
   );

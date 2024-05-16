@@ -8,9 +8,9 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../Firebase.jsx";
 
-export const AuthContext = createContext(null);
+const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -55,4 +55,6 @@ AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default AuthProvider;
+export const Auth = () => {
+  return useContext(AuthContext);
+};
