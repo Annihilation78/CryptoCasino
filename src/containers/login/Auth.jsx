@@ -12,20 +12,16 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const loginUser = (email, password) => {
-    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => {
-    setLoading(true);
     return signOut(auth);
   };
 
@@ -45,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     user,
     loginUser,
     logOut,
-    loading,
   };
 
   return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;

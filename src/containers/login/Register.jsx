@@ -9,16 +9,10 @@ import Header from '../Header.jsx';
 import Footer from '../Footer.jsx'; 
 
 function Register() {
-  const { createUser, user, loading } = useContext(Auth);
+  const { createUser, user } = useContext(Auth);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
-  if (loading) {
-    return (
-      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
-    );
-  }
-  
   if (user) {
     navigate("/");
   }

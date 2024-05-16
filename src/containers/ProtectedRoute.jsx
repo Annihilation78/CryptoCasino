@@ -4,11 +4,7 @@ import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 
 export const ProtectedRoute = ({ children }) => {
-  const { loading, user } = useContext(Auth);
-
-  if (loading) {
-    return <span className="loading loading-dots loading-lg"></span>;
-  }
+  const { user } = useContext(Auth);
 
   if (user) {
     return children;

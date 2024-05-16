@@ -8,15 +8,8 @@ import Footer from '../Footer.jsx';
 import '../../css/Home.css';
 
 const Login = () => {
-  const { loginUser, loading, user } = useContext(Auth);
+  const { loginUser, user } = useContext(Auth);
   const navigate = useNavigate();
-
-  // If authentication is still loading, display a loading indicator
-  if (loading) {
-    return (
-      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
-    );
-  }
 
   // If the user is already authenticated, redirect to the home page
   if (user) {
