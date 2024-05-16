@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from "react";
-import { AuthContext } from "./Auth.jsx";
+import { Auth } from "./Auth.jsx";
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import '../../css/Home.css';
 
 const Login = () => {
-  const { loginUser, loading, user } = useContext(AuthContext);
+  const { loginUser, loading, user } = useContext(Auth);
   const navigate = useNavigate();
 
   // If authentication is still loading, display a loading indicator

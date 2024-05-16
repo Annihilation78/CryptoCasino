@@ -2,14 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "./Auth.jsx";
+import { Auth } from "./Auth.jsx";
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
 
 function Register() {
-  const { createUser, user, loading } = useContext(AuthContext);
+  const { createUser, user, loading } = useContext(Auth);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
