@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useSound from 'use-sound';
 import boopSfx from '../assets/urss.mp3';
 import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import { useAuth } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
@@ -31,11 +32,18 @@ function Home() {
       playBeep();
     }
   };
-
-  const { logOut } = useAuth(); // Usa el hook useAuth para obtener la función logOut
+  const { user, logOut, loading } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logOut();
+    logOut()
+      .then(() => {
+        alert('Cierre de sesión exitoso!');
+        navigate("/login"); // Redirect to the login page after logout
+      })
+      .catch((error) => {
+        console.error("Error al cerrar la sesión", error);
+      });
   };
 
   return (
