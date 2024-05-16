@@ -16,7 +16,7 @@ import Support from './containers/Support.jsx';
 function App() {
   return (
       <Router>
-        <AuthProvider>
+        <AuthContext>
           <Routes>
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
@@ -31,7 +31,7 @@ function App() {
                   <Home />
                 </ProtectedRoute>} />
           </Routes>
-        </AuthProvider>
+        </AuthContext>
       </Router>
       
   );
