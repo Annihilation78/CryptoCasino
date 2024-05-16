@@ -1,10 +1,11 @@
+// Auth.jsx
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../Firebase.jsx";
 
@@ -12,6 +13,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -41,15 +43,22 @@ export const AuthProvider = ({ children }) => {
     user,
     loginUser,
     logOut,
+    loading
   };
 
-  return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authValue}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export const Auth = () => {
+export const useAuth = () => {
   return useContext(AuthContext);
 };
+
+export { AuthContext };

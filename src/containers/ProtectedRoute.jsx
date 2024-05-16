@@ -1,19 +1,22 @@
+// ProtectedRoute.jsx
 import { useContext } from "react";
-import { Auth } from "./login/Auth.jsx";
+import { AuthContext } from "./login/Auth.jsx";
 import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 
 export const ProtectedRoute = ({ children }) => {
-  const { user } = useContext(Auth);
+  const { loading, user } = useContext(AuthContext);
+
+  if (loading) {
+    return <span className="loading loading-dots loading-lg"></span>;
+  }
 
   if (user) {
     return children;
   }
 
-  return <Navigate to="/login" />;
+  return <Navigate to="/Login" />;
 };
-
-
 
 ProtectedRoute.propTypes = {
   children: PropTypes.node,
