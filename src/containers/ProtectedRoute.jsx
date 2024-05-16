@@ -24,3 +24,4 @@ ProtectedRoute.propTypes = {
 };
 
 export default ProtectedRoute;
+//export
