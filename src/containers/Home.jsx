@@ -35,7 +35,7 @@ function Home() {
   const { user, logOut, loading } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  export const handleLogout = () => {
     logOut()
       .then(() => {
         alert('Cierre de sesión exitoso!');
