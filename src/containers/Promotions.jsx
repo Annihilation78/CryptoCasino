@@ -23,7 +23,7 @@ function MenuPromociones() {
                     <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion3" alt="juego 3" />
                     </Tilt> 
                     <Tilt>
-                    <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion4" alt="juego 3" />
+                    <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion4.jpg" alt="juego 3" />
                     </Tilt> 
             </div> {/* Aquí faltaba cerrar la etiqueta */}
             <Footer />
