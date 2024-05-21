@@ -6,12 +6,19 @@ import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import '../../css/Home.css';
+import { useSpring, animated } from 'react-spring';
 
 const Login = () => {
   const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const animationProps = useSpring({
+    from: { opacity: 0, transform: 'translate3d(0,-40px,0)', width: '0%' },
+    to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
+    config: { tension: 210, friction: 20 }
+  });
+  
 
   if (loading) {
     return (
@@ -37,6 +44,7 @@ const Login = () => {
   };
 
   return (
+    <animated.div style={animationProps}>
     <div className="app">
       <Header title="Quantum Bet Bot"/>
       <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
@@ -75,6 +83,7 @@ const Login = () => {
       </main>
       <Footer />
     </div>
+    </animated.div>
   );
 }
 
