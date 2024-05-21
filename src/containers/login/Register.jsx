@@ -63,7 +63,7 @@ function Register() {
             alert("Usuario registrado con éxito!");
             signInWithEmailAndPassword(auth, email, password)
               .then(() => {
-                navigate("/");
+                navigate("/Profile");
               })
               .catch((error) => {
                 console.error("Error al iniciar sesión después del registro: ", error);

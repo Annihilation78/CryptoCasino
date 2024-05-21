@@ -29,7 +29,7 @@ const Login = () => {
     try {
       loginUser(email, password); // Usa la autenticación de Firebase
       alert('Inicio de sesión exitoso!');
-      navigate("/");
+      navigate("/Profile");
       // Redirigir a la página principal o a donde sea necesario después del inicio de sesión
     } catch (error) {
       alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
@@ -64,7 +64,7 @@ const Login = () => {
               <input type="checkbox" name="" id="" style={{position: "relative", right: "-5px"}}/>
             </div>
             <div>
-              <li><Link to="">¿Has olvidado tu contraseña?</Link></li>
+              <li><Link to="/Contact">¿Has olvidado tu contraseña?</Link></li>
             </div>
             <div><button type="submit" className="login-btn">Iniciar sesión</button></div>
             <div>
