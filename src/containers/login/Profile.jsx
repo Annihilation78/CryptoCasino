@@ -2,11 +2,20 @@ import { useContext } from "react";
 import { AuthContext } from "./Auth.jsx";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
-import { handleLogout } from '../Home.jsx';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-
+  
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        alert('Cierre de sesión exitoso!');
+        navigate("/login"); // Redirect to the login page after logout
+      })
+      .catch((error) => {
+        console.error("Error al cerrar la sesión", error);
+      });
+  };
   // Render user's profile information
   return (
     <div className="app">
