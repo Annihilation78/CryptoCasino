@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "./Auth.jsx";
+import { Link } from 'react-router-dom';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  
+
   const handleLogout = () => {
     logOut()
       .then(() => {
