@@ -15,37 +15,46 @@ function MenuJuegos() {
       <Header title="Juegos"/>
 
       <div className="menu"> 
-      <motion.div whileHover={{ scale: 1.1 }}>
-  <Link to="/BlackJack">
-    <motion.img
-      className="imagen-juego"
-      src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg"
-      alt="juego 1"
-      whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
-    />
-    <div className="descripcion-juego">BlackJack</div>
-  </Link>
-</motion.div>
-<motion.div whileHover={{ scale: 1.1 }}>
-  <Link to="/Roulette">
-    <motion.img
-      className="imagen-juego"
-      src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png"
-      alt="juego 2"
-      whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
-    />
-    <div className="descripcion-juego">Roulette</div>
-  </Link>
-</motion.div>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Link to="/BlackJack">
+            <motion.img
+              className="imagen-juego"
+              src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/jack.jpg"
+              alt="juego 1"
+              whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
+            />
+            <div className="descripcion-juego">BlackJack</div>
+          </Link>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Link to="/Roulette">
+            <motion.img
+              className="imagen-juego"
+              src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Roulette.png"
+              alt="juego 2"
+              whileHover={{ boxShadow: "0px 0px 20px 10px rgba(0, 0, 0, 0.75)" }}
+            />
+            <div className="descripcion-juego">Roulette</div>
+          </Link>
+        </motion.div>
       </div>
 
-      <AudioPlayer
-        audioFile={audioFile}
-        controls // Agregar controles de reproducción
-      />
+      <div style={{
+        position: 'fixed',
+        top: '180px', // Ajusta la distancia desde la parte superior
+        left: '10px', // Ajusta la distancia desde la izquierda
+        width: '250px', // Ajusta el ancho
+        height: '50px', // Ajusta la altura
+        zIndex: 1000, // Asegura que el reproductor esté por encima de otros elementos
+      }}>
+        <AudioPlayer
+          audioFile={audioFile}
+          controls // Agregar controles de reproducción
+        />
+      </div>
+
       <Footer />
     </div>
-    
   );
 }
 
