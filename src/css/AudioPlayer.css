@@ -1,0 +1,10 @@
+.audio-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75px;
+  }
+  
+  .audio-player .rhap_container {
+    width: 100%;
+  }
