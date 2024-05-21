@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 
 
 function MapComponent() {
-  const position = [37.7749, -122.4194];
+  const position = [35.652832, 139.839478];
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
