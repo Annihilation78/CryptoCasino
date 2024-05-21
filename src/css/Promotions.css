@@ -24,8 +24,8 @@
 }
 
 .imagen-juego {
-    width: 550px; /* Tamaño de la imagen aumentado */
-    height: 550px; /* Tamaño de la imagen aumentado */
+    width: 400px; /* Tamaño de la imagen aumentado */
+    height: 400px; /* Tamaño de la imagen aumentado */
     object-fit: cover;
     transition: opacity 0.5s;
     margin-top: 280px;
