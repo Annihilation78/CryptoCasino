@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .support-list {
     display: list-item;
     list-style-type: disc;
@@ -22,6 +23,7 @@
     line-height: 1.6;
     text-align: left;
 }
+
 .support-title {
     font-size: 2em;
 }
@@ -55,10 +57,10 @@
     position: relative;
     z-index: 1;
     padding: 10px;
-  }
-  
-  .social-icons svg {
+}
+
+.social-icons svg {
     width: 24px;
     height: 24px;
     margin: 0 8px;
-  }
+}
