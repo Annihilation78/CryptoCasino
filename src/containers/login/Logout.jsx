@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signOut } from '../Firebase.jsx'; // Importa la función de cierre de sesión de Firebase
+import { IconButton } from '@mui/material';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
-function Logout() {
+const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -17,10 +19,20 @@ function Logout() {
     }
   };
 
+  const buttonStyle = {
+    backgroundColor: '#2B3742',
+    color: '#FFFFFF',
+    borderRadius: '50%',
+    padding: '10px',
+    '&:hover': {
+      backgroundColor: '#1F2A33',
+    }
+  };
+
   return (
-    <button onClick={handleLogout} className="logout-btn">
-      Cerrar sesión
-    </button>
+    <IconButton style={buttonStyle} onClick={handleLogout}>
+      <PowerSettingsNewIcon />
+    </IconButton>
   );
 }
 
