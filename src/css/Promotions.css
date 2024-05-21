@@ -50,3 +50,20 @@
 a {
     text-decoration: none;
 }
+
+.imagen-juego-container {
+    position: relative;
+}
+
+.imagen-juego-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+    color: white; /* Texto blanco */
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
