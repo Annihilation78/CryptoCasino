@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "./Auth.jsx";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
+import { AuthContext } from "./login/Auth.jsx";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
