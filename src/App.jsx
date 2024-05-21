@@ -26,7 +26,6 @@ function App() {
             <Route path="/Register" element={<Register />} />
             <Route path="/BlackJack" element={<BlackJack />} />
             <Route path="/Roulette" element={<Roulette />} />
-            <Route path="/Auth" element={<Auth />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </AuthProvider>
