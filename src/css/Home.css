@@ -216,12 +216,12 @@ header h1 img {
 }
 
 .py-6 {
-  max-width: 60vw;
+  max-width: fit-content;
   display: grid;
   grid-template-columns: 30% 70%;
   gap: 20px;
   justify-content: center;
-  align-items: center;
+  margin-top: 100px;
 }
 
 .content-container {
