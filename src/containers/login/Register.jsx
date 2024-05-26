@@ -44,11 +44,10 @@ function Register() {
     setPassword(e.target.value); 
     setSubmitted(false); 
   }; 
-  
 
   const handleSubmit = async (e) => { 
     e.preventDefault(); 
-    if (usuario === "" || email === "" || password === "" || cartera === "") { 
+    if (usuario === "" || email === "" || password === "") { 
       setError(true);
       alert("Error al registrar usuario!");
     } else { 
@@ -58,8 +57,7 @@ function Register() {
           // User registered successfully, now save the additional data in Firestore
           setDoc(doc(db, 'users', userCredential.user.uid), {
             usuario: usuario,
-            email: email,
-            balance: cartera
+            email: email
           })
           .then(() => {
             alert("Usuario registrado con éxito!");
@@ -90,11 +88,11 @@ function Register() {
     <div className="app">
       <Header title="Quantum Bet Bot"/>
       <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
-        <div className="login-container" style={{height:"500px"}}> {/* Ajusta la altura según sea necesario */}
+        <div className="login-container" style={{height:"450px"}}>
           <h2>Crea tu cuenta</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label htmlFor="usuario">Usuario:</label>
+              <label name="usuario">Usuario:</label>
               <input
                 id="usuario"
                 type="text"
@@ -102,7 +100,7 @@ function Register() {
                 onChange={handleUsuario}/>
             </div>
             <div className="input-group">
-              <label htmlFor="email">Correo:</label>
+              <label name="email">Correo:</label>
               <input
                 type="email"
                 name="email"
@@ -116,13 +114,13 @@ function Register() {
                 onChange={handleEmail}/>
             </div>
             <div className="input-group">
-              <label htmlFor="password">Contraseña:</label>
+              <label name="password">Contraseña:</label>
               <input
                 type="password"
                 name="password"
                 {...register("password", { required: "Este campo es requerido" })}
                 onChange={handlePassword}/>
-            </div>      
+            </div>
             <div><button type="submit" className="login-btn">Registrarse</button></div>
           </form>
           <div>
@@ -130,7 +128,7 @@ function Register() {
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
