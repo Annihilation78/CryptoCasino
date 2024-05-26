@@ -19,7 +19,7 @@ function Register() {
   const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
   const navigate = useNavigate();
-
+  const [cartera] = useState('');
   if (loading) {
     return (
       <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
@@ -57,7 +57,8 @@ function Register() {
           // User registered successfully, now save the additional data in Firestore
           setDoc(doc(db, 'users', userCredential.user.uid), {
             usuario: usuario,
-            email: email
+            email: email,
+            balance: cartera
           })
           .then(() => {
             alert("Usuario registrado con éxito!");
