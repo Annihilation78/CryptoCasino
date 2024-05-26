@@ -166,6 +166,8 @@ header h1 img {
   width: 400px;
   height: 380px;
   position: relative;
+  top: 45%;
+  left: 135%;
 }
 
 .login-container h2 {
