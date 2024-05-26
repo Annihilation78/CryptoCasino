@@ -1,11 +1,10 @@
-// Auth.jsx
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { createContext, useEffect, useState, useContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../Firebase.jsx";
 
@@ -14,18 +13,6 @@ export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
-
-  const loginUser = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
-  const logOut = () => {
-    return signOut(auth);
-  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -38,12 +25,46 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  const createUser = async (email, password, cartera) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setUser({ ...userCredential.user, cartera: cartera || null });
+      return userCredential;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const loginUser = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user);
+      return userCredential;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      setUser(null);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const updateUserCartera = (cartera) => {
+    setUser((prevUser) => ({ ...prevUser, cartera }));
+  };
+
   const authValue = {
     createUser,
     user,
     loginUser,
     logOut,
-    loading
+    loading,
+    updateUserCartera,
   };
 
   return (

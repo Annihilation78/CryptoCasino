@@ -1,8 +1,10 @@
 import React, { useContext, memo } from "react";
 import { MyContext } from "./Context";
+import { AuthContext } from "../../../login/Auth"; // Ajusta la ruta de importación según la estructura de tu proyecto
 
 const Chips = () => {
-  const { selectChip, chip, bConState, cartera } = useContext(MyContext);
+  const { selectChip, chip, bConState } = useContext(MyContext);
+  const { user } = useContext(AuthContext); // Accede al contexto de autenticación para obtener la cartera del usuario
 
   const chips = [
     { id: "1", number: 1, color: "#204b99" },
@@ -10,7 +12,7 @@ const Chips = () => {
     { id: "3", number: 20, color: "#18ab79" },
     { id: "4", number: 50, color: "#cea92a" },
     { id: "5", number: 100, color: "#6e43af" },
-    { id: "6", number: cartera, color: "#ff0000" }, // Add the balance as a chip option
+    { id: "6", number: user?.cartera || 0, color: "#ff0000" }, // Asegúrate de manejar el caso en que user sea null
   ];
 
   return (

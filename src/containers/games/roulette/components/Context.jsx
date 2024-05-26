@@ -1,5 +1,6 @@
-import React, { createContext, useEffect, useState, useRef } from "react";
+import React, { createContext, useEffect, useState, useRef,useContext } from "react";
 import $ from "jquery"
+import { AuthContext } from "../../../login/Auth";
 
 export const MyContext = createContext()
 
@@ -67,7 +68,7 @@ const Context = (props) => {
 
   const selectChip = (num) => { setChip(num) }                  // chip amount changing function
 
-  const [balance, setBalance] = useState(300)                  // balance constant
+  const [balance, setBalance] = useContext(AuthContext);                  // balance constant
   const [faucetModal, setFaucetModal] = useState(false)        // constant for keeping faucet modal's open/close info
   const [playable, setPlayable] = useState(false)              // play button's disable or active info
   const [bConState, setbConState] = useState(false)            // bet-container disable or active info
@@ -84,8 +85,11 @@ const Context = (props) => {
   const [gain, setGain] = useState(0)                          // gained from turn constant
   const [animation, setAnimation] = useState(false)            // confetti animation state
   const [winnerEffect, setWinnerEffect] = useState("none")     // won or lost animation state
-  const [turn, setTurn] = useState(0)                          // Turn number
-
+  const [turn, setTurn] = useState(0)   
+                         // Turn number
+  const updateBalance = (amount) => {
+    setBalance(balance + amount);
+  };
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
     setShowItemBall(false)
@@ -477,7 +481,7 @@ const Context = (props) => {
 
 
   return (
-    <MyContext.Provider value={{ buttons, lastNums, chip, bet, selectChip, balance, setBalance, faucetModal, setFaucetModal, gain, winnerEffect, svgContainer, animation, fadeBtn, fadeBtn2, fadeBtn3, play, playable, setPlayable, bConState, rotate, setRotate, rotate2, hideBall, showItemBall, winnerNumber, clearBet, doubleBet, reBet }}>
+    <MyContext.Provider value={{ buttons, lastNums, chip, bet, selectChip, balance, setBalance, faucetModal, setFaucetModal, gain, winnerEffect, svgContainer, animation, fadeBtn, fadeBtn2, fadeBtn3, play, playable, setPlayable, bConState, rotate, setRotate, rotate2, hideBall, showItemBall, winnerNumber, clearBet, doubleBet, reBet,updateBalance }}>
       {props.children}
     </MyContext.Provider>
   )
