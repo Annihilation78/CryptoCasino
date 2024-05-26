@@ -216,7 +216,7 @@ header h1 img {
 }
 
 .py-6 {
-  max-width: fit-content;
+  max-width: inherit;
   display: grid;
   grid-template-columns: 30% 70%;
   gap: 20px;
