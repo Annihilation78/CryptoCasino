@@ -25,10 +25,10 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const createUser = async (email, password, cartera) => {
+  const createUser = async (email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      setUser({ ...userCredential.user, cartera: cartera || null });
+      setUser({ ...userCredential.user });
       return userCredential;
     } catch (error) {
       throw error;
@@ -54,9 +54,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const updateUserCartera = (cartera) => {
-    setUser((prevUser) => ({ ...prevUser, cartera }));
-  };
+
 
   const authValue = {
     createUser,
@@ -64,7 +62,6 @@ export const AuthProvider = ({ children }) => {
     loginUser,
     logOut,
     loading,
-    updateUserCartera,
   };
 
   return (

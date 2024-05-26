@@ -15,7 +15,6 @@ function Register() {
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [cartera, setCartera] = useState(''); // Definir el estado de cartera
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
@@ -46,10 +45,6 @@ function Register() {
     setSubmitted(false); 
   }; 
   
-  const handleCartera = (e) => { 
-    setCartera(e.target.value); // Actualiza el estado de la cartera
-    setSubmitted(false); 
-  }; 
 
   const handleSubmit = async (e) => { 
     e.preventDefault(); 

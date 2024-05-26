@@ -1,8 +1,8 @@
-import React, { createContext, useEffect, useState, useRef,useContext } from "react";
-import $ from "jquery"
-import { AuthContext } from "../../../login/Auth";
+import React, { createContext, useEffect, useState, useRef} from "react";
+import $ from "jquery";
 
-export const MyContext = createContext()
+
+export const MyContext = createContext();
 
 const Context = (props) => {
 
@@ -58,38 +58,30 @@ const Context = (props) => {
     { id: "49", turn: "", value: "19 to 36", class: "button-cluster", nums: ["19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36"], ga: "5 / 12 / 6 / 14", betAmount: 0, multiple: 2 }
   ])
 
-  const rot = 360 / 37;                                         // to keep rotation ratio constant
+  const rot = 360 / 37; // to keep rotation ratio constant
 
-  const [lastNums, setLastNums] = useState([])                 // stores last winner numbers
+  const [lastNums, setLastNums] = useState([]); // stores last winner numbers
+  const [lastBet, setLastBet] = useState(buttons); // stores last winner numbers
+  const [chip, selectChip] = useState(20); // active chip money
+  const [balance,setBalance] = useState(); // balance constant
+  const [faucetModal, setFaucetModal] = useState(false); // constant for keeping faucet modal's open/close info
+  const [playable, setPlayable] = useState(false); // play button's disable or active info
+  const [bConState, setbConState] = useState(false); // bet-container disable or active info
+  const [rotate, setRotate] = useState(0); // ball's total rotation value
+  const [rotate2, setRotate2] = useState(0); // board's total rotation value
+  const [hideBall, setHideBall] = useState(false); // ball's opacity info
+  const [showItemBall, setShowItemBall] = useState(false); // item's ball's opacity info
+  const [winnerNumber, setWinnerNumber] = useState(""); // winner number constant
+  const [totalBet, setTotalBet] = useState(0); // total bet amount
+  const [lastTotalBet, setLastTotalBet] = useState(0); // total bet amount of previous turn
+  const [fadeBtn, setFadeBtn] = useState(true);
+  const [fadeBtn2, setFadeBtn2] = useState(true); // other buttons' controllers
+  const [fadeBtn3, setFadeBtn3] = useState(true);
+  const [gain, setGain] = useState(0); // gained from turn constant
+  const [animation, setAnimation] = useState(false); // confetti animation state
+  const [winnerEffect, setWinnerEffect] = useState("none"); // won or lost animation state
+  const [turn, setTurn] = useState(0); // Turn number
 
-  const [lastBet, setLastBet] = useState(buttons)              // stores last winner numbers
-
-  const [chip, setChip] = useState(20)                        // active chip money
-
-  const selectChip = (num) => { setChip(num) }                  // chip amount changing function
-
-  const [balance, setBalance] = useContext(AuthContext);                  // balance constant
-  const [faucetModal, setFaucetModal] = useState(false)        // constant for keeping faucet modal's open/close info
-  const [playable, setPlayable] = useState(false)              // play button's disable or active info
-  const [bConState, setbConState] = useState(false)            // bet-container disable or active info
-  const [rotate, setRotate] = useState(0)                      // ball's total rotation value
-  const [rotate2, setRotate2] = useState(0)                    // board's total rotation value
-  const [hideBall, setHideBall] = useState(false)              // ball's opacity info
-  const [showItemBall, setShowItemBall] = useState(false)      // item's ball's opacity info
-  const [winnerNumber, setWinnerNumber] = useState("")         // winner number constant
-  const [totalBet, setTotalBet] = useState(0)                  // total bet amount
-  const [lastTotalBet, setLastTotalBet] = useState(0)          // total bet amount of previous turn
-  const [fadeBtn, setFadeBtn] = useState(true)
-  const [fadeBtn2, setFadeBtn2] = useState(true)               // other buttons' controllers
-  const [fadeBtn3, setFadeBtn3] = useState(true)
-  const [gain, setGain] = useState(0)                          // gained from turn constant
-  const [animation, setAnimation] = useState(false)            // confetti animation state
-  const [winnerEffect, setWinnerEffect] = useState("none")     // won or lost animation state
-  const [turn, setTurn] = useState(0)   
-                         // Turn number
-  const updateBalance = (amount) => {
-    setBalance(balance + amount);
-  };
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
     setShowItemBall(false)
@@ -481,7 +473,7 @@ const Context = (props) => {
 
 
   return (
-    <MyContext.Provider value={{ buttons, lastNums, chip, bet, selectChip, balance, setBalance, faucetModal, setFaucetModal, gain, winnerEffect, svgContainer, animation, fadeBtn, fadeBtn2, fadeBtn3, play, playable, setPlayable, bConState, rotate, setRotate, rotate2, hideBall, showItemBall, winnerNumber, clearBet, doubleBet, reBet,updateBalance }}>
+    <MyContext.Provider value={{ buttons, lastNums, chip, bet, selectChip, balance, setBalance, faucetModal, setFaucetModal, gain, winnerEffect, svgContainer, animation, fadeBtn, fadeBtn2, fadeBtn3, play, playable, setPlayable, bConState, rotate, setRotate, rotate2, hideBall, showItemBall, winnerNumber, clearBet, doubleBet, reBet }}>
       {props.children}
     </MyContext.Provider>
   )
