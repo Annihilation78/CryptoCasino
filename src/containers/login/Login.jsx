@@ -81,7 +81,7 @@ const Login = () => {
           </form>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     </animated.div>
   );

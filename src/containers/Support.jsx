@@ -48,7 +48,7 @@ function Support() {
                     <FaFacebook />
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

@@ -30,7 +30,7 @@ function MenuPromociones() {
                     <p className="imagen-juego-text">Deposita mínimo 20 fichas.Y podrás ganar X fichas extra</p>
                     </Tilt> 
             </div> {/* Aquí faltaba cerrar la etiqueta */}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

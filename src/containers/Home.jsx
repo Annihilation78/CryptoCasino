@@ -78,7 +78,7 @@ function Home() {
       </main>
       <Chat />
       <div className='footerHome'>
-      <Footer />
+      {/* <Footer /> */}
       </div>
       
     </div>
