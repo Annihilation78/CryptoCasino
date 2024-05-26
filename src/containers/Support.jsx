@@ -9,9 +9,9 @@ function Support() {
     return (
         <div className="support-container">
             <Header title="Soporte" />
-            <p className="support-text">
+            <h1 className="support-text">
                 Bienvenido a nuestra página de soporte. Aquí puedes encontrar ayuda y recursos relacionados con nuestros productos y servicios.
-            </p>
+            </h1>
 
             <div className="support-div">
                 <h1 className="support-title">Preguntas Frequentes (FAQ)</h1>
