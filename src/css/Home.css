@@ -221,7 +221,7 @@ header h1 img {
   grid-template-columns: 30% 70%;
   gap: 20px;
   justify-content: center;
-  padding: 10% 4%;
+  align-items: center;
 }
 
 .content-container {
