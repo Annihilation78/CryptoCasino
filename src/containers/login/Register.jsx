@@ -15,11 +15,12 @@ function Register() {
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [cartera, setCartera] = useState(''); // Definir el estado de cartera
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
   const navigate = useNavigate();
-  const [cartera] = useState('');
+
   if (loading) {
     return (
       <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
@@ -44,10 +45,15 @@ function Register() {
     setPassword(e.target.value); 
     setSubmitted(false); 
   }; 
+  
+  const handleCartera = (e) => { 
+    setCartera(e.target.value); // Actualiza el estado de la cartera
+    setSubmitted(false); 
+  }; 
 
   const handleSubmit = async (e) => { 
     e.preventDefault(); 
-    if (usuario === "" || email === "" || password === "") { 
+    if (usuario === "" || email === "" || password === "" || cartera === "") { 
       setError(true);
       alert("Error al registrar usuario!");
     } else { 
@@ -89,11 +95,11 @@ function Register() {
     <div className="app">
       <Header title="Quantum Bet Bot"/>
       <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
-        <div className="login-container" style={{height:"450px"}}>
+        <div className="login-container" style={{height:"500px"}}> {/* Ajusta la altura según sea necesario */}
           <h2>Crea tu cuenta</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label name="usuario">Usuario:</label>
+              <label htmlFor="usuario">Usuario:</label>
               <input
                 id="usuario"
                 type="text"
@@ -101,7 +107,7 @@ function Register() {
                 onChange={handleUsuario}/>
             </div>
             <div className="input-group">
-              <label name="email">Correo:</label>
+              <label htmlFor="email">Correo:</label>
               <input
                 type="email"
                 name="email"
@@ -115,13 +121,13 @@ function Register() {
                 onChange={handleEmail}/>
             </div>
             <div className="input-group">
-              <label name="password">Contraseña:</label>
+              <label htmlFor="password">Contraseña:</label>
               <input
                 type="password"
                 name="password"
                 {...register("password", { required: "Este campo es requerido" })}
                 onChange={handlePassword}/>
-            </div>
+            </div>      
             <div><button type="submit" className="login-btn">Registrarse</button></div>
           </form>
           <div>
