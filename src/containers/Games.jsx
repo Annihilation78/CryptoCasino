@@ -40,12 +40,12 @@ function MenuJuegos() {
       </div>
 
       <div style={{
-        position: 'fixed',
-        top: '85px', // Ajusta la distancia desde la parte superior
-        left: '10px', // Ajusta la distancia desde la izquierda
-        width: '250px', // Ajusta el ancho
-        height: '50px', // Ajusta la altura
-        zIndex: 1000, // Asegura que el reproductor esté por encima de otros elementos
+       position: 'fixed',
+       bottom: '30px', // Ajusta la distancia desde la parte inferior
+       right: '0px', // Ajusta la distancia desde la derecha
+       width: '250px', // Ajusta el ancho
+       height: '50px', // Ajusta la altura
+       zIndex: 1000, // Asegura que el elemento esté por encima de otros elementos
       }}>
         <AudioPlayer
           audioFile={audioFile}
