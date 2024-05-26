@@ -216,6 +216,7 @@ header h1 img {
 }
 
 .py-6 {
+  max-width: 60vw;
   display: grid;
   grid-template-columns: 30% 70%;
   gap: 20px;
