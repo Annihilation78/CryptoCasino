@@ -50,7 +50,7 @@ function Home() {
     <div className="app">
       <Header title="Quantum Bet Bot" />
       <main className="py-6">
-        <div><button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button></div>
+        <button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button>
         <div className="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
