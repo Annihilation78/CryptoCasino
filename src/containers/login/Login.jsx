@@ -47,7 +47,7 @@ const Login = () => {
     <animated.div style={animationProps}>
     <div className="app">
       <Header title="Quantum Bet Bot"/>
-      <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
+      <main className="py-6">
         <div className="login-container" style={{height:"450px"}}>
           <h2>Ingresa a tu cuenta</h2>
           <form onSubmit={handleLogin} name="sesion">
