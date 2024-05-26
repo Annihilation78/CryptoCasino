@@ -21,15 +21,15 @@ function App() {
         <Routes>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Games" element={<Games />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Promotions" element={<Promotions />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/BlackJack" element={<BlackJack />} />
           <Route path="/Roulette" element={<Roulette />} />
-          <Route path="/" element={
+          <Route path="/Games" element={
             <ProtectedRoute>
-              <Home />
+              <Games />
             </ProtectedRoute>
           } />
           <Route path="/Profile" element={
