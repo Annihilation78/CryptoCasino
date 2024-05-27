@@ -8,6 +8,7 @@ import {
 import { createContext, useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../Firebase.jsx";
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext(null);
 
