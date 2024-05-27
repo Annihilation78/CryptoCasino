@@ -4,7 +4,6 @@ import { auth, signOut } from '../Firebase.jsx';
 import { AuthContext } from "./Auth.jsx"; // Importa la función de cierre de sesión de Firebase
 
 function Logout(){
-  return (
   logOut()
     .then(() => {
       alert('Cierre de sesión exitoso!');
@@ -13,7 +12,6 @@ function Logout(){
     .catch((error) => {
       console.error("Error al cerrar la sesión", error);
     })
-  );
 }
 
 export default Logout;
