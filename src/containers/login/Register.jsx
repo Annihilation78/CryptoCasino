@@ -8,7 +8,7 @@ import Header from '../Header.jsx';
 import Footer from '../Footer.jsx'; 
 import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 function Register() {
   const { createUser, user, loading } = useContext(AuthContext); // Usa el hook useAuth
@@ -55,6 +55,11 @@ function Register() {
       createUser(email, password)
         .then((userCredential) => {
           // User registered successfully, now save the additional data in Firestore
+          updateProfile(userCredential.user, {
+            displayName: usuario,
+            email: email,
+            balance: balance,
+          });
           setDoc(doc(db, 'users', userCredential.user.uid), {
             usuario: usuario,
             email: email,

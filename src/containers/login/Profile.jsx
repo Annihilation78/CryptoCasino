@@ -24,8 +24,9 @@ const Profile = () => {
       <main className="py-6">
        <div><button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button></div>
          <div>
-            <h1 className="text-5xl font-bold">{user?.displayName}</h1>
-            <p className="py-6">{user?.email}</p>
+            <h1>{user?.displayName}</h1>
+            <p >{user?.email}</p>
+            <p >{user?.balance}</p>
             <div>
               <li name="home"><Link to="/">¿Listo para jugar?</Link></li>
          </div>
