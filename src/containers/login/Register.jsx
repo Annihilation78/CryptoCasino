@@ -1,16 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
-import '../../css/Home.css';
-import Navigation from '../Navigation.jsx';
-import Header from '../Header.jsx'; 
-import Footer from '../Footer.jsx'; 
-import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
-import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
-import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { useEffect } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
 
-export const getBalance = async (userId) => {
+// Función para obtener el balance del usuario
+const getBalance = async (userId) => {
   try {
     const userDoc = await getDoc(doc(db, 'users', userId));
     if (userDoc.exists()) {
@@ -28,24 +20,21 @@ export const getBalance = async (userId) => {
 };
 
 function Register() {
-  const { createUser, user, loading } = useContext(AuthContext); // Usa el hook useAuth
+  const { createUser, user, loading } = useContext(AuthContext);
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null); // Aún no se usa, pero lo dejamos aquí
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
 
-  if (loading) {
-    return (
-      <span className="loading loading-dots loading-lg flex item-center mx-auto"></span>
-    );
-  }
-  
-  if (user) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const handleUsuario = (e) => { 
     setUsuario(e.target.value); 
@@ -68,24 +57,20 @@ function Register() {
       setError(true);
       alert("Error al registrar usuario!");
     } else { 
-      // Register the user in Firebase Authentication
       createUser(email, password)
         .then((userCredential) => {
-          // User registered successfully, now save the additional data in Firestore
-          updateProfile(userCredential.user, {
-            displayName: usuario,
-            email: email,
-            balance: balance,
-          });
-          setDoc(doc(db, 'users', userCredential.user.uid), {
+          const userId = userCredential.user.uid;
+          setDoc(doc(db, 'users', userId), {
             usuario: usuario,
             email: email,
             balance: 40
           })
-          .then(() => {
+          .then(async () => {
             alert("Usuario registrado con éxito!");
             signInWithEmailAndPassword(auth, email, password)
-              .then(() => {
+              .then(async () => {
+                const userBalance = await getBalance(userId); // Obtener el balance después de iniciar sesión
+                setBalance(userBalance); // Actualizar el estado con el balance
                 navigate("/Profile");
               })
               .catch((error) => {
@@ -149,6 +134,7 @@ function Register() {
           <div>
             <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link></p>
           </div>
+          {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
         </div>
       </main>
       <Footer />
@@ -157,5 +143,3 @@ function Register() {
 }
 
 export default Register;
-
-
