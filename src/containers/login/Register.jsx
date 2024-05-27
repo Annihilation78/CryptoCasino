@@ -10,7 +10,7 @@ import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
-const getBalance = async (userId) => {
+export const getBalance = async (userId) => {
   try {
     const userDoc = await getDoc(doc(db, 'users', userId));
     if (userDoc.exists()) {
