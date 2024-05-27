@@ -24,6 +24,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
+    alert('Cierre de sesión exitoso!');
+    navigate("/login");
     return signOut(auth);
   };
 
