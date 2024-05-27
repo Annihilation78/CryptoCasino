@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signOut } from '../Firebase.jsx';
-import { logOut } from "./Auth.jsx"; // Importa la función de cierre de sesión de Firebase
+import { AuthContext } from "./Auth.jsx"; // Importa la función de cierre de sesión de Firebase
 
 function Logout(){
   return (
