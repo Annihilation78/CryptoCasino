@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
-import { AuthProvider } from './Auth.jsx'; // Asegúrate de importar la función de cerrar sesión correctamente
+import { handleLogout } from './Logout.jsx'; // Asegúrate de importar la función de cerrar sesión correctamente
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -21,17 +21,6 @@ const Profile = () => {
 
     fetchBalance();
   }, [user]);
-
-  const handleLogout = () => {
-    logOut()
-      .then(() => {
-        alert('Cierre de sesión exitoso!');
-        navigate("/login"); // Redirect to the login page after logout
-      })
-      .catch((error) => {
-        console.error("Error al cerrar la sesión", error);
-      });
-  };
 
   // Render user's profile information
   return (

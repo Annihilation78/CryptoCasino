@@ -7,6 +7,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
+import { handleLogout } from './Logout.jsx'; 
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
@@ -34,17 +35,6 @@ function Home() {
   };
   const { user, logOut, loading } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logOut()
-      .then(() => {
-        alert('Cierre de sesión exitoso!');
-        navigate("/login"); // Redirect to the login page after logout
-      })
-      .catch((error) => {
-        console.error("Error al cerrar la sesión", error);
-      });
-  };
 
   return (
     <div className="app">
