@@ -53,7 +53,7 @@ function MenuJuegos() {
         />
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

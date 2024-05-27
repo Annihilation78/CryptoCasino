@@ -19,6 +19,15 @@ const Logout = () => {
     }
   };
 
+  const buttonStyle = {
+    backgroundColor: '#2B3742',
+    color: '#FFFFFF',
+    borderRadius: '50%',
+    padding: '10px',
+    '&:hover': {
+      backgroundColor: '#1F2A33',
+    }
+  };
 
   return (
     <IconButton style={buttonStyle} onClick={handleLogout}>

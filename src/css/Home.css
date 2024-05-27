@@ -165,9 +165,6 @@ header h1 img {
   text-align: center;
   width: 400px;
   height: 380px;
-  position: relative;
-  top: 45%;
-  left: 135%;
 }
 
 .login-container h2 {
@@ -208,13 +205,10 @@ header h1 img {
 }
 
 .logout-btn {
-  width: 130px;
-  height: 45px;
-  background: #2B3742;
-  color: white;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  background-color: '#2B3742';
+    color: '#FFFFFF';
+    border-radius: '50%';
+    padding: '10px';
 }
 
 .logout-btn:hover {
@@ -222,11 +216,11 @@ header h1 img {
 }
 
 .py-6 {
-  max-width: inherit;
   display: grid;
   grid-template-columns: 30% 70%;
   gap: 20px;
-
+  justify-content: center;
+  padding: 10% 4%;
 }
 
 .content-container {
