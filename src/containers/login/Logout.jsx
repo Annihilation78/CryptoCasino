@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signOut } from '../Firebase.jsx'; // Importa la función de cierre de sesión de Firebase
 
-export const handleLogout = () => {
+function Logout(){
+  return (
   logOut()
     .then(() => {
       alert('Cierre de sesión exitoso!');
@@ -10,7 +11,8 @@ export const handleLogout = () => {
     })
     .catch((error) => {
       console.error("Error al cerrar la sesión", error);
-    });
-};
+    })
+  );
+}
 
-export default handleLogout;
+export default Logout;
