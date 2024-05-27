@@ -57,7 +57,8 @@ function Register() {
           // User registered successfully, now save the additional data in Firestore
           setDoc(doc(db, 'users', userCredential.user.uid), {
             usuario: usuario,
-            email: email
+            email: email,
+            balance: 40
           })
           .then(() => {
             alert("Usuario registrado con éxito!");
@@ -134,3 +135,5 @@ function Register() {
 }
 
 export default Register;
+
+
