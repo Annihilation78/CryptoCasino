@@ -3,10 +3,8 @@ import { AuthContext } from "./Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
-import { getBalance } from './firebaseUtils'; // Asegúrate de importar la función correctamente
-import { logOut } from './Auth.jsx'; // Asegúrate de importar la función de cerrar sesión correctamente
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from './Firebase';
+import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
+import { LogOut } from './Auth.jsx'; // Asegúrate de importar la función de cerrar sesión correctamente
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
