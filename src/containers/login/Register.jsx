@@ -10,6 +10,23 @@ import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+const getBalance = async (userId) => {
+  try {
+    const userDoc = await getDoc(doc(db, 'users', userId));
+    if (userDoc.exists()) {
+      const userData = userDoc.data();
+      const balance = userData.balance;
+      return balance;
+    } else {
+      console.error("No such document!");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error al obtener el balance: ", error);
+    return null;
+  }
+};
+
 function Register() {
   const { createUser, user, loading } = useContext(AuthContext); // Usa el hook useAuth
   const [usuario, setUsuario] = useState('');
