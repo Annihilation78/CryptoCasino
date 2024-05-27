@@ -26,7 +26,7 @@ const Profile = () => {
          <div>
          <div className="hero-content flex-col lg:flex-row">
           <img
-            src="/images/stock/photo-1635805737707-575885ab0820.jpg"
+            src="https://media.discordapp.net/attachments/1155067568885862420/1244730756790485114/image.png?ex=66562d5a&is=6654dbda&hm=66c2f0b153a01a88d1f3961689b90b204835ca1020ccc676a4d74d093ff7f04e&=&format=webp&quality=lossless&width=632&height=676"
             className="max-w-sm rounded-lg shadow-2xl"
           />
           <div>
