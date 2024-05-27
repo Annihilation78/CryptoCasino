@@ -20,7 +20,7 @@ const Profile = () => {
   // Render user's profile information
   return (
     <div className="app">
-      <Header title="Quantum Bet Bot"/>
+      <Header title="Perfil"/>
       <main className="py-6">
        <div><button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button></div>
          <div>
