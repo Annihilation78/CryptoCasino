@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Auth.jsx";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import { getBalance } from './firebaseUtils'; // Asegúrate de importar la función correctamente
