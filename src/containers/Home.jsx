@@ -7,7 +7,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
-import { Logout } from './login/Logout.jsx'; 
+import Logout from './login/Logout.jsx'; 
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
