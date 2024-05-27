@@ -1,8 +1,16 @@
-import { useEffect } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
+import React, { useContext, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
+import '../../css/Home.css';
+import Navigation from '../Navigation.jsx';
+import Header from '../Header.jsx'; 
+import Footer from '../Footer.jsx'; 
+import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
+import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
+import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
-// Función para obtener el balance del usuario
-const getBalance = async (userId) => {
+export const getBalance = async (userId) => {
   try {
     const userDoc = await getDoc(doc(db, 'users', userId));
     if (userDoc.exists()) {
