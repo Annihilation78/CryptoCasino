@@ -28,7 +28,7 @@ const Profile = () => {
       <Header title="Perfil"/>
       <main className="py-6">
         <div>
-          <button className="logout-btn"><Logout />Cerrar sesión</button>
+          <button className="logout-btn" onClick={Logout}>Cerrar sesión</button>
         </div>
         <div>
           <div className="hero-content flex-col lg:flex-row">
