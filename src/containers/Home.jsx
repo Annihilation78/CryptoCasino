@@ -5,7 +5,7 @@ import beepSfx from '../assets/fri.mp3';
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
@@ -51,7 +51,7 @@ function Home() {
       <Header title="Quantum Bet Bot" />
       <main className="py-6">
         <div><button className="logout-btn" onClick={handleLogout}>Cerrar sesión</button></div>
-        <div><button className="login-btn" onClick={navigate("/Profile")}>Perfil</button></div>
+        <div><button className="login-btn" onClick={<Link to="/Perfil"></Link>}>Perfil</button></div>
         <div className="content-container">
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
