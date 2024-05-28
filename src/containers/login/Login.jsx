@@ -12,7 +12,6 @@ import { useSpring, animated } from 'react-spring';
 const Login = () => {
   const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
   const navigate = useNavigate();
-  const auth = getAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
