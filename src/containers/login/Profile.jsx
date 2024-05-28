@@ -5,6 +5,7 @@ import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
 
+
 const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
