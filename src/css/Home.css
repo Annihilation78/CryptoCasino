@@ -71,6 +71,7 @@ a:-webkit-any-link {
   color: whitesmoke;
   cursor: pointer;
 }
+
 .main-nav {
   color: #fff;
   padding: 60px 0;
@@ -202,6 +203,9 @@ a:-webkit-any-link {
 }
 
 .login-btn {
+  position: absolute;
+  top: 10%;
+  right: 5%;
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -215,14 +219,18 @@ a:-webkit-any-link {
 }
 
 .logout-btn {
-  background-color: '#2B3742';
-    color: '#FFFFFF';
-    border-radius: '50%';
-    padding: '10px';
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #2B3742;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .logout-btn:hover {
-  background-color: '#1F2A33';
+  background-color: #1F2A33;
 }
 
 .py-6 {
