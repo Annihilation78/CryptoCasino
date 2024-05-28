@@ -4,7 +4,7 @@ import Deck from './Deck.jsx';
 import Header from '../../Header.jsx';
 import Footer from '../../Footer.jsx';
 import $ from 'jquery';
-import { getBalance } from '../../login/Register.jsx';
+
 import { AuthContext } from "../../login/Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { updateDoc, doc } from 'firebase/firestore';
@@ -59,16 +59,6 @@ export default function Game() {
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
 
-  useEffect(() => {
-    const fetchBalance = async () => {
-      if (user) {
-        const userBalance = await getBalance(user.uid);
-        setBalance(userBalance);
-      }
-    };
-
-    fetchBalance();
-  }, [user]);
 
   // Temporary card values
   let url = '';
