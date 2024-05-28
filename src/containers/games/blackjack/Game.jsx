@@ -651,24 +651,18 @@ export default function Game() {
     }
   }
 
-  async function handleOnPurchase(userId) {
+  async function handleOnPurchase() {
     try {
       if (chipCostSubtotal > balance) {
         alert('No tienes suficiente dinero. Selecciona menos fichas.\n\n Si estás en negativo, estás en bancarrota. Reinicia para volver a empezar.');
       } else {
         const newBalance = balance - chipCostSubtotal;
-  
-        // Actualiza el saldo en la base de datos
-        await updateDoc(doc(db, 'users', userId), {
-          balance: newBalance
-        });
-  
-        // Actualiza los estados de las fichas y el subtotal
+        await updateDoc(doc(db, 'users', user.uid), { balance: newBalance });
         setBalance(newBalance);
-        setChipAmountRed(chipAmountRed + cashierChipAmountRed);
-        setChipAmountBlack(chipAmountBlack + cashierChipAmountBlack);
-        setChipAmountBlue(chipAmountBlue + cashierChipAmountBlue);
-        setChipAmountGreen(chipAmountGreen + cashierChipAmountGreen);
+        setChipAmountRed(prev => prev + cashierChipAmountRed);
+        setChipAmountBlack(prev => prev + cashierChipAmountBlack);
+        setChipAmountBlue(prev => prev + cashierChipAmountBlue);
+        setChipAmountGreen(prev => prev + cashierChipAmountGreen);
         setCashierChipAmountRed(0);
         setCashierChipAmountBlack(0);
         setCashierChipAmountBlue(0);
@@ -677,7 +671,6 @@ export default function Game() {
       }
     } catch (error) {
       console.error("Error al realizar la compra:", error);
-      // Aquí puedes manejar cualquier error que pueda ocurrir al actualizar la base de datos
     }
   }
 
