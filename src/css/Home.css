@@ -199,7 +199,7 @@ a:-webkit-any-link {
 }
 
 .login-btn {
-  position: absolute;
+  position: fixed;
   top: 10%;
   right: 5%;
   background-color: #007bff;
@@ -215,7 +215,7 @@ a:-webkit-any-link {
 }
 
 .logout-btn {
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 5%;
   background-color: #2B3742;
