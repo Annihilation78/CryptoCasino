@@ -45,7 +45,6 @@ header {
   height: 0px;
   position: sticky;
   font-size: 50px;
-  color: whitesmoke;
 }
 
 header h1 {
@@ -60,6 +59,11 @@ header h1 img {
   margin: 5px 5px;
 }
 
+a:-webkit-any-link {
+  color: whitesmoke;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .main-nav {
   color: #fff;
   padding: 60px 0;
