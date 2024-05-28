@@ -42,8 +42,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
+      const userCredential = await loginUser(
         email,
         password
       );
