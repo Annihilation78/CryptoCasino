@@ -78,6 +78,7 @@ const Login = () => {
           setErrorMessage(errorMessage);
           break;
       }
+      alert(errorCode);
     }
   };
 
