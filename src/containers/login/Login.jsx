@@ -14,8 +14,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const animationProps = useSpring({
     from: { opacity: 0, transform: 'translate3d(0,-40px,0)', width: '0%' },
     to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
@@ -29,7 +27,6 @@ const Login = () => {
     );
   }
 
-  // If the user is already authenticated, redirect to the home page
   if (user) {
     navigate("/");
   }
@@ -45,43 +42,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // Sign in with email and password in firebase auth service
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
 
-      // The signed-in user info
       const user = userCredential.user;
       alert('Inicio de sesión exitoso!');
       navigate("/Profile");
     } catch (err) {
-     // Handle Errors here.
-      const errorMessage = err.message;
-      const errorCode = err.code;
-
-      setError(true);
-      console.log(errorCode)
-
-      switch (errorCode) {
-        case "auth/invalid-email":
-          setErrorMessage("Este correo es inválido.");
-          alert("Este correo es inválido.");
-          break;
-        case "auth/user-not-found":
-          setErrorMessage("Este correo no está registrado.");
-          alert("Este correo no está registrado.");
-          break;
-        case "auth/wrong-password":
-          setErrorMessage("Contraseña errónea.")
-          alert("Contraseña errónea.");
-          break;
-        default:
-          setErrorMessage(errorMessage);
-          break;
-      }
-      alert("Este correo es inválido.");
+      alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
     }
   };
 
