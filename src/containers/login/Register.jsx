@@ -10,6 +10,7 @@ import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de impor
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+
 export const getBalance = async (userId) => {
   try {
     const userDoc = await getDoc(doc(db, 'users', userId));
@@ -79,6 +80,7 @@ function Register() {
               .then(async () => {
                 const userBalance = await getBalance(userId); // Obtener el balance después de iniciar sesión
                 setBalance(userBalance); // Actualizar el estado con el balance
+                handleOnPurchase(userId);
                 navigate("/Profile");
               })
               .catch((error) => {

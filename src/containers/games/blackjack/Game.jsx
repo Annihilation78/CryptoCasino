@@ -1,9 +1,15 @@
 import './Blackjack.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import Deck from './Deck.jsx';
 import Header from '../../Header.jsx';
 import Footer from '../../Footer.jsx';
 import $ from 'jquery';
+import { getBalance } from '../../login/Register.jsx';
+import { AuthContext } from "../../login/Auth.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import { updateDoc, doc } from 'firebase/firestore';
+import { db } from "../../Firebase.jsx";
+
 
 export default function Game() {
   // Dealer cards
@@ -49,7 +55,20 @@ export default function Game() {
   const [cashierChipAmountGreen, setCashierChipAmountGreen] = useState(0);
 
   const [chipCostSubtotal, setChipCostSubtotal] = useState(0);
-  const [userBank, setUserBank] = useState(100);
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [balance, setBalance] = useState(null);
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (user) {
+        const userBalance = await getBalance(user.uid);
+        setBalance(userBalance);
+      }
+    };
+
+    fetchBalance();
+  }, [user]);
 
   // Temporary card values
   let url = '';
@@ -330,7 +349,7 @@ export default function Game() {
     }
 
     // Update the user's bank balance with the new winnings or losses
-    setUserBank(userBank + winnings);
+    setBalance(balance + winnings);
     refreshGame(); // Refresh or update the game state
   }
 
@@ -553,7 +572,7 @@ export default function Game() {
           SUBTOTAL: <span>{chipCostSubtotal}</span>€
         </h3>
         <h3>
-          Cuenta bancaria: <span>{userBank}</span>€
+          Cuenta bancaria: <span>{balance}</span>€
         </h3>
         <div className="button" id="purchase" onClick={handleOnPurchase}>
           Comprar
@@ -632,22 +651,33 @@ export default function Game() {
     }
   }
 
-  function handleOnPurchase() {
-    if (chipCostSubtotal > userBank) {
-      alert('No tienes suficiente dinero. Selecciona menos fichas.\n\n Si estás en negativo, estás en bancarrota. Reinicia para volver a empezar.');
-    } else {
-      setUserBank(userBank - chipCostSubtotal);
-
-      setChipAmountRed(chipAmountRed + cashierChipAmountRed);
-      setChipAmountBlack(chipAmountBlack + cashierChipAmountBlack);
-      setChipAmountBlue(chipAmountBlue + cashierChipAmountBlue);
-      setChipAmountGreen(chipAmountGreen + cashierChipAmountGreen);
-
-      setCashierChipAmountRed(0);
-      setCashierChipAmountBlack(0);
-      setCashierChipAmountBlue(0);
-      setCashierChipAmountGreen(0);
-      setChipCostSubtotal(0);
+  async function handleOnPurchase(userId) {
+    try {
+      if (chipCostSubtotal > balance) {
+        alert('No tienes suficiente dinero. Selecciona menos fichas.\n\n Si estás en negativo, estás en bancarrota. Reinicia para volver a empezar.');
+      } else {
+        const newBalance = balance - chipCostSubtotal;
+  
+        // Actualiza el saldo en la base de datos
+        await updateDoc(doc(db, 'users', userId), {
+          balance: newBalance
+        });
+  
+        // Actualiza los estados de las fichas y el subtotal
+        setBalance(newBalance);
+        setChipAmountRed(chipAmountRed + cashierChipAmountRed);
+        setChipAmountBlack(chipAmountBlack + cashierChipAmountBlack);
+        setChipAmountBlue(chipAmountBlue + cashierChipAmountBlue);
+        setChipAmountGreen(chipAmountGreen + cashierChipAmountGreen);
+        setCashierChipAmountRed(0);
+        setCashierChipAmountBlack(0);
+        setCashierChipAmountBlue(0);
+        setCashierChipAmountGreen(0);
+        setChipCostSubtotal(0);
+      }
+    } catch (error) {
+      console.error("Error al realizar la compra:", error);
+      // Aquí puedes manejar cualquier error que pueda ocurrir al actualizar la base de datos
     }
   }
 
