@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
@@ -6,7 +6,7 @@ import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
-import { doc, setDoc } from 'firebase/firestore'; // Asegúrate de importar esto
+import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
