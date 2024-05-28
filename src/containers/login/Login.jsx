@@ -5,14 +5,18 @@ import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de use
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
+import { auth } from "../Firebase.jsx";
 import '../../css/Home.css';
 import { useSpring, animated } from 'react-spring';
 
 const Login = () => {
   const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
   const navigate = useNavigate();
+  const auth = getAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const animationProps = useSpring({
     from: { opacity: 0, transform: 'translate3d(0,-40px,0)', width: '0%' },
     to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
@@ -30,16 +34,51 @@ const Login = () => {
   if (user) {
     navigate("/");
   }
-
+  
   const handleLogin = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "email") setEmail(value);
+    if (name === "password") setPassword(value);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      loginUser(email, password); // Usa la autenticación de Firebase
+      // Sign in with email and password in firebase auth service
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      // The signed-in user info
+      const user = userCredential.user;
       alert('Inicio de sesión exitoso!');
       navigate("/Profile");
-      // Redirigir a la página principal o a donde sea necesario después del inicio de sesión
-    } catch (error) {
-      alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
+    } catch (err) {
+     // Handle Errors here.
+      const errorMessage = err.message;
+      const errorCode = err.code;
+
+      setError(true);
+      console.log(errorCode)
+
+      switch (errorCode) {
+        case "auth/invalid-email":
+          setErrorMessage("Este correo es inválido.");
+          break;
+        case "auth/user-not-found":
+          setErrorMessage("Este correo no está registrado.");
+          break;
+        case "auth/wrong-password":
+          setErrorMessage("Contraseña errónea.")
+          break;
+        default:
+          setErrorMessage(errorMessage);
+          break;
+      }
     }
   };
 
@@ -50,14 +89,14 @@ const Login = () => {
       <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
         <div className="login-container" style={{height:"450px"}}>
           <h2>Ingresa a tu cuenta</h2>
-          <form onSubmit={handleLogin} name="sesion">
+          <form onSubmit={handleSubmit} name="sesion">
             <div className="input-group">
               <label name="email">Correo electrónico:</label>
               <input
                 name="email"
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}/>
+                onChange={handleLogin}/>
             </div>
             <div className="input-group">
               <label name="password">Contraseña:</label>
@@ -65,7 +104,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}/>
+                onChange={handleLogin}/>
             </div>
             <div>
               <label name="recuerdame">Recuérdame</label>
