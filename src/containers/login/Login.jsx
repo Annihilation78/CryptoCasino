@@ -67,18 +67,21 @@ const Login = () => {
       switch (errorCode) {
         case "auth/invalid-email":
           setErrorMessage("Este correo es inválido.");
+          alert("Este correo es inválido.");
           break;
         case "auth/user-not-found":
           setErrorMessage("Este correo no está registrado.");
+          alert("Este correo no está registrado.");
           break;
         case "auth/wrong-password":
           setErrorMessage("Contraseña errónea.")
+          alert("Contraseña errónea.");
           break;
         default:
           setErrorMessage(errorMessage);
           break;
       }
-      alert(errorCode);
+      alert("Este correo es inválido.");
     }
   };
 
