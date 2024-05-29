@@ -6,7 +6,6 @@ import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import { useNavigate, Link } from 'react-router-dom';
-import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
@@ -14,7 +13,6 @@ function Home() {
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
   const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
   const urlDelGif = "https://media.tenor.com/9eXlgcljmCAAAAAM/cat-money.gif";
-  const { logOut } = useContext(AuthContext);
 
   const handleBoopClick = () => {
     if (isBoopPlaying) {
@@ -39,8 +37,6 @@ function Home() {
       <Header title="Quantum Bet Bot" />
       <main className="py-6">
         <div className="content-container">
-          <div><button className="logout-btn" onClick={logOut}>Cerrar sesión</button></div>
-          <div><button className="login-btn"><Link to="/Profile">Perfil</Link></button></div>
           <section className="container">
             <h2 className="text-2xl">Juegos Destacados</h2>
             <div className="game-list">

@@ -7,7 +7,7 @@ import { getBalance } from './Register.jsx'; // Asegúrate de importar la funci�
 
 
 const Profile = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
 
@@ -27,9 +27,6 @@ const Profile = () => {
     <div className="app">
       <Header title="Perfil"/>
       <main className="py-6">
-        <div>
-          <button className="logout-btn" onClick={logOut}>Cerrar sesión</button>
-        </div>
         <div>
           <div className="hero-content flex-col lg:flex-row">
             <img
