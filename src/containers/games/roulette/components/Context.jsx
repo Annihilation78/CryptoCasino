@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
 import $ from "jquery";
-import { updateBalance } from './balanceUtils';
+import { updateBalance, getBalance } from './balanceUtils';
 
 export const MyContext = createContext()
 
