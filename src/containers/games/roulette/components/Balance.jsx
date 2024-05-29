@@ -1,6 +1,6 @@
 import { useContext, useEffect, memo } from "react";
 import { MyContext } from "./Context";
-import { AuthContext } from "../../../Auth.jsx";
+import { AuthContext } from "../../login/Auth.jsx";
 import { getBalance } from './balanceUtils'; // Importa la función
 
 const Balance = () => {
