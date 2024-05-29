@@ -9,7 +9,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from "./login/Auth.jsx"; // Usa el hook useAuth para obtener la función logOut
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-
+import InteractiveSceneAnya from './InteractiveSceneAnya.jsx';
 function Home() {
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
   const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
@@ -61,6 +61,7 @@ function Home() {
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
               </div>
+              <InteractiveSceneAnya />
             </div>
           </section>
         </div>

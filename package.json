@@ -24,6 +24,8 @@
     "@emotion/styled": "^11.11.5",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@mui/material": "^5.15.16",
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
     "@supabase/supabase-js": "^2.39.7",
     "@tensorflow-models/qna": "^1.0.2",
     "@tensorflow/tfjs": "^4.17.0",
@@ -51,6 +53,7 @@
     "react-spring": "^9.7.3",
     "sort-by": "^0.0.2",
     "sound": "^3.1.0",
+    "three": "^0.164.1",
     "unzipper": "^0.10.14",
     "use-sound": "^4.0.1"
   },

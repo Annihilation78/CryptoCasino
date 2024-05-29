@@ -15,6 +15,7 @@ export default defineConfig({
       external: ['@mui/styles']
     }
   },
+  assetsInclude: ["**/*.glb"],
 
   base: process.env.NODE_ENV === 'production' ? '/CryptoCasino/' : '/',
 })

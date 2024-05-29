@@ -9,6 +9,7 @@ import { AuthContext } from "../../login/Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { updateDoc, doc } from 'firebase/firestore';
 import { db } from "../../Firebase.jsx";
+import InteractiveSceneBlackJack from '../../InteractiveSceneBlackJack.jsx';
 
 
 export default function Game() {
@@ -571,6 +572,7 @@ export default function Game() {
           Restablecer
         </div>
       </div>
+      <InteractiveSceneBlackJack/>
       <Footer />
     </div>
   );
