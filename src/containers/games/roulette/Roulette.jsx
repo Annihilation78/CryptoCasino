@@ -33,7 +33,7 @@ function Roulette() {
           <Chips />
         </div>
       </Context>
-      <Footer />
+
     </div>
   );
 }
