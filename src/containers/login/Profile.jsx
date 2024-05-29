@@ -52,7 +52,7 @@ const Profile = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </div>
   );
 };

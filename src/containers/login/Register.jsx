@@ -147,7 +147,7 @@ function Register() {
           {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
         </div>
       </main>
-      <Footer />
+
     </div>
   );
 }
