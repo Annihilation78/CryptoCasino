@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState, useRef, useContext} from "react";
 import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
-
+import { AuthContext } from "../../login/Auth.jsx";
 export const MyContext = createContext()
 
 const Context = (props) => {
