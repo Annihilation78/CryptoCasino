@@ -573,7 +573,7 @@ export default function Game() {
         </div>
       </div>
       <InteractiveSceneBlackJack/>
-      <Footer />
+
     </div>
   );
 
