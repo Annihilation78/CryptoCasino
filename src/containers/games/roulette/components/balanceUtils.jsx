@@ -1,6 +1,7 @@
 // balanceUtils.jsx
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from "../../../Firebase.jsx";
+
 
 // Función para actualizar el balance del usuario
 export const updateBalance = async (userId, newBalance) => {
@@ -15,10 +16,10 @@ export const updateBalance = async (userId, newBalance) => {
 
 export const getBalance = async (userId) => {
     try {
-      const userDoc = await getDoc(doc(db, 'users', userId));
+      const userDoc = await getDoc(doc(db, 'users', user.uid), { balance: newBalance });
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        const balance = userData.balance;
+        const balance = newBalance;
         return balance;
       } else {
         console.error("No such document!");
