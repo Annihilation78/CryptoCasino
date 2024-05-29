@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
-import $ from "jquery"
+import $ from "jquery";
+import { updateBalance } from './balanceUtils';
 
 export const MyContext = createContext()
 
@@ -220,6 +221,7 @@ const Context = (props) => {
       setWinnerEffect("lost")
     }
     setBalance(balance + profit)
+    await updateBalance(userId, newBalance);
   }
 
 
