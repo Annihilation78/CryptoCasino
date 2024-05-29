@@ -103,7 +103,6 @@ a:-webkit-any-link {
 
 .game-item {
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
   text-align: center;
@@ -231,10 +230,9 @@ a:-webkit-any-link {
 
 .py-6 {
   display: grid;
-  grid-template-columns: 30% 70%;
   gap: 20px;
-  justify-content: center;
   padding: 10% 4%;
+  justify-content: center;
 }
 
 .content-container {
