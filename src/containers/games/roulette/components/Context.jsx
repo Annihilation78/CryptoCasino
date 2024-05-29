@@ -193,7 +193,7 @@ const Context = (props) => {
 
 
 
-  const calculateResult = (winnerNum) => {
+  const calculateResult = async (winnerNum) => {
     let profit = 0;
     const nonNums = ["14", "27", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49"]
 
