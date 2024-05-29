@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useRef } from "react";
+import React, { createContext, useEffect, useState, useRef, useContext } from "react";
 import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
 
