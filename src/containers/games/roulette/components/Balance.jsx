@@ -1,15 +1,21 @@
-import { useContext, memo } from "react";
+import { useContext, useEffect, useState, memo } from "react";
 import { MyContext } from "./Context";
-import { updateBalance } from './balanceUtils'; // Importa la función
+import { getBalance } from './balanceUtils'; // Importa la función
 
 const Balance = () => {
-  const { balance, setFaucetModal } = useContext(MyContext);
-  
-  // Ejemplo de uso de updateBalance
-  const handleUpdateBalance = async (newBalance) => {
-    const userId = "user-id"; // Obtén el ID del usuario autenticado
-    await updateBalance(userId, newBalance);
-  };
+  const { balance, setBalance, setFaucetModal } = useContext(MyContext);
+  const userId = "user-id"; // Debes obtener el ID del usuario autenticado
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const userBalance = await getBalance(userId);
+      if (userBalance !== null) {
+        setBalance(userBalance);
+      }
+    };
+
+    fetchBalance();
+  }, [userId, setBalance]);
 
   return (
     <div className="balance">
