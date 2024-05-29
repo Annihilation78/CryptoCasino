@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Navigation from './Navigation.jsx';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "./login/Auth.jsx";
+import '../../css/Home.css';
 
 function Header({ title }) {
   const { logOut } = useContext(AuthContext);
