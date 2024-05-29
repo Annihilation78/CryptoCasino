@@ -199,8 +199,8 @@ a:-webkit-any-link {
 
 .login-btn {
   position: fixed;
-  top: 10%;
-  right: 5%;
+  top: 12%;
+  left: 1%;
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -215,8 +215,8 @@ a:-webkit-any-link {
 
 .logout-btn {
   position: fixed;
-  top: 5%;
-  right: 5%;
+  top: 12%;
+  right: 1%;
   background-color: #2B3742;
   color: #FFFFFF;
   border-radius: 50%;
