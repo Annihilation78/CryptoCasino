@@ -1,16 +1,19 @@
-import { useContext, useEffect, useState, memo } from "react";
+import { useContext, useEffect, memo } from "react";
 import { MyContext } from "./Context";
+import { AuthContext } from "../../../Auth.jsx";
 import { getBalance } from './balanceUtils'; // Importa la función
 
 const Balance = () => {
   const { balance, setBalance, setFaucetModal } = useContext(MyContext);
-  const userId = "user-id"; // Debes obtener el ID del usuario autenticado
+  const { userId } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const userBalance = await getBalance(userId);
-      if (userBalance !== null) {
-        setBalance(userBalance);
+      if (userId) {
+        const userBalance = await getBalance(userId);
+        if (userBalance !== null) {
+          setBalance(userBalance);
+        }
       }
     };
 
