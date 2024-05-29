@@ -1,6 +1,6 @@
 // balanceUtils.jsx
 import { doc, updateDoc } from 'firebase/firestore';
-import { db } from './Firebase'; // Ajusta la ruta según tu estructura de archivos
+import { db } from "../../Firebase.jsx";
 
 // Función para actualizar el balance del usuario
 export const updateBalance = async (userId, newBalance) => {
