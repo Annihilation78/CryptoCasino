@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState, useRef } from "react";
-import $ from "jquery"
+import $ from "jquery";
+import { updateBalance, getBalance } from './balanceUtils';
 
 export const MyContext = createContext()
 
@@ -86,6 +87,17 @@ const Context = (props) => {
   const [winnerEffect, setWinnerEffect] = useState("none")     // won or lost animation state
   const [turn, setTurn] = useState(0)                          // Turn number
 
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const userBalance = await getBalance(userId);
+      if (userBalance !== null) {
+        setBalance(userBalance);
+      }
+    };
+
+    fetchBalance();
+  }, [userId]);
+  
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
     setShowItemBall(false)
@@ -192,7 +204,7 @@ const Context = (props) => {
 
 
 
-  const calculateResult = (winnerNum) => {
+  const calculateResult = async (winnerNum) => {
     let profit = 0;
     const nonNums = ["14", "27", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49"]
 
@@ -220,6 +232,7 @@ const Context = (props) => {
       setWinnerEffect("lost")
     }
     setBalance(balance + profit)
+    await updateBalance(userId, newBalance);
   }
 
 
