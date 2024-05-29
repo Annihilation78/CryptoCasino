@@ -59,7 +59,7 @@ header h1 img {
   max-width: 80px;
   max-height: 80px;
   position: absolute;
-  left: 0;
+  left: 18px;
   margin: 5px 5px;
 }
 
@@ -200,7 +200,7 @@ a:-webkit-any-link {
 .login-btn {
   position: fixed;
   top: 12%;
-  left: 1%;
+  left: 12px;
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
