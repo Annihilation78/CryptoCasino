@@ -87,6 +87,17 @@ const Context = (props) => {
   const [winnerEffect, setWinnerEffect] = useState("none")     // won or lost animation state
   const [turn, setTurn] = useState(0)                          // Turn number
 
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const userBalance = await getBalance(userId);
+      if (userBalance !== null) {
+        setBalance(userBalance);
+      }
+    };
+
+    fetchBalance();
+  }, [userId]);
+  
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
     setShowItemBall(false)
