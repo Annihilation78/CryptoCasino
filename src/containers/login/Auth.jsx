@@ -45,7 +45,6 @@ export const AuthProvider = ({ children }) => {
   const authValue = {
     createUser,
     user,
-    userId: user?.uid || null,
     loginUser,
     logOut,
     loading

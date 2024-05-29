@@ -86,7 +86,7 @@ const Context = (props) => {
   const [animation, setAnimation] = useState(false)            // confetti animation state
   const [winnerEffect, setWinnerEffect] = useState("none")     // won or lost animation state
   const [turn, setTurn] = useState(0)                          // Turn number
-
+  const { userId } = useContext(AuthContext);
   useEffect(() => {
     const fetchBalance = async () => {
       const userBalance = await getBalance(userId);

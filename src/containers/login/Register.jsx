@@ -1,14 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "./Auth.jsx";
+import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
-import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { db, auth } from "../Firebase.jsx";
+import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de importar esto
+import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+
 
 export const getBalance = async (userId) => {
   try {
@@ -28,14 +29,14 @@ export const getBalance = async (userId) => {
 };
 
 function Register() {
-  const { createUser, user, loading, userId } = useContext(AuthContext);
+  const { createUser, user, loading } = useContext(AuthContext);
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [balance, setBalance] = useState(null);
+  const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -67,8 +68,8 @@ function Register() {
     } else { 
       createUser(email, password)
         .then((userCredential) => {
-          const newUserId = userCredential.user.uid;
-          setDoc(doc(db, 'users', newUserId), {
+          const userId = userCredential.user.uid;
+          setDoc(doc(db, 'users', userId), {
             usuario: usuario,
             email: email,
             balance: 40
@@ -77,8 +78,9 @@ function Register() {
             alert("Usuario registrado con éxito!");
             signInWithEmailAndPassword(auth, email, password)
               .then(async () => {
-                const userBalance = await getBalance(newUserId);
-                setBalance(userBalance);
+                const userBalance = await getBalance(userId); // Obtener el balance después de iniciar sesión
+                setBalance(userBalance); // Actualizar el estado con el balance
+                handleOnPurchase(userId);
                 navigate("/Profile");
               })
               .catch((error) => {
@@ -145,6 +147,7 @@ function Register() {
           {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
         </div>
       </main>
+
     </div>
   );
 }
