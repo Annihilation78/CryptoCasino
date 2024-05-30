@@ -6,7 +6,6 @@ import Header from './Header.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import '../css/Home.css';
 
 function Home() {
   const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });

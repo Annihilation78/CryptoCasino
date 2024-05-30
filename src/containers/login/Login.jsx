@@ -6,7 +6,6 @@ import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
 import { auth } from "../Firebase.jsx";
-import '../../css/Home.css';
 import { useSpring, animated } from 'react-spring';
 
 const Login = () => {

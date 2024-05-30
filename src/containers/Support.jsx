@@ -3,7 +3,6 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import MapComponent from './Map.jsx';
 import { FaTwitter, FaFacebook,FaInstagram } from 'react-icons/fa';
-import { useSpring, animated } from 'react-spring';
 import {
   Accordion,
   AccordionItem,
