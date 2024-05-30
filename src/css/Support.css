@@ -86,12 +86,12 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    gap: 10px;
+    gap: 20px; /* Aumenta el espacio entre los iconos */
 }
 
 .social-icons svg {
-    width: 24px;
-    height: 24px;
+    width: 36px; /* Ancho de los iconos */
+    height: 36px; /* Alto de los iconos */
     margin: 0 8px;
 }
 
