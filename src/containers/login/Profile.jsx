@@ -9,6 +9,7 @@ import { getBalance } from './Register.jsx'; // Asegúrate de importar la funci�
 const Profile = () => {
   const [balance, setBalance] = useState(null);
   const { user, logOut } = useContext(AuthContext);
+  const displayName = user.displayName;
 
   useEffect(() => {
     const fetchBalance = async () => {
@@ -48,8 +49,8 @@ const Profile = () => {
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-              <p className="py-6">{user?.usuario}</p>
-              <p className="py-6">{user?.email}</p>
+              <p style={{color:"white"}}>¡Bienvenido {displayName}!</p>
+              <p style={{color:"white"}}>Tu correo es: {user?.email}</p>
               {balance !== null ? (
                 <p style={{color:"white"}}>Tu balance es: {balance}</p>
               ) : (
