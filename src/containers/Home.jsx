@@ -9,27 +9,7 @@ import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.js
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
 function Home() {
-  const [playBoop, { stop: stopBoop, isPlaying: isBoopPlaying }] = useSound(boopSfx, { loop: true });
-  const [playBeep, { stop: stopBeep, isPlaying: isBeepPlaying }] = useSound(beepSfx);
-  const urlDelGif = "https://media.tenor.com/9eXlgcljmCAAAAAM/cat-money.gif";
-
-  const handleBoopClick = () => {
-    if (isBoopPlaying) {
-      stopBoop();
-    } else {
-      stopBoop();
-      playBoop();
-    }
-  };
-
-  const handleBeepClick = () => {
-    if (isBeepPlaying) {
-      stopBeep();
-    } else {
-      stopBeep();
-      playBeep();
-    }
-  };
+  
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
