@@ -91,5 +91,25 @@
     margin: 0 8px;
 }
 
-
-
+/* Estilos específicos para el AccordionButton */
+.accordion-button {
+    background: none; /* Asegura que no haya fondo morado */
+    color: inherit; /* Mantiene el color original */
+    border: none; /* Elimina cualquier borde predeterminado */
+    padding: 20px; /* Asegura el padding adecuado */
+    font-size: 2xl; /* Tamaño de fuente adecuado */
+    font-weight: bold; /* Peso de la fuente adecuado */
+  }
+  
+  .accordion-button:focus, .accordion-button:hover {
+    text-decoration: none; /* Elimina la subrayado */
+    color: inherit; /* Mantiene el color original */
+  }
+  
+  .accordion-button:focus-visible {
+    outline: none; /* Elimina el contorno de enfoque */
+  }
+  
+  .accordion-button:visited {
+    color: inherit; /* Mantiene el color original */
+  }
