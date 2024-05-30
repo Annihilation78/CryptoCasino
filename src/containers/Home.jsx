@@ -7,6 +7,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
+import InteractiveSceneAnya from './InteractiveSceneAnya.jsx';
 
 function Home() {
   
@@ -42,6 +43,7 @@ function Home() {
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
               </div>
+              <InteractiveSceneAnya />
             </div>
           </section>
         </div>
