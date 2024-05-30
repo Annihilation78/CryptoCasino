@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import Header from '../Header.jsx';
-import Footer from '../Footer.jsx';
+import Navigation from '../Navigation.jsx';
 import { useSpring, animated } from 'react-spring';
 import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
 
@@ -32,7 +31,16 @@ const Profile = () => {
   // Render user's profile information
   return (
     <animated.div style={fadeIn} className="app">
-      <Header title="Perfil"/>
+      <header>
+        <h1 className="title">
+          <Link to="/">
+            <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" />
+            Perfil
+          </Link>
+        </h1>
+        <div><button className="logout-btn" onClick={logOut}>Cerrar sesión</button></div>
+        <Navigation />
+      </header>
       <main className="py-6">
         <div>
           <div className="hero-content flex-col lg:flex-row">
