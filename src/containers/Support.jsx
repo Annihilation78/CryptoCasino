@@ -115,7 +115,6 @@ function Support() {
                     </div>
                 </section>
             </main>
-            <Footer />
         </animated.div>
     );
 }

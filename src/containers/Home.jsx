@@ -67,8 +67,6 @@ function Home() {
         </div>
       </main>
       <Chat />
-
-
     </animated.div>
   );
 }
