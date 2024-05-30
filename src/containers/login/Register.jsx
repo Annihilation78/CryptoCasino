@@ -35,12 +35,6 @@ function Register() {
   const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user, navigate]);
-
   const handleFormSubmit = async (e) => { 
     e.preventDefault(); 
     createUser(email, password)

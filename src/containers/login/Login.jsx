@@ -22,10 +22,6 @@ const Login = () => {
     );
   }
 
-  if (user) {
-    navigate("/");
-  }
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
