@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import MapComponent from './Map.jsx';
 import { FaTwitter, FaFacebook,FaInstagram } from 'react-icons/fa';
+import { useSpring, animated } from 'react-spring';
 import {
   Accordion,
   AccordionItem,
@@ -14,9 +15,14 @@ import {
 import '../css/Support.css';
 
 function Support() {
+    const fadeIn = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        config: { duration: 500 },
+    });
 
     return (
-        <div className="support-container">
+        <animated.div style={fadeIn} className="support-container">
             <Header title="Soporte" />
             <main className="support-main">
                 <section className="support-intro">
@@ -109,8 +115,8 @@ function Support() {
                     </div>
                 </section>
             </main>
-
-        </div>
+            <Footer />
+        </animated.div>
     );
 }
 

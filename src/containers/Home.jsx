@@ -4,6 +4,7 @@ import boopSfx from '../assets/urss.mp3';
 import beepSfx from '../assets/fri.mp3';
 import Header from './Header.jsx';
 import { useNavigate, Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
 import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
@@ -30,8 +31,14 @@ function Home() {
     }
   };
 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className="app">
+    <animated.div style={fadeIn} className="app">
       <Header title="Quantum Bet Bot" />
       <main className="py-6">
         <div className="content-container">
@@ -62,7 +69,7 @@ function Home() {
       <Chat />
 
 
-    </div>
+    </animated.div>
   );
 }
 

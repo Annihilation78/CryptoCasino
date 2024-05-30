@@ -7,11 +7,17 @@ import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
 import Header from './Header.jsx'; 
 import Footer from './Footer.jsx';
+import { useSpring, animated } from 'react-spring';
 
 function MenuJuegos() {
-  
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className='App'>
+    <animated.div style={fadeIn} className='App'>
       <Header title="Juegos"/>
 
       <div className="menu"> 
@@ -54,7 +60,7 @@ function MenuJuegos() {
       </div>
 
 
-    </div>
+    </animated.div>
   );
 }
 

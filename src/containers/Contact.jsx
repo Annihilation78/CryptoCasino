@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
 import Header from './Header.jsx'; 
 import Footer from './Footer.jsx';
+import { useSpring, animated } from 'react-spring';
 
 
 import "../css/Contacto.css";
@@ -19,8 +20,14 @@ function Contact() {
     alert("¡Formulario enviado con éxito!");
   };
 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
+
   return (
-    <div className="app">
+    <animated.div style={fadeIn} className="app">
       <Header title="Contacto"/>
       <section className="contact-section">
         <div className="container mx-auto">
@@ -84,7 +91,7 @@ function Contact() {
       </section>      
 
       
-    </div>
+    </animated.div>
   );
 }
 

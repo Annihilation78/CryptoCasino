@@ -3,6 +3,7 @@ import { AuthContext } from "./Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import Header from '../Header.jsx';
 import Footer from '../Footer.jsx';
+import { useSpring, animated } from 'react-spring';
 import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
 
 
@@ -21,10 +22,16 @@ const Profile = () => {
 
     fetchBalance();
   }, [user]);
+  
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
 
   // Render user's profile information
   return (
-    <div className="app">
+    <animated.div style={fadeIn} className="app">
       <Header title="Perfil"/>
       <main className="py-6">
         <div>
@@ -50,7 +57,7 @@ const Profile = () => {
         </div>
       </main>
 
-    </div>
+    </animated.div>
   );
 };
 
