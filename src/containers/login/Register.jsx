@@ -43,7 +43,7 @@ function Register() {
     createUser(email, password)
       .then((result) => {
           const userId = result.user.uid;
-          updateProfile(result.user, {
+          rasult.user.updateProfile({
             displayName: usuario,
           });
           setDoc(doc(db, 'users', userId), {
