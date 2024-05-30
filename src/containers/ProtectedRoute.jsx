@@ -3,7 +3,7 @@ import { AuthContext } from "./login/Auth.jsx";
 import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ children }) => {
+export const ProtectedRoute = ({ children }) => {
   const { loading, user } = useContext(AuthContext);
 
   if (loading) {
