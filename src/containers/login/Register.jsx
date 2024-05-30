@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
+import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
@@ -12,10 +13,10 @@ import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 export const getBalance = async (userId) => {
   try {
-    const userDoc = await getDoc(doc(db, 'users', user.uid), { balance: newBalance });
+    const userDoc = await getDoc(doc(db, 'users', userId));
     if (userDoc.exists()) {
       const userData = userDoc.data();
-      const balance = newBalance;
+      const balance = userData.balance;
       return balance;
     } else {
       console.error("No such document!");
@@ -103,16 +104,8 @@ function Register() {
 
   return (
     <div className="app">
-      <header>
-        <h1 className="title">
-          <Link to="/">
-            <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" />
-            Quantum Bet Bot
-          </Link>
-        </h1>
-        <Navigation />
-      </header>
-      <main className="py-6">
+      <Header title="Quantum Bet Bot"/>
+      <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
         <div className="login-container" style={{height:"450px"}}>
           <h2>Crea tu cuenta</h2>
           <form onSubmit={handleSubmit}>
@@ -149,12 +142,12 @@ function Register() {
             <div><button type="submit" className="login-btn">Registrarse</button></div>
           </form>
           <div>
-            <p>¿Ya tienes una cuenta? <Link to="/login"  style={{color:"darkorchid"}}>Inicia sesión</Link></p>
+            <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link></p>
           </div>
           {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
         </div>
       </main>
-
+      <Footer />
     </div>
   );
 }
