@@ -9,6 +9,7 @@ import Footer from '../Footer.jsx';
 import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { useSpring, animated } from 'react-spring';
 
 
 export const getBalance = async (userId) => {
@@ -77,11 +78,16 @@ function Register() {
         });
     e.target.reset(); 
   }; 
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
 
   const { register } = useForm();
 
   return (
-    <div className="app">
+    <animated.div style={fadeIn} className="app">
       <Header title="Quantum Bet Bot"/>
       <main className="py-6">
         <div className="login-container" style={{height:"450px"}}>
@@ -126,7 +132,7 @@ function Register() {
         </div>
       </main>
       <Footer />
-    </div>
+    </animated.div>
   );
 }
 

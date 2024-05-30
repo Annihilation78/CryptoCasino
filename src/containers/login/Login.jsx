@@ -45,50 +45,49 @@ const Login = () => {
   });
   return (
     <animated.div style={animationProps}>
-    <div className="app">
-    <header>
-        <h1 className="title">
-          <Link to="/">
-            <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" />
-            Quantum Bet Bot
-          </Link>
-        </h1>
-        <Navigation />
-      </header>
-      <main className="py-6">
-        <div className="login-container">
-          <h2>Ingresa a tu cuenta</h2>
-          <form onSubmit={handleFormSubmit} name="sesion">
-            <div className="input-group">
-              <label name="email">Correo electrónico:</label>
-              <input
-                name="email"
-                type="email"
-                placeholder="Email"/>
-            </div>
-            <div className="input-group">
-              <label name="password">Contraseña:</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"/>
-            </div>
-            <div>
-              <label name="recuerdame">Recuérdame</label>
-              <input type="checkbox" className="box"/>
-            </div>
-            <div>
-              <li><Link to="/Contact" style={{color:"darkorchid"}}>¿Has olvidado tu contraseña?</Link></li>
-            </div>
-            <div><button type="submit" className="login-btn">Iniciar sesión</button></div>
-            <div>
-              <li name="registro"><Link to="/register" style={{color:"darkorchid"}}>¿No tienes cuenta?</Link></li>
-            </div>
-          </form>
-        </div>
-      </main>
-
-    </div>
+      <animated.div style={fadeIn} className="app">
+        <header>
+          <h1 className="title">
+            <Link to="/">
+              <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" />
+              Quantum Bet Bot
+            </Link>
+          </h1>
+          <Navigation />
+        </header>
+        <main className="py-6">
+          <div className="login-container">
+            <h2>Ingresa a tu cuenta</h2>
+            <form onSubmit={handleFormSubmit} name="sesion">
+              <div className="input-group">
+                <label name="email">Correo electrónico:</label>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"/>
+              </div>
+              <div className="input-group">
+                <label name="password">Contraseña:</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"/>
+              </div>
+              <div>
+                <label name="recuerdame">Recuérdame</label>
+                <input type="checkbox" className="box"/>
+              </div>
+              <div>
+                <li><Link to="/Contact" style={{color:"darkorchid"}}>¿Has olvidado tu contraseña?</Link></li>
+              </div>
+              <div><button type="submit" className="login-btn">Iniciar sesión</button></div>
+              <div>
+                <li name="registro"><Link to="/register" style={{color:"darkorchid"}}>¿No tienes cuenta?</Link></li>
+              </div>
+            </form>
+          </div>
+        </main>
+      </animated.div>
     </animated.div>
   );
 }
