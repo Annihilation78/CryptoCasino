@@ -43,7 +43,7 @@ function Home() {
               <div className="game-item">
                 <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion2.webp" alt="juego de blackjack" />
               </div>
-              <InteractiveSceneAnya />
+              <InteractiveSceneAnya scale={[0.1, 0.1, 0.1]} position={[1, 0, 0]} />
             </div>
           </section>
         </div>

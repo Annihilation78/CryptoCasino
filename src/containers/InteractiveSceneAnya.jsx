@@ -7,13 +7,13 @@ import AvatarAnya from './AvatarAnya';
 
 export default  function InteractiveSceneAnya() {
   return (
-    <Canvas style={{ height: '100vh', width: '100vw' }}>
+    <Canvas style={{ height: '60vh', width: '60vw' }}>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
       <OrbitControls />
       <Environment preset="sunset" />
-      <AvatarAnya scale={[0.5, 0.5, 0.5]} /> {/* Adjust scale as needed */}
+      <AvatarAnya scale={[2.6,2.6,2.6]} /> {/* Adjust scale as needed */}
       
     </Canvas>
     

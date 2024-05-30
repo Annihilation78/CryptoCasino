@@ -6,7 +6,6 @@ import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de re
 import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
 import Header from './Header.jsx'; 
-import Footer from './Footer.jsx';
 import { useSpring, animated } from 'react-spring';
 
 function MenuJuegos() {
