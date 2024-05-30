@@ -22,7 +22,7 @@ function Support() {
     });
 
     return (
-        <animated.div style={fadeIn} className="support-container">
+        <animated.div style={fadeIn} className="App">
             <Header title="Soporte" />
             <main className="support-main">
                 <section className="support-intro">

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@
   min-width: 100vw;
   flex-wrap: wrap;
   line-height: 1.6;
-  font-family: var(--chakra-fonts-body);
+  font-family: "Pixelify Sans", sans-serif;
   background-image: url('../assets/casino.png');
   color: #333;
   background-color: #555;
