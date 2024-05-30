@@ -26,26 +26,32 @@ const Login = () => {
     navigate("/");
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    loginUser(email, password)
+    try{
+      await loginUser(email, password)
       .then((result) => {
         alert('Inicio de sesión exitoso!');
         navigate("/Profile");
       }) 
-      .catch ((err) => alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.'));
+    }
+    catch (err) {
+      alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
+    }
     e.target.reset();
   };
+
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: { duration: 500 },
   });
+  
   return (
-    <animated.div style={animationProps}>
-      <animated.div style={fadeIn} className="app">
+    <animated.div style={fadeIn} className="app">
+      <animated.div style={animationProps}>
         <header>
           <h1 className="title">
             <Link to="/">
