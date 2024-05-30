@@ -3,14 +3,21 @@ import { motion } from 'framer-motion';
 import '../css/Promotions.css'; 
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
+import { useSpring, animated } from 'react-spring';
 import Tilt from 'react-parallax-tilt'; 
 import Header from './Header.jsx'; 
 import Footer from './Footer.jsx';
  
 
 function MenuPromociones() {
+    const fadeIn = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        config: { duration: 500 },
+    });
+
     return (
-        <div className='App'>
+        <animated.div style={fadeIn} className='App'>
             <Header title="Promociones"/>
             <div className="menu">
                 <Tilt>
@@ -31,7 +38,7 @@ function MenuPromociones() {
                     </Tilt> 
             </div> {/* Aquí faltaba cerrar la etiqueta */}
 
-        </div>
+        </animated.div>
     );
 }
 
