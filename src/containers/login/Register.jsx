@@ -120,7 +120,7 @@ function Register() {
             <div><button type="submit" className="login-btn">Registrarse</button></div>
           </form>
           <div>
-            <p>¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link></p>
+            <p>¿Ya tienes una cuenta? <Link to="/login" style={{color:"darkorchid"}}>Inicia sesión</Link></p>
           </div>
           {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
         </div>
