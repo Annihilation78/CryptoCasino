@@ -49,12 +49,12 @@ const Profile = () => {
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-              <h1 className="text-5xl font-bold">{user?.usuario}</h1>
-              <p className="py-6">{user?.email}</p>
+              <p className="py-6" style={{color:"white"}}>{user?.usuario}</p>
+              <p className="py-6" style={{color:"white"}}>{user?.email}</p>
               {balance !== null ? (
-                <p>Tu balance es: {balance}</p>
+                <p style={{color:"white"}}>Tu balance es: {balance}</p>
               ) : (
-                <p>Obteniendo balance...</p>
+                <p style={{color:"white"}}>Obteniendo balance...</p>
               )}
               <button className="btn btn-primary">Get Started</button>
             </div>
