@@ -1,21 +1,26 @@
+import { useContext } from "react";
+import { AuthContext } from "./AuthProvider";
+import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-export const ProtectedRoute = ({ children }) => {
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
-    // ...
-  } else {
-     // user is not authenticated
-     return <Navigate to="/login" />;
+const ProtectedRoute = ({ children }) => {
+  const { loading, user } = useContext(AuthContext);
+
+  if (loading) {
+    return <span className="loading loading-dots loading-lg"></span>;
   }
-})
-  return children;
+
+  if (user) {
+    return children;
+  }
+
+  return <Navigate to="/login" />;
+};
+
+
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ProtectedRoute;
-
