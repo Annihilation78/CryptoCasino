@@ -8,9 +8,9 @@
   min-height: 100vh;
   min-width: 100vw;
   flex-wrap: wrap;
-  font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-image: url('https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/casino.png');
+  font-family: var(--chakra-fonts-body);
+  background-image: url('../assets/casino.png');
   color: #333;
   background-color: #555;
   display: flex;
@@ -59,7 +59,7 @@ header h1 img {
   max-width: 80px;
   max-height: 80px;
   position: absolute;
-  left: 18px;
+  left: 0px;
   margin: 5px 5px;
 }
 

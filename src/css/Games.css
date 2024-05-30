@@ -3,6 +3,7 @@
     background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
     background-size: cover;
     background-attachment: fixed;
+    font-family: var(--chakra-fonts-body);
   }
 
 .menu {

@@ -15,14 +15,9 @@ import {
 import '../css/Support.css';
 
 function Support() {
-    const fadeIn = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-        config: { duration: 1000 },
-    });
 
     return (
-        <animated.div style={fadeIn} className="support-container">
+        <div className="support-container">
             <Header title="Soporte" />
             <main className="support-main">
                 <section className="support-intro">
@@ -116,7 +111,7 @@ function Support() {
                 </section>
             </main>
 
-        </animated.div>
+        </div>
     );
 }
 
