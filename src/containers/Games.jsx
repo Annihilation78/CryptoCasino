@@ -45,7 +45,7 @@ function MenuJuegos() {
       </div>
 
       <div style={{
-       position: 'fixed',
+       position: 'absolute',
        bottom: '30px', // Ajusta la distancia desde la parte inferior
        right: '0px', // Ajusta la distancia desde la derecha
        width: '250px', // Ajusta el ancho
