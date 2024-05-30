@@ -48,7 +48,7 @@ const Profile = () => {
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-              <p className="py-6">{user?.displayName}</p>
+              <p className="py-6">{user?.usuario}</p>
               <p className="py-6">{user?.email}</p>
               {balance !== null ? (
                 <p style={{color:"white"}}>Tu balance es: {balance}</p>
