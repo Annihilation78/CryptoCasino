@@ -53,9 +53,10 @@ function Register() {
           })
           .then(async () => {
             alert("Usuario registrado con éxito!");
+            navigate("/Profile");
             signInWithEmailAndPassword(auth, email, password)
-              .then((userId) => {
-                const userBalance = getBalance(userId); // Obtener el balance después de iniciar sesión
+              .then(async () => {
+                const userBalance = await getBalance(userId); // Obtener el balance después de iniciar sesión
                 setBalance(userBalance); // Actualizar el estado con el balance
                 handleOnPurchase(userId);
                 navigate("/Profile");
