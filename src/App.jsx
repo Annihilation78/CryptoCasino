@@ -15,8 +15,14 @@ import Promotions from './containers/Promotions.jsx';
 import Support from './containers/Support.jsx';
 
 function App() {
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 500 },
+  });
+
   return (
-    <Router>
+    <animated.Router style={fadeIn}>
       <AuthProvider>
         <Routes>
           <Route path="/Contact" element={<Contact />} />
@@ -39,7 +45,7 @@ function App() {
           } />
         </Routes>
       </AuthProvider>
-    </Router>
+    </animated.Router>
   );
 }
 
