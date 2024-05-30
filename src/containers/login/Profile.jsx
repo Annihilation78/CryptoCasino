@@ -55,11 +55,8 @@ const Profile = () => {
               ) : (
                 <p style={{color:"white"}}>Obteniendo balance...</p>
               )}
-              <button className="btn btn-primary">Get Started</button>
+              <button className="btn btn-primary"><Link to="/">¿Listo para jugar?</Link></button>
             </div>
-          </div>
-          <div>
-            <li name="home"><Link to="/">¿Listo para jugar?</Link></li>
           </div>
         </div>
       </main>

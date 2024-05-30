@@ -34,16 +34,16 @@ function Register() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
+  const usuario = e.target.usuario.value;
+  const email = e.target.email.value;
+  const password = e.target.password.value;
 
   const handleFormSubmit = async (e) => { 
-    e.preventDefault();
-    const usuario = e.target.usuario.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value; 
+    e.preventDefault(); 
     createUser(email, password)
       .then((result) => {
           const userId = result.user.uid;
-          rasult.user.updateProfile({
+          result.user.updateProfile({
             displayName: usuario,
           });
           setDoc(doc(db, 'users', userId), {
