@@ -69,7 +69,7 @@ const Login = () => {
         <Navigation />
       </header>
       <main className="py-6">
-        <div className="login-container" style={{height:"450px"}}>
+        <div className="login-container">
           <h2>Ingresa a tu cuenta</h2>
           <form onSubmit={handleSubmit} name="sesion">
             <div className="input-group">

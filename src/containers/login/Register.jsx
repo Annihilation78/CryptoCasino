@@ -103,8 +103,16 @@ function Register() {
 
   return (
     <div className="app">
-      <Header title="Quantum Bet Bot"/>
-      <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
+      <header>
+        <h1 className="title">
+          <Link to="/">
+            <img src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/Logo.png" alt="Logo" />
+            Quantum Bet Bot
+          </Link>
+        </h1>
+        <Navigation />
+      </header>
+      <main className="py-6">
         <div className="login-container" style={{height:"450px"}}>
           <h2>Crea tu cuenta</h2>
           <form onSubmit={handleSubmit}>
