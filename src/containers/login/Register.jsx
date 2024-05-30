@@ -34,12 +34,12 @@ function Register() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
-  const usuario = e.target.usuario.value;
-  const email = e.target.email.value;
-  const password = e.target.password.value;
 
   const handleFormSubmit = async (e) => { 
-    e.preventDefault(); 
+    e.preventDefault();
+    const usuario = e.target.usuario.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value; 
     createUser(email, password)
       .then((result) => {
           const userId = result.user.uid;
