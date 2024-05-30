@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Auth.jsx";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navigation from '../Navigation.jsx';
 import { useSpring, animated } from 'react-spring';
 import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
 
 
 const Profile = () => {
-  const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
   const { user, logOut } = useContext(AuthContext);
 
@@ -49,8 +48,8 @@ const Profile = () => {
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-              <p className="py-6" style={{color:"white"}}>{user?.usuario}</p>
-              <p className="py-6" style={{color:"white"}}>{user?.email}</p>
+              <p className="py-6">{user?.displayName}</p>
+              <p className="py-6">{user?.email}</p>
               {balance !== null ? (
                 <p style={{color:"white"}}>Tu balance es: {balance}</p>
               ) : (
