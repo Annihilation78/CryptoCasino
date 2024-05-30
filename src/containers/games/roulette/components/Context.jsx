@@ -68,7 +68,7 @@ const Context = (props) => {
 
   const selectChip = (num) => { setChip(num) }                  // chip amount changing function
 
-  let [balance, setBalance] = useState(300)                  // balance constant
+  // const [balance, setBalance] = useState(300)                  // balance constant
   const [faucetModal, setFaucetModal] = useState(false)        // constant for keeping faucet modal's open/close info
   const [playable, setPlayable] = useState(false)              // play button's disable or active info
   const [bConState, setbConState] = useState(false)            // bet-container disable or active info
@@ -89,9 +89,9 @@ const Context = (props) => {
   const { userId } = useContext(AuthContext);
   useEffect(() => {
     const fetchBalance = async () => {
-      const userBalance = await getBalance(userId);
-      if (userBalance !== null) {
-        setBalance(userBalance);
+      const balance = await getBalance(userId);
+      if (balance !== null) {
+        setBalance(balance);
       }
     };
 
