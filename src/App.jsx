@@ -13,6 +13,7 @@ import BlackJack from './containers/games/blackjack/Game.jsx';
 import Games from './containers/Games.jsx';
 import Promotions from './containers/Promotions.jsx';
 import Support from './containers/Support.jsx';
+import { useSpring, animated } from 'react-spring';
 
 function App() {
   const fadeIn = useSpring({
