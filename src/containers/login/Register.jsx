@@ -30,11 +30,6 @@ export const getBalance = async (userId) => {
 
 function Register() {
   const { createUser, user, loading } = useContext(AuthContext);
-  const [usuario, setUsuario] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [balance, setBalance] = useState(null); // Nuevo estado para el balance
   const navigate = useNavigate();
@@ -45,30 +40,14 @@ function Register() {
     }
   }, [user, navigate]);
 
-  const handleUsuario = (e) => { 
-    setUsuario(e.target.value); 
-    setSubmitted(false); 
-  }; 
-
-  const handleEmail = (e) => { 
-    setEmail(e.target.value); 
-    setSubmitted(false); 
-  }; 
-
-  const handlePassword = (e) => { 
-    setPassword(e.target.value); 
-    setSubmitted(false); 
-  }; 
-
-  const handleSubmit = async (e) => { 
+  const handleFormSubmit = async (e) => { 
     e.preventDefault(); 
-    if (usuario === "" || email === "" || password === "") { 
-      setError(true);
-      alert("Error al registrar usuario!");
-    } else { 
-      createUser(email, password)
-        .then((userCredential) => {
-          const userId = userCredential.user.uid;
+    createUser(email, password)
+      .then((result) => {
+          const userId = result.user.uid;
+          updateProfile(result.user, {
+            displayName: usuario,
+          });
           setDoc(doc(db, 'users', userId), {
             usuario: usuario,
             email: email,
@@ -96,7 +75,6 @@ function Register() {
         .catch((error) => {
           console.error("Error al registrar el usuario: ", error);
         });
-    }
     e.target.reset(); 
   }; 
 
@@ -105,17 +83,17 @@ function Register() {
   return (
     <div className="app">
       <Header title="Quantum Bet Bot"/>
-      <main className="py-6" style={{position:"relative", top:"10%", left:"36%"}}>
+      <main className="py-6">
         <div className="login-container" style={{height:"450px"}}>
           <h2>Crea tu cuenta</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleFormSubmit}>
             <div className="input-group">
               <label name="usuario">Usuario:</label>
               <input
                 id="usuario"
                 type="text"
                 {...register("usuario", { required: "Este campo es requerido"})}
-                onChange={handleUsuario}/>
+                placeholder="Usuario"/>
             </div>
             <div className="input-group">
               <label name="email">Correo:</label>
@@ -129,7 +107,7 @@ function Register() {
                     message: "Por favor, ingresa una dirección de correo válida",
                   },
                 })}
-                onChange={handleEmail}/>
+                placeholder="Email"/>
             </div>
             <div className="input-group">
               <label name="password">Contraseña:</label>
@@ -137,7 +115,7 @@ function Register() {
                 type="password"
                 name="password"
                 {...register("password", { required: "Este campo es requerido" })}
-                onChange={handlePassword}/>
+                placeholder="Password"/>
             </div>
             <div><button type="submit" className="login-btn">Registrarse</button></div>
           </form>

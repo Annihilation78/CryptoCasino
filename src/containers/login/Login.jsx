@@ -9,8 +9,6 @@ import { useSpring, animated } from 'react-spring';
 const Login = () => {
   const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const animationProps = useSpring({
     from: { opacity: 0, transform: 'translate3d(0,-40px,0)', width: '0%' },
     to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
@@ -27,29 +25,18 @@ const Login = () => {
   if (user) {
     navigate("/");
   }
-  
-  const handleLogin = (e) => {
-    const { name, value } = e.target;
 
-    if (name === "email") setEmail(value);
-    if (name === "password") setPassword(value);
-  };
-
-  const handleSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      const userCredential = await loginUser(
-        email,
-        password
-      );
-
-      const user = userCredential.user;
-      alert('Inicio de sesión exitoso!');
-      navigate("/Profile");
-    } catch (err) {
-      alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
-    }
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    loginUser(email, password)
+      .then((result) => {
+        alert('Inicio de sesión exitoso!');
+        navigate("/Profile");
+      }) 
+      .catch ((err) => alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.'));
+    e.target.reset();
   };
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -71,22 +58,20 @@ const Login = () => {
       <main className="py-6">
         <div className="login-container">
           <h2>Ingresa a tu cuenta</h2>
-          <form onSubmit={handleSubmit} name="sesion">
+          <form onSubmit={handleFormSubmit} name="sesion">
             <div className="input-group">
               <label name="email">Correo electrónico:</label>
               <input
                 name="email"
                 type="email"
-                value={email}
-                onChange={handleLogin}/>
+                placeholder="Email"/>
             </div>
             <div className="input-group">
               <label name="password">Contraseña:</label>
               <input
                 type="password"
                 name="password"
-                value={password}
-                onChange={handleLogin}/>
+                placeholder="Password"/>
             </div>
             <div>
               <label name="recuerdame">Recuérdame</label>
