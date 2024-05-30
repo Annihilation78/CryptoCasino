@@ -93,11 +93,11 @@ const Login = () => {
               <input type="checkbox" className="box"/>
             </div>
             <div>
-              <li><Link to="/Contact" style={{color:"#000"}}>¿Has olvidado tu contraseña?</Link></li>
+              <li><Link to="/Contact" style={{color:"darkorchid"}}>¿Has olvidado tu contraseña?</Link></li>
             </div>
             <div><button type="submit" className="login-btn">Iniciar sesión</button></div>
             <div>
-              <li name="registro"><Link to="/register" style={{color:"#000"}}>¿No tienes cuenta?</Link></li>
+              <li name="registro"><Link to="/register" style={{color:"darkorchid"}}>¿No tienes cuenta?</Link></li>
             </div>
           </form>
         </div>
