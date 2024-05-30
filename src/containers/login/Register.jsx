@@ -8,7 +8,7 @@ import Header from '../Header.jsx';
 import Footer from '../Footer.jsx'; 
 import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de importar esto
 import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
-import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useSpring, animated } from 'react-spring';
 
 
@@ -40,9 +40,6 @@ function Register() {
     createUser(email, password)
       .then((result) => {
           const userId = result.user.uid;
-          updateProfile(result.user, {
-            displayName: usuario,
-          });
           setDoc(doc(db, 'users', userId), {
             usuario: usuario,
             email: email,

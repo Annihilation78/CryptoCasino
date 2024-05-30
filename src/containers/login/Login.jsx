@@ -1,14 +1,12 @@
 // Login.jsx
 import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
 import Navigation from '../Navigation.jsx';
-import { auth } from "../Firebase.jsx";
 import { useSpring, animated } from 'react-spring';
 
 const Login = () => {
   const { loginUser, loading, user } = useContext(AuthContext); // Usa el hook useAuth
-  const navigate = useNavigate();
   const animationProps = useSpring({
     from: { opacity: 0, transform: 'translate3d(0,-40px,0)', width: '0%' },
     to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
