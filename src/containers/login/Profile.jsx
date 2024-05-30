@@ -10,6 +10,7 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
+  const { logOut } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchBalance = async () => {
