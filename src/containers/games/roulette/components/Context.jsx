@@ -70,7 +70,16 @@ const Context = (props) => {
 
 
 
-  const [balance, setBalance] = useState(null)                  // balance constant
+  const [balance, setBalance] = useState(() => {
+    const fetchBalance = async () => {
+      const userBalance = await getBalance(userId);
+      if (userBalance !== null) {
+        setBalance(userBalance);
+      }
+    };
+
+    fetchBalance();
+  }, [userId])                  // balance constant
   const [faucetModal, setFaucetModal] = useState(false)        // constant for keeping faucet modal's open/close info
   const [playable, setPlayable] = useState(false)              // play button's disable or active info
   const [bConState, setbConState] = useState(false)            // bet-container disable or active info
@@ -90,16 +99,7 @@ const Context = (props) => {
   const [turn, setTurn] = useState(0)                          // Turn number
   const { userId } = useContext(AuthContext);
 
-  useEffect(() => {
-    const fetchBalance = async () => {
-      const userBalance = await getBalance(userId);
-      if (userBalance !== null) {
-        setBalance(userBalance);
-      }
-    };
 
-    fetchBalance();
-  }, [userId]);
   
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
