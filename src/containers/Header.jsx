@@ -15,7 +15,7 @@ function Header({ title }) {
         </Link>
       </h1>
       <div><button className="logout-btn" onClick={logOut}>Cerrar sesión</button></div>
-      <div><button className="login-btn"><Link to="/Profile">Perfil</Link></button></div>
+      <div><button className="profile-btn"><Link to="/Profile">Perfil</Link></button></div>
       <Navigation />
     </header>
   );

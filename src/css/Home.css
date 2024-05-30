@@ -205,10 +205,19 @@ a:-webkit-any-link {
   border-radius: 4px;
 }
 
-.login-btn {
+.profile-btn {
   position: fixed;
   top: 12%;
   left: 12px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-btn {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -246,7 +255,10 @@ a:-webkit-any-link {
 .content-container {
   padding: 0% 15%;
 }
-
+.box{
+  position: "relative";
+  right: "-5px";
+}
 
 
 
