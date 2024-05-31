@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState, useRef, useContext} from "re
 import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
 import { AuthContext } from "../../../login/Auth.jsx";
-import { updateDoc, doc } from 'firebase/firestore';
+import { updateDoc, doc, getDoc } from 'firebase/firestore';
 export const MyContext = createContext()
 
 const Context = (props) => {
@@ -71,7 +71,25 @@ const Context = (props) => {
 
 
 
-  const [balance, setBalance] = useState(100)
+  const [balance, setBalance] = useState(null)
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (user) {
+        try {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (userDoc.exists()) {
+            setBalance(userDoc.data().balance);
+          } else {
+            console.log('No such document!');
+          }
+        } catch (error) {
+          console.error('Error fetching user balance:', error);
+        }
+      }
+    };
+
+    fetchBalance();
+  }, [user]);
   const [faucetModal, setFaucetModal] = useState(false)
   const [playable, setPlayable] = useState(false)
   const [bConState, setbConState] = useState(false)
