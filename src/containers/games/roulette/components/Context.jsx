@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useRef, useContext} from "react";
+import React, { createContext, useEffect, useState, useRef, useContext } from "react";
 import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
 import { AuthContext } from "../../../login/Auth.jsx";
@@ -62,7 +62,7 @@ const Context = (props) => {
 
   const rot = 360 / 37;
 
-  const [lastNums, setLastNums] = useState([]) 
+  const [lastNums, setLastNums] = useState([])
 
   const [lastBet, setLastBet] = useState(buttons)
 
@@ -97,12 +97,12 @@ const Context = (props) => {
   const [rotate, setRotate] = useState(0)
   const [rotate2, setRotate2] = useState(0)
   const [hideBall, setHideBall] = useState(false)
-  const [showItemBall, setShowItemBall] = useState(false) 
-  const [winnerNumber, setWinnerNumber] = useState("") 
+  const [showItemBall, setShowItemBall] = useState(false)
+  const [winnerNumber, setWinnerNumber] = useState("")
   const [totalBet, setTotalBet] = useState(0)
   const [lastTotalBet, setLastTotalBet] = useState(0)
   const [fadeBtn, setFadeBtn] = useState(true)
-  const [fadeBtn2, setFadeBtn2] = useState(true) 
+  const [fadeBtn2, setFadeBtn2] = useState(true)
   const [fadeBtn3, setFadeBtn3] = useState(true)
   const [gain, setGain] = useState(0)
   const [animation, setAnimation] = useState(false)
@@ -111,7 +111,7 @@ const Context = (props) => {
   const { userId } = useContext(AuthContext);
 
 
-  
+
   const play = () => {
     setHideBall(false)
     setShowItemBall(false)
@@ -121,33 +121,33 @@ const Context = (props) => {
 
     setLastBet(buttons.map(elm => elm.id ? { ...elm, betAmount: buttons.filter(el => el.id === elm.id)[0].betAmount, class: buttons.filter(el => el.id === elm.id)[0].class } : null))
     setLastTotalBet(totalBet)
-    
+
     let random = Math.floor(Math.random() * (((rot * 200) + rotate) - ((rot * 100) + rotate))) + ((rot * 100) + rotate);
     let random2 = Math.floor(Math.random() * ((rotate2 - 1500) - rotate2)) + rotate2;
-    let rnum = parseFloat((random - random2) % 360); 
-    let winnerNumObj = buttons.filter(elm => parseFloat(elm.min) <= rnum && parseFloat(elm.max) >= rnum)[0] 
-    
+    let rnum = parseFloat((random - random2) % 360);
+    let winnerNumObj = buttons.filter(elm => parseFloat(elm.min) <= rnum && parseFloat(elm.max) >= rnum)[0]
+
     winnerNumObj = !winnerNumObj ? winnerNumObj = buttons[0] : winnerNumObj
-    
-    setRotate(random)  
+
+    setRotate(random)
     setRotate2(random2)
     setWinnerNumber(winnerNumObj.value)
-    
+
     console.log(winnerNumObj.value)
-    setTimeout(() => {                                     
+    setTimeout(() => {
       setTotalBet(0)
       setLastNums([winnerNumObj.value, ...lastNums])
       setHideBall(true)
       setShowItemBall(true)
       setbConState(false)
-      calculateResult(winnerNumObj.value)  
+      calculateResult(winnerNumObj.value)
       setTurn(turn + 1)
     }, 10200)
   }
 
 
   useEffect(() => {
-    if (totalBet > 0) { 
+    if (totalBet > 0) {
       setPlayable(true)
       setFadeBtn(false)
       setFadeBtn3(true)
@@ -172,17 +172,17 @@ const Context = (props) => {
 
   const bet = (e, num, stat) => {
 
-    const tempAry = buttons.filter(el => el.id === num)[0] 
+    const tempAry = buttons.filter(el => el.id === num)[0]
 
     if (balance >= chip && stat === "add") {
       tempAry.betAmount += chip
-      !tempAry.class.includes("bet-active") ? tempAry.class += " bet-active" : tempAry.class += ""  
+      !tempAry.class.includes("bet-active") ? tempAry.class += " bet-active" : tempAry.class += ""
       setBalance(balance - chip)
       setTotalBet(totalBet + chip)
-    } else if (stat === "del") { 
+    } else if (stat === "del") {
       e.preventDefault()
 
-      if (tempAry.betAmount - chip <= 0) { 
+      if (tempAry.betAmount - chip <= 0) {
         setBalance(balance + tempAry.betAmount)
         setTotalBet(totalBet - tempAry.betAmount)
         tempAry.betAmount = 0;
@@ -194,8 +194,8 @@ const Context = (props) => {
       }
     }
 
-    tempAry.class = updateBetChipBackground(tempAry.class, tempAry.betAmount) 
-    setButtons(buttons.map(elm => elm.id === num ? tempAry : elm)) 
+    tempAry.class = updateBetChipBackground(tempAry.class, tempAry.betAmount)
+    setButtons(buttons.map(elm => elm.id === num ? tempAry : elm))
   }
 
 
@@ -203,7 +203,7 @@ const Context = (props) => {
     let chipBg;
     if (betAmnt < 5) { chipBg = "chip-1" }
     else if (betAmnt < 20) { chipBg = "chip-5" }
-    else if (betAmnt < 50) { chipBg = "chip-20" }  
+    else if (betAmnt < 50) { chipBg = "chip-20" }
     else if (betAmnt < 100) { chipBg = "chip-50" }
     else { chipBg = "chip-100" }
 
@@ -227,37 +227,39 @@ const Context = (props) => {
       let tempNum = element.value
 
       if (tempNum === winnerNum && element.betAmount !== 0) {
-        profit = profit + (element.betAmount * element.multiple)   
+        profit = profit + (element.betAmount * element.multiple)
       }
 
       if (nonNums.includes(element.id)) {
-        if (element.nums.includes(winnerNum) && element.betAmount !== 0) {    
+        if (element.nums.includes(winnerNum) && element.betAmount !== 0) {
           profit = profit + (element.betAmount * element.multiple)
         }
       }
-      element.class = element.class.replace("bet-active", "")  
+      element.class = element.class.replace("bet-active", "")
       element.betAmount = 0
     });
-    
+
     setGain(profit)
     if (profit > 0) {
       setWinnerEffect("gained")
     } else {
       setWinnerEffect("lost")
     }
-    setBalance(balance + profit)
+
+    const newBalance = balance + profit;
     await updateDoc(doc(db, 'users', user.uid), { balance: newBalance });
+    setBalance(newBalance);
   }
 
   const clearBet = () => {
-    setButtons(buttons.map(elm => elm ? { ...elm, class: elm.class.replace("bet-active", ""), betAmount: 0 } : null)) 
+    setButtons(buttons.map(elm => elm ? { ...elm, class: elm.class.replace("bet-active", ""), betAmount: 0 } : null))
     setBalance(balance + totalBet)
     setTotalBet(0)
   }
 
   const doubleBet = () => {
     if ((balance + totalBet) >= (totalBet * 2)) {
-      setButtons(buttons.map(elm => elm ? { ...elm, class: updateBetChipBackground(elm.class, (elm.betAmount * 2)), betAmount: (elm.betAmount * 2) } : null)) 
+      setButtons(buttons.map(elm => elm ? { ...elm, class: updateBetChipBackground(elm.class, (elm.betAmount * 2)), betAmount: (elm.betAmount * 2) } : null))
       setBalance(balance - totalBet)
       setTotalBet(totalBet * 2)
     }
