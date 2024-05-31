@@ -1,9 +1,6 @@
-// balanceUtils.jsx
 import { doc, updateDoc, setDoc, getDoc } from 'firebase/firestore';
 import { db } from "../../../Firebase.jsx";
 
-
-// Función para actualizar el balance del usuario
 export const updateBalance = async (userId, newBalance) => {
   try {
     const userDocRef = doc(db, 'users', userId);

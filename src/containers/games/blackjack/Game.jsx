@@ -11,12 +11,11 @@ import { db } from "../../Firebase.jsx";
 import InteractiveSceneBlackJack from '../../InteractiveSceneBlackJack.jsx';
 
 export default function Game() {
-  // Dealer cards
+
   const [card1BG, setCard1BG] = useState('');
   const [card2BG, setCard2BG] = useState('https://i.pinimg.com/originals/09/a5/8d/09a58d561b2a7b92bd506c83414ef1ab.png');
   const [tempCard2, setTempCard2] = useState('');
 
-  // User cards
   const [card3BG, setCard3BG] = useState('');
   const [card4BG, setCard4BG] = useState('');
   const [userCardExtra1BG, setUserCardExtra1BG] = useState('');
@@ -26,11 +25,9 @@ export default function Game() {
   const [dCardExtra2BG, setDCardExtra2BG] = useState('');
   const [dCardExtra3BG, setDCardExtra3BG] = useState('');
 
-  // Game directions
   const [turnDirections, setTurnDirections] = useState('- Pincha en Jugar para jugar');
   const [dealerDirections, setDealerDirections] = useState('');
 
-  // Betting chip values
   const [chipVisibilityRed, setChipVisibilityRed] = useState('hidden');
   const [chipAmountRed, setChipAmountRed] = useState(0);
   const [chipBetRed, setChipBetRed] = useState(0);
@@ -47,7 +44,6 @@ export default function Game() {
   const [chipAmountGreen, setChipAmountGreen] = useState(0);
   const [chipBetGreen, setChipBetGreen] = useState(0);
 
-  // Cashier chip values
   const [cashierChipAmountRed, setCashierChipAmountRed] = useState(0);
   const [cashierChipAmountBlack, setCashierChipAmountBlack] = useState(0);
   const [cashierChipAmountBlue, setCashierChipAmountBlue] = useState(0);
@@ -58,7 +54,6 @@ export default function Game() {
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
 
-  // Fetch balance from Firestore
   useEffect(() => {
     const fetchBalance = async () => {
       if (user) {
@@ -78,14 +73,12 @@ export default function Game() {
     fetchBalance();
   }, [user]);
 
-  // Temporary card values
   let url = '';
   let card1 = '';
   let card2 = '';
   let card3 = '';
   let card4 = '';
 
-  // Hit button visibility
   const [pec1Visibility, setPec1Visibility] = useState('hidden');
   const [pec2Visibility, setPec2Visibility] = useState('hidden');
   const [pec3Visibility, setPec3Visibility] = useState('hidden');
@@ -102,7 +95,6 @@ export default function Game() {
   let extraDCard2 = '';
   let extraDCard3 = '';
 
-  // Deal button clicked
   function handleOnDeal() {
     if (
       chipAmountRed === 0 &&
@@ -112,7 +104,6 @@ export default function Game() {
     ) {
       alert("¡No tienes ninguna ficha!\nCompra fichas abajo en la sección de compra.");
     } else {
-      // Shuffle new deck
       $.ajax({
         url: 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
         dataType: 'json',
@@ -128,7 +119,6 @@ export default function Game() {
         },
       });
 
-      // Deal cards to player and dealer
       $.ajax({
         url: url,
         dataType: 'json',
@@ -335,30 +325,24 @@ export default function Game() {
   }
 
   function winResults() {
-    // Calculate initial winnings based on the chips bet and their multipliers
     let winnings = chipBetRed * 1 + chipBetBlack * 5 + chipBetBlue * 25 + chipBetGreen * 50;
 
     if (userTotal > 21) {
-      // User loses if they go over 21
       alert('Gana la casa, ¡suerte la próxima vez!\nTe pasaste de 21.\nPerdiste ' + winnings + '€.');
-      winnings *= -1; // Convert winnings to a loss
+      winnings *= -1; 
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
-      // User wins by having a higher total than the dealer, without exceeding 21
       alert('¿Ganaste?\nGanaste ' + winnings + '€.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
-      // User loses by having a lower total than the dealer
       alert('Gana la casa, ¡suerte la próxima vez!\nPerdiste ' + winnings + '€.');
       winnings *= -1;
     } else if (userTotal === dealerTotal && dealerTotal <= 21) {
-      // Handle tie scenario
-      let tieWinnings = winnings / 2; // User gets half of the winnings in a tie
+      let tieWinnings = winnings / 2; 
       alert('Habéis empatado. Recibirás la mitad del dinero, unos ' + tieWinnings + '€.');
       winnings = tieWinnings;
     }
 
-    // Update the user's bank balance with the new winnings or losses
     setBalance(balance + winnings);
-    refreshGame(); // Refresh or update the game state
+    refreshGame(); 
   }
 
   function refreshGame() {
@@ -398,7 +382,6 @@ export default function Game() {
     setChipVisibilityGreen('hidden');
   }
 
-  // Bet chip and user chip actions
   function handleOnClickChipRed() {
     if (chipAmountRed > 0) {
       setChipVisibilityRed('visible');
@@ -431,7 +414,6 @@ export default function Game() {
     }
   }
 
-  // Coming soon page
   function handleComingSoon() {
     open('https://static.vecteezy.com/system/resources/previews/002/115/431/original/coming-soon-business-sign-free-vector.jpg');
   }
