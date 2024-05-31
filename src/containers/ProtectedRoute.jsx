@@ -17,8 +17,6 @@ export const ProtectedRoute = ({ children }) => {
   return <Navigate to="/login" />;
 };
 
-
-
 ProtectedRoute.propTypes = {
   children: PropTypes.node,
 };

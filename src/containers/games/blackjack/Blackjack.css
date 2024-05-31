@@ -159,23 +159,24 @@ html {
   background-size: cover;
 }
 
-#chip-amt, #cashier-chip-amt {
+#chip-amt,
+#cashier-chip-amt {
   padding: 0;
   margin: 0;
   position: absolute;
   top: 50px;
   left: 15px;
-  color: white; 
+  color: white;
   font-weight: bold;
 }
 
-#cashier-chip-value{
+#cashier-chip-value {
   padding: 0;
   margin: 0;
   position: absolute;
   top: 50px;
   left: 0px;
-  color: white; 
+  color: white;
   font-weight: bold;
 }
 

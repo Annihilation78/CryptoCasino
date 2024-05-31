@@ -3,10 +3,10 @@ import ReactAudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 function AudioPlayer({ audioFile }) {
-  const [isPlaying, setIsPlaying] = useState(false); 
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
-    setIsPlaying(!isPlaying); 
+    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -14,7 +14,7 @@ function AudioPlayer({ audioFile }) {
       src={audioFile}
       autoPlay={isPlaying}
       controls
-      onPlay={handlePlayClick} 
+      onPlay={handlePlayClick}
     />
   );
 }

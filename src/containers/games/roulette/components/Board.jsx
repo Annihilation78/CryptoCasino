@@ -39,15 +39,15 @@ const Board = () => {
     return (
         <div className="board-container">
             <div className={`board ${winnerEffect}`}>
-                <div className={animation ? "profitContainer addOpacity": "profitContainer"}>
+                <div className={animation ? "profitContainer addOpacity" : "profitContainer"}>
                     <span id="winnerN">{winnerNumber}</span>
                     <span className="divider"></span>
                     <span id="gained"><font color="#2fe2e1">Gained: </font>{gain}$</span>
                 </div>
                 <div className="board-middle-vector"></div>
-                <div className="board-ball" style={{rotate: rotate + "deg"}}><div className="ball" style={{opacity: hideBall ? "0" : "1"}}></div></div>
-                <div className={playable ? "spin-container" : "spin-container disabled-btn"}><button type="button" className="spin" onClick={()=>play()}>PLAY</button></div>
-                <div className="outterCircle" style={{rotate: rotate2 + "deg"}}>
+                <div className="board-ball" style={{ rotate: rotate + "deg" }}><div className="ball" style={{ opacity: hideBall ? "0" : "1" }}></div></div>
+                <div className={playable ? "spin-container" : "spin-container disabled-btn"}><button type="button" className="spin" onClick={() => play()}>PLAY</button></div>
+                <div className="outterCircle" style={{ rotate: rotate2 + "deg" }}>
                     <div className="innerCircle">
                         {
                             boardItems.map((elm, index) => {

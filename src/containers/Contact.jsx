@@ -1,11 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Navigation from './Navigation.jsx';
-import Header from './Header.jsx'; 
+import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import { useSpring, animated } from 'react-spring';
-
-
 import "../css/Contacto.css";
 
 function Contact() {
@@ -28,7 +26,7 @@ function Contact() {
 
   return (
     <animated.div style={fadeIn} className="app">
-      <Header title="Contacto"/>
+      <Header title="Contacto" />
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contacta con nosotros</h2>
@@ -36,7 +34,6 @@ function Contact() {
             ¿Tienes preguntas, sugerencias o quieres trabajar con nosotros? ¡No
             dudes en contactarnos!
           </p>
-
           <div className="contact-info">
             <ul>
               <li>
@@ -47,7 +44,6 @@ function Contact() {
               </li>
             </ul>
           </div>
-          
           <div className="contact-form">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -88,9 +84,7 @@ function Contact() {
             </form>
           </div>
         </div>
-      </section>      
-
-      
+      </section>
     </animated.div>
   );
 }

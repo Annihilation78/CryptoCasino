@@ -13,7 +13,7 @@ import {
 const API_KEY = "";
 
 const Chat = () => {
-  const [showChat, setShowChat] = useState(false); 
+  const [showChat, setShowChat] = useState(false);
   const [messages, setMessages] = useState([
     {
       message: "Hola, soy tu asistente virtual y estoy aquí para ayudarte: ¿Qué necesitas?",
@@ -55,10 +55,9 @@ const Chat = () => {
         }
       }
     };
-  
+
     processMessage();
   }, [messages]);
-  
 
   async function processMessageToChatGPT(chatMessages) {
     const apiMessages = chatMessages.map((messageObject) => {
@@ -99,16 +98,16 @@ const Chat = () => {
               Ocultar chat
             </Button>
             <MainContainer>
-              <ChatContainer>       
-                <MessageList 
-                  scrollBehavior="smooth" 
+              <ChatContainer>
+                <MessageList
+                  scrollBehavior="smooth"
                   typingIndicator={isTyping ? <TypingIndicator content="ChatGPT está escribiendo..." /> : null}
                 >
                   {messages.map((message, i) => (
                     <Message key={i} model={message} />
                   ))}
                 </MessageList>
-                <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />        
+                <MessageInput placeholder="Enviar un mensaje" onSend={handleSendRequest} />
               </ChatContainer>
             </MainContainer>
           </Box>

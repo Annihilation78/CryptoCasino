@@ -10,8 +10,6 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import InteractiveSceneAnya from './InteractiveSceneAnya.jsx';
 
 function Home() {
-  
-
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },

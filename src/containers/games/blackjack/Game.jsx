@@ -329,20 +329,20 @@ export default function Game() {
 
     if (userTotal > 21) {
       alert('Gana la casa, ¡suerte la próxima vez!\nTe pasaste de 21.\nPerdiste ' + winnings + '€.');
-      winnings *= -1; 
+      winnings *= -1;
     } else if (userTotal > dealerTotal && dealerTotal <= 21) {
       alert('¿Ganaste?\nGanaste ' + winnings + '€.');
     } else if (userTotal < dealerTotal && dealerTotal <= 21) {
       alert('Gana la casa, ¡suerte la próxima vez!\nPerdiste ' + winnings + '€.');
       winnings *= -1;
     } else if (userTotal === dealerTotal && dealerTotal <= 21) {
-      let tieWinnings = winnings / 2; 
+      let tieWinnings = winnings / 2;
       alert('Habéis empatado. Recibirás la mitad del dinero, unos ' + tieWinnings + '€.');
       winnings = tieWinnings;
     }
 
     setBalance(balance + winnings);
-    refreshGame(); 
+    refreshGame();
   }
 
   function refreshGame() {
@@ -571,7 +571,7 @@ export default function Game() {
           Restablecer
         </div>
       </div>
-      <InteractiveSceneBlackJack/>
+      <InteractiveSceneBlackJack />
     </div>
   );
 

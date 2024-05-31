@@ -5,7 +5,6 @@ import { AuthContext } from "./login/Auth.jsx";
 
 function Header({ title }) {
   const { logOut } = useContext(AuthContext);
-
   return (
     <header>
       <h1 className="title">

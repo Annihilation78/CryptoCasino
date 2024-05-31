@@ -15,7 +15,7 @@
 
 .support-main {
     padding: 20px;
-    
+
 }
 
 .support-intro {
@@ -86,7 +86,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .social-icons svg {
@@ -96,23 +96,24 @@
 }
 
 .accordion-button {
-    background: none; 
-    color: inherit; 
-    border: none; 
-    padding: 20px; 
-    font-size: 2xl; 
-    font-weight: bold; 
-  }
-  
-  .accordion-button:focus, .accordion-button:hover {
-    text-decoration: none; 
-    color: inherit; 
-  }
-  
-  .accordion-button:focus-visible {
-    outline: none; 
-  }
-  
-  .accordion-button:visited {
-    color: inherit; 
-  }
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 20px;
+    font-size: 2xl;
+    font-weight: bold;
+}
+
+.accordion-button:focus,
+.accordion-button:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.accordion-button:focus-visible {
+    outline: none;
+}
+
+.accordion-button:visited {
+    color: inherit;
+}

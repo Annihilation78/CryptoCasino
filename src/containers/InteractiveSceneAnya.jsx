@@ -3,8 +3,6 @@ import { Canvas} from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import AvatarAnya from './AvatarAnya';
 
-
-
 export default  function InteractiveSceneAnya() {
   return (
     <Canvas style={{ height: '60vh', width: '60vw' }}>
@@ -14,9 +12,7 @@ export default  function InteractiveSceneAnya() {
       <OrbitControls />
       <Environment preset="sunset" />
       <AvatarAnya scale={[2.6,2.6,2.6]} /> {}
-      
     </Canvas>
-    
   );
 }
 

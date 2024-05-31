@@ -8,18 +8,18 @@ import Faucet from './components/FaucetModal';
 import Board from './components/Board';
 import Confetti from './components/Confetti'
 import Navigation from '../../Navigation.jsx';
-import Header from '../../Header.jsx'; 
-import Footer from '../../Footer.jsx'; 
+import Header from '../../Header.jsx';
+import Footer from '../../Footer.jsx';
 
 function Roulette() {
   return (
     <div className="App">
-      <Header title="Roulette"/>
+      <Header title="Roulette" />
       <Context>
 
         <div>
-            <Balance />
-            <Faucet />
+          <Balance />
+          <Faucet />
         </div>
 
         <div className='upper-container'>

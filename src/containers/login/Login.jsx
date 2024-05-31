@@ -13,7 +13,7 @@ const Login = () => {
     to: { opacity: 1, transform: 'translate3d(0,0px,0)', width: '100%' },
     config: { tension: 210, friction: 20 }
   });
-  
+
 
   if (loading) {
     return (
@@ -25,12 +25,12 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    try{
+    try {
       await loginUser(email, password)
-      .then((result) => {
-        alert('Inicio de sesión exitoso!');
-        navigate("/Profile");
-      }) 
+        .then((result) => {
+          alert('Inicio de sesión exitoso!');
+          navigate("/Profile");
+        })
     }
     catch (err) {
       alert('Error al iniciar sesión. Verifica tus credenciales e inténtalo de nuevo.');
@@ -43,7 +43,7 @@ const Login = () => {
     to: { opacity: 1 },
     config: { duration: 500 },
   });
-  
+
   return (
     <animated.div style={fadeIn} className="app">
       <animated.div style={animationProps}>
@@ -65,25 +65,25 @@ const Login = () => {
                 <input
                   name="email"
                   type="email"
-                  placeholder="Email"/>
+                  placeholder="Email" />
               </div>
               <div className="input-group">
                 <label name="password">Contraseña:</label>
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password"/>
+                  placeholder="Password" />
               </div>
               <div>
                 <label name="recuerdame">Recuérdame</label>
-                <input type="checkbox" className="box"/>
+                <input type="checkbox" className="box" />
               </div>
               <div>
-                <li><Link to="/Contact" style={{color:"darkorchid"}}>¿Has olvidado tu contraseña?</Link></li>
+                <li><Link to="/Contact" style={{ color: "darkorchid" }}>¿Has olvidado tu contraseña?</Link></li>
               </div>
               <div><button type="submit" className="login-btn">Iniciar sesión</button></div>
               <div>
-                <li name="registro"><Link to="/register" style={{color:"darkorchid"}}>¿No tienes cuenta?</Link></li>
+                <li name="registro"><Link to="/register" style={{ color: "darkorchid" }}>¿No tienes cuenta?</Link></li>
               </div>
             </form>
           </div>

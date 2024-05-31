@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
-import 'react-h5-audio-player/lib/styles.css'; 
+import 'react-h5-audio-player/lib/styles.css';
 import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
-import Header from './Header.jsx'; 
+import Header from './Header.jsx';
 import { useSpring, animated } from 'react-spring';
 
 function MenuJuegos() {
@@ -17,9 +17,8 @@ function MenuJuegos() {
 
   return (
     <animated.div style={fadeIn} className='App'>
-      <Header title="Juegos"/>
-
-      <div className="menu"> 
+      <Header title="Juegos" />
+      <div className="menu">
         <motion.div whileHover={{ scale: 1.1 }}>
           <Link to="/BlackJack">
             <motion.img
@@ -45,19 +44,18 @@ function MenuJuegos() {
       </div>
 
       <div style={{
-       position: 'absolute',
-       bottom: '30px', 
-       right: '0px', 
-       width: '250px', 
-       height: '50px', 
-       zIndex: 1000, 
+        position: 'absolute',
+        bottom: '30px',
+        right: '0px',
+        width: '250px',
+        height: '50px',
+        zIndex: 1000,
       }}>
         <AudioPlayer
           audioFile={audioFile}
           controls
         />
       </div>
-
 
     </animated.div>
   );

@@ -5,7 +5,6 @@ import Navigation from '../Navigation.jsx';
 import { useSpring, animated } from 'react-spring';
 import { getBalance } from './Register.jsx';
 
-
 const Profile = () => {
   const [balance, setBalance] = useState(null);
   const { user, logOut } = useContext(AuthContext);
@@ -20,7 +19,7 @@ const Profile = () => {
 
     fetchBalance();
   }, [user]);
-  
+
   const fadeIn = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
@@ -47,12 +46,12 @@ const Profile = () => {
               className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-              <p style={{color:"white"}}>¡Bienvenido {user?.displayName}!</p>
-              <p style={{color:"white"}}>Tu correo es: {user?.email}</p>
+              <p style={{ color: "white" }}>¡Bienvenido {user?.displayName}!</p>
+              <p style={{ color: "white" }}>Tu correo es: {user?.email}</p>
               {balance !== null ? (
-                <p style={{color:"white"}}>Tu balance es: {balance}</p>
+                <p style={{ color: "white" }}>Tu balance es: {balance}</p>
               ) : (
-                <p style={{color:"white"}}>Obteniendo balance...</p>
+                <p style={{ color: "white" }}>Obteniendo balance...</p>
               )}
               <button className="btn btn-primary"><Link to="/">¿Listo para jugar?</Link></button>
             </div>

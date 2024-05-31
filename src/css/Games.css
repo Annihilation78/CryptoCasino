@@ -1,11 +1,10 @@
-
 .imagen-juego {
     width: 550px;
-    height: 550px; 
+    height: 550px;
     object-fit: cover;
     transition: opacity 0.5s;
     margin-top: 280px;
-    
+
 }
 
 .imagen-juego:hover {
@@ -18,7 +17,7 @@
     color: coral;
     transition: color 0.5s;
     text-align: center;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .descripcion-juego:hover {
@@ -28,4 +27,3 @@
 a {
     text-decoration: none;
 }
-
