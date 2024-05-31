@@ -246,11 +246,8 @@ const Context = (props) => {
       setWinnerEffect("lost")
     }
     setBalance(balance + profit)
-    await updateBalance(userId, newBalance);
+    await updateDoc(doc(db, 'users', user.uid), { balance: newBalance });
   }
-
-
-
 
   const clearBet = () => {
     setButtons(buttons.map(elm => elm ? { ...elm, class: elm.class.replace("bet-active", ""), betAmount: 0 } : null)) 
