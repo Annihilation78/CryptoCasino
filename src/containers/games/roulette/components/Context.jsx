@@ -3,6 +3,7 @@ import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
 import { AuthContext } from "../../../login/Auth.jsx";
 import { updateDoc, doc, getDoc } from 'firebase/firestore';
+import { db } from "../../Firebase.jsx";
 export const MyContext = createContext()
 
 const Context = (props) => {
