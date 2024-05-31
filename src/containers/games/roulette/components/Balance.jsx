@@ -1,7 +1,8 @@
 import { useContext, useEffect, memo } from "react";
 import { MyContext } from "./Context";
 import { AuthContext } from "../../../login/Auth.jsx";
-import { getBalance } from './balanceUtils'; // Importa la función
+import { getBalance } from './balanceUtils'; 
+import { updateDoc, doc } from 'firebase/firestore';
 
 const Balance = () => {
   const { balance, setBalance, setFaucetModal } = useContext(MyContext);
@@ -10,7 +11,7 @@ const Balance = () => {
   useEffect(() => {
     const fetchBalance = async () => {
       if (userId) {
-        const userBalance = await getBalance(userId);
+        const userBalance =   await updateDoc(doc(db, 'users', user.uid), { balance: newBalance });
         if (userBalance !== null) {
           setBalance(userBalance);
         }

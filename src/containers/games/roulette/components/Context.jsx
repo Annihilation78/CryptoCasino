@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState, useRef, useContext} from "re
 import $ from "jquery";
 import { updateBalance, getBalance } from './balanceUtils';
 import { AuthContext } from "../../../login/Auth.jsx";
+import { updateDoc, doc } from 'firebase/firestore';
 export const MyContext = createContext()
 
 const Context = (props) => {
@@ -90,16 +91,7 @@ const Context = (props) => {
   const [turn, setTurn] = useState(0)                          // Turn number
   const { userId } = useContext(AuthContext);
 
-  useEffect(() => {
-    const fetchBalance = async () => {
-      const userBalance = await getBalance(userId);
-      if (userBalance !== null) {
-        setBalance(userBalance);
-      }
-    };
 
-    fetchBalance();
-  }, [userId]);
   
   const play = () => {
     setHideBall(false)                                                                                                      // here we showed our ball and hid the active item's ball
