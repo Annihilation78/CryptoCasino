@@ -13,7 +13,7 @@ import {
 const API_KEY = "";
 
 const Chat = () => {
-  const [showChat, setShowChat] = useState(false); // Inicialmente oculto
+  const [showChat, setShowChat] = useState(false); 
   const [messages, setMessages] = useState([
     {
       message: "Hola, soy tu asistente virtual y estoy aquí para ayudarte: ¿Qué necesitas?",

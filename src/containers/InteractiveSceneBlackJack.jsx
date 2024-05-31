@@ -11,7 +11,7 @@ export default  function InteractiveSceneBlackJack() {
         <pointLight position={[-10, -10, -10]} />
         <OrbitControls />
         <Environment preset="sunset" />
-        <AvatarBlackJack scale={[3,3,3]} /> {/* Adjust scale as needed */}
+        <AvatarBlackJack scale={[3,3,3]} /> {}
         
       </Canvas>
       

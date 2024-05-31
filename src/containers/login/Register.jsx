@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "./Auth.jsx"; // Usa el hook useAuth en lugar de useContext(Auth)
+import { AuthContext } from "./Auth.jsx"; 
 import '../../css/Home.css';
 import Navigation from '../Navigation.jsx';
 import Header from '../Header.jsx'; 
 import Footer from '../Footer.jsx'; 
-import { doc, setDoc, getDoc } from 'firebase/firestore'; // Asegúrate de importar esto
-import { db, auth } from "../Firebase.jsx"; // Ajusta la ruta según tu estructura de archivos
+import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { db, auth } from "../Firebase.jsx"; 
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useSpring, animated } from 'react-spring';
 
@@ -32,7 +32,7 @@ export const getBalance = async (userId) => {
 function Register() {
   const { createUser, user, loading } = useContext(AuthContext);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [balance, setBalance] = useState(null); // Nuevo estado para el balance
+  const [balance, setBalance] = useState(null); 
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => { 
@@ -56,8 +56,8 @@ function Register() {
             navigate("/Profile");
             signInWithEmailAndPassword(auth, email, password)
               .then(async () => {
-                const userBalance = await getBalance(userId); // Obtener el balance después de iniciar sesión
-                setBalance(userBalance); // Actualizar el estado con el balance
+                const userBalance = await getBalance(userId); 
+                setBalance(userBalance); 
                 handleOnPurchase(userId);
                 navigate("/Profile");
               })
@@ -134,7 +134,7 @@ function Register() {
           <div>
             <p>¿Ya tienes una cuenta? <Link to="/login" style={{color:"darkorchid"}}>Inicia sesión</Link></p>
           </div>
-          {balance !== null && <p>Tu balance es: {balance}</p>} {/* Mostrar el balance si está disponible */}
+          {balance !== null && <p>Tu balance es: {balance}</p>} {}
         </div>
       </main>
     </animated.div>

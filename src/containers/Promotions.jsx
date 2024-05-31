@@ -36,7 +36,7 @@ function MenuPromociones() {
                     <img className="imagen-juego" src="https://github.com/Annihilation78/CryptoCasino/raw/main/src/assets/promocion4.jpg" alt="juego 3" />
                     <p className="imagen-juego-text">Deposita mínimo 20 fichas.Y podrás ganar X fichas extra</p>
                     </Tilt> 
-            </div> {/* Aquí faltaba cerrar la etiqueta */}
+            </div> {}
 
         </animated.div>
     );

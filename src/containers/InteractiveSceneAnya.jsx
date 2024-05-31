@@ -13,7 +13,7 @@ export default  function InteractiveSceneAnya() {
       <pointLight position={[-10, -10, -10]} />
       <OrbitControls />
       <Environment preset="sunset" />
-      <AvatarAnya scale={[2.6,2.6,2.6]} /> {/* Adjust scale as needed */}
+      <AvatarAnya scale={[2.6,2.6,2.6]} /> {}
       
     </Canvas>
     

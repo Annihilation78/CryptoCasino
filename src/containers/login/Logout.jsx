@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from './Auth.jsx'; // Importa la función de cierre de sesión de Firebase
+import { AuthContext } from './Auth.jsx'; 
 
 const Logout = () => {
   const { logOut } = useContext(AuthContext);
@@ -8,7 +8,7 @@ const Logout = () => {
   logOut()
     .then(() => {
       alert('Cierre de sesión exitoso!');
-      navigate("/login"); // Redirect to the login page after logout
+      navigate("/login"); 
     })
     .catch((error) => {
       console.error("Error al cerrar la sesión", error);

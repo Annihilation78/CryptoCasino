@@ -1,7 +1,7 @@
 
 .imagen-juego {
-    width: 550px; /* Tamaño de la imagen aumentado */
-    height: 550px; /* Tamaño de la imagen aumentado */
+    width: 550px;
+    height: 550px; 
     object-fit: cover;
     transition: opacity 0.5s;
     margin-top: 280px;
@@ -9,20 +9,20 @@
 }
 
 .imagen-juego:hover {
-    opacity: 0.7; /* La imagen se ilumina al pasar el ratón por encima */
+    opacity: 0.7;
 }
 
 .descripcion-juego {
     padding: 10px 20px;
     font-size: 20px;
     color: coral;
-    transition: color 0.5s; /* Transición suave del color del texto */
-    text-align: center; /* Centra el texto horizontalmente */
-    margin-top: 10px; /* Añade un espacio arriba de la descripción */
+    transition: color 0.5s;
+    text-align: center;
+    margin-top: 10px; 
 }
 
 .descripcion-juego:hover {
-    color: lightblue; /* El texto se ilumina al pasar el ratón por encima */
+    color: lightblue;
 }
 
 a {

@@ -86,34 +86,33 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    gap: 20px; /* Aumenta el espacio entre los iconos */
+    gap: 20px; 
 }
 
 .social-icons svg {
-    width: 36px; /* Ancho de los iconos */
-    height: 36px; /* Alto de los iconos */
+    width: 36px;
+    height: 36px;
     margin: 0 8px;
 }
 
-/* Estilos específicos para el AccordionButton */
 .accordion-button {
-    background: none; /* Asegura que no haya fondo morado */
-    color: inherit; /* Mantiene el color original */
-    border: none; /* Elimina cualquier borde predeterminado */
-    padding: 20px; /* Asegura el padding adecuado */
-    font-size: 2xl; /* Tamaño de fuente adecuado */
-    font-weight: bold; /* Peso de la fuente adecuado */
+    background: none; 
+    color: inherit; 
+    border: none; 
+    padding: 20px; 
+    font-size: 2xl; 
+    font-weight: bold; 
   }
   
   .accordion-button:focus, .accordion-button:hover {
-    text-decoration: none; /* Elimina la subrayado */
-    color: inherit; /* Mantiene el color original */
+    text-decoration: none; 
+    color: inherit; 
   }
   
   .accordion-button:focus-visible {
-    outline: none; /* Elimina el contorno de enfoque */
+    outline: none; 
   }
   
   .accordion-button:visited {
-    color: inherit; /* Mantiene el color original */
+    color: inherit; 
   }

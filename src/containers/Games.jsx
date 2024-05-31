@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
-import 'react-h5-audio-player/lib/styles.css'; // Importar los estilos CSS de react-h5-audio-player
+import 'react-h5-audio-player/lib/styles.css'; 
 import audioFile from '../assets/music/ageofwar.mp3';
 import { motion } from 'framer-motion';
 import Header from './Header.jsx'; 
@@ -46,15 +46,15 @@ function MenuJuegos() {
 
       <div style={{
        position: 'absolute',
-       bottom: '30px', // Ajusta la distancia desde la parte inferior
-       right: '0px', // Ajusta la distancia desde la derecha
-       width: '250px', // Ajusta el ancho
-       height: '50px', // Ajusta la altura
-       zIndex: 1000, // Asegura que el elemento esté por encima de otros elementos
+       bottom: '30px', 
+       right: '0px', 
+       width: '250px', 
+       height: '50px', 
+       zIndex: 1000, 
       }}>
         <AudioPlayer
           audioFile={audioFile}
-          controls // Agregar controles de reproducción
+          controls
         />
       </div>
 

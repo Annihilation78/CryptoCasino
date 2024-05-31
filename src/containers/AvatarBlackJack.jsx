@@ -4,7 +4,7 @@ import BlackJack from '../assets/models/BlackJack.glb';
 
 
 export default  function AvatarBlackJack(props) {
-    const { scene } = useGLTF(BlackJack);  // Adjust the path as necessary
+    const { scene } = useGLTF(BlackJack); 
   
     return <primitive object={scene} scale={props.scale || [1, 1, 1]} />;
   }

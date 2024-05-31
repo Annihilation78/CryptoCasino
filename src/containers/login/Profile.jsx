@@ -3,7 +3,7 @@ import { AuthContext } from "./Auth.jsx";
 import { Link } from "react-router-dom";
 import Navigation from '../Navigation.jsx';
 import { useSpring, animated } from 'react-spring';
-import { getBalance } from './Register.jsx'; // Asegúrate de importar la función correctamente
+import { getBalance } from './Register.jsx';
 
 
 const Profile = () => {
@@ -27,7 +27,6 @@ const Profile = () => {
     config: { duration: 500 },
   });
 
-  // Render user's profile information
   return (
     <animated.div style={fadeIn} className="app">
       <header>

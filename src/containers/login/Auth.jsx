@@ -1,4 +1,3 @@
-// Auth.jsx
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,

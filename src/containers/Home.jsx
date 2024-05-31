@@ -5,7 +5,7 @@ import beepSfx from '../assets/fri.mp3';
 import Header from './Header.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
-import Chat from './Chat.jsx'; // Importa el componente Chatbot desde Chatbot.jsx
+import Chat from './Chat.jsx';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import InteractiveSceneAnya from './InteractiveSceneAnya.jsx';
 
