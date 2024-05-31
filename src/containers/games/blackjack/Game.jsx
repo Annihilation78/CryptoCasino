@@ -1,16 +1,14 @@
 import './Blackjack.css';
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Deck from './Deck.jsx';
 import Header from '../../Header.jsx';
 import Footer from '../../Footer.jsx';
 import $ from 'jquery';
-
 import { AuthContext } from "../../login/Auth.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import { updateDoc, doc } from 'firebase/firestore';
+import { updateDoc, doc, getDoc } from 'firebase/firestore';
 import { db } from "../../Firebase.jsx";
 import InteractiveSceneBlackJack from '../../InteractiveSceneBlackJack.jsx';
-
 
 export default function Game() {
   // Dealer cards
@@ -60,6 +58,25 @@ export default function Game() {
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
 
+  // Fetch balance from Firestore
+  useEffect(() => {
+    const fetchBalance = async () => {
+      if (user) {
+        try {
+          const userDoc = await getDoc(doc(db, 'users', user.uid));
+          if (userDoc.exists()) {
+            setBalance(userDoc.data().balance);
+          } else {
+            console.log('No such document!');
+          }
+        } catch (error) {
+          console.error('Error fetching user balance:', error);
+        }
+      }
+    };
+
+    fetchBalance();
+  }, [user]);
 
   // Temporary card values
   let url = '';
@@ -573,7 +590,6 @@ export default function Game() {
         </div>
       </div>
       <InteractiveSceneBlackJack/>
-
     </div>
   );
 
