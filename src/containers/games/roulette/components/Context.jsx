@@ -70,7 +70,7 @@ const Context = (props) => {
 
   const selectChip = (num) => { setChip(num) }
 
-
+  const { user, logOut } = useContext(AuthContext);
 
   const [balance, setBalance] = useState(null)
   useEffect(() => {
